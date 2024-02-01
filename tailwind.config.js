@@ -7,7 +7,6 @@ export default {
         160: "640px",
         180: "720px",
         200: "800px",
-        page: "1760px",
       },
       height: {
         page: "800px",
@@ -16,16 +15,11 @@ export default {
         160: "640px",
       },
       fontSize: {
-        bacc: "200px",
+        bacd: "200px",
         title: "120px",
         subtitle: "32px",
       },
-      color: {
-        linear1_1: "#143666",
-      },
     },
   },
-  plugins: [
-    
-  ],
+  plugins: [require("tailwindcss-3d")({ legacy: true })],
 };
