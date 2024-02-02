@@ -54,9 +54,9 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="h-page bg-gradient-to-b from-cyan-800 to-blue-900  px-40"
+          className="flex h-screen items-center justify-center  bg-gradient-to-b from-[#082A4D] to-[#000000] px-40"
         >
-          <div className="h-page overflow-scroll">
+          <div className="h-5/6 overflow-scroll rounded-3xl no-scrollbar">
             <div className="w-[1000vw]">
               <img className="map" src="../pic/map.jpg" alt="" />
             </div>

@@ -9,28 +9,28 @@ const MapPage = () => {
       <div className="h-[120px] w-full bg-gradient-to-b from-[#082A4D] to-[#000000]"></div>
       <nav>
         <div className="flex flex-row-reverse gap-x-4 bg-black px-4 py-4 text-base">
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white  px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,中正區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,中山區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,大同區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,大安區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,松山區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,信義區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,北投區
           </button>
-          <button className="rounded-full bg-white px-5 py-2 hover:bg-[#0B374D] hover:text-white">
+          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
             台北,萬華區
           </button>
         </div>
@@ -42,9 +42,11 @@ const MapPage = () => {
         height="600"
       ></iframe> */}
       {/* <section className="h-page bg-gradient-to-b from-cyan-800 to-blue-900  px-40"> */}
-      <div className="h-page overflow-scroll">
-        <div className="w-[1000vw]">
-          <img className="map" src="../pic/map.jpg" alt="" />
+      <div className="flex h-screen">
+        <div className="h-page overflow-scroll no-scrollbar">
+          <div className="w-[1000vw]">
+            <img className="map" src="../pic/map.jpg" alt="" />
+          </div>
         </div>
       </div>
       {/* </section> */}
