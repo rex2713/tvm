@@ -32,7 +32,7 @@ const HomePage = () => {
       {/*<!-- 主要內容 -->*/}
       <main className="relative ">
         {/* 首頁-主視覺 */}
-        <section className="relative h-page bg-[url('../../pic/homepage-bg.jpg')] bg-cover px-20">
+        <section className="relative h-screen bg-[url('../../pic/homepage-bg.jpg')] bg-cover px-20">
           {/* <div className="relative flex h-160 justify-around"> */}
           {/* <div className="absolute left-0 z-10 h-full"> */}
           <div className="h-[100px]"></div>
@@ -40,7 +40,7 @@ const HomePage = () => {
             <div className="absolute left-0 top-0 z-20 w-full ">
               {delayLoading ? <Loading /> : <></>}
             </div>
-            <div className="absolute left-0 top-0">
+            <div className="absolute left-0 top-0 h-full w-full">
               {indexDelayLoading ? <></> : <IndexTitle />}
             </div>
           </div>
