@@ -35,7 +35,7 @@ const HomePage = () => {
         <section className="relative h-screen bg-[url('../../pic/homepage-bg.jpg')] bg-cover px-20">
           {/* <div className="relative flex h-160 justify-around"> */}
           {/* <div className="absolute left-0 z-10 h-full"> */}
-          <div className="h-[100px]"></div>
+          {/* <div className="h-[100px]"></div> */}
           <div className="">
             <div className="absolute left-0 top-0 z-20 w-full ">
               {delayLoading ? <Loading /> : <></>}
@@ -46,7 +46,7 @@ const HomePage = () => {
           </div>
           <button
             onClick={handleClick}
-            className="absolute bottom-10 left-[48vw] rounded-full bg-white/20 p-4 text-white shadow-md shadow-black/50 hover:bg-white/40"
+            className="absolute bottom-10 right-20 rounded-full bg-white/20 px-4 py-3 text-white hover:bg-white/40"
           >
             開始瀏覽
           </button>

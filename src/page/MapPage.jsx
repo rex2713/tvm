@@ -6,50 +6,42 @@ const MapPage = () => {
   window.scrollTo(0, 0);
   return (
     <main>
-      <div className="h-[120px] w-full bg-gradient-to-b from-[#082A4D] to-[#000000]"></div>
-      <nav>
-        <div className="flex flex-row-reverse gap-x-4 bg-black px-4 py-4 text-base">
-          <button className="rounded-full bg-black text-white  px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,中正區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,中山區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,大同區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,大安區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,松山區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,信義區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,北投區
-          </button>
-          <button className="rounded-full bg-black text-white px-5 py-2 hover:bg-[#0B374D] hover:text-white hover:border-[rgba(255,255,255,.5)] border border-transparent">
-            台北,萬華區
-          </button>
-        </div>
-      </nav>
-      {/* <iframe
-        // className="pointer-events-none"
-        src="https://www.google.com/maps/d/embed?mid=1Gg9ZAfd_DxxN_wDaiKNXxW8vjzp7Zzs&ehbc=2E312F"
-        width="1470"
-        height="600"
-      ></iframe> */}
-      {/* <section className="h-page bg-gradient-to-b from-cyan-800 to-blue-900  px-40"> */}
-      <div className="flex h-screen">
-        <div className="h-page overflow-scroll no-scrollbar">
-          <div className="w-[1000vw]">
-            <img className="map" src="../pic/map.jpg" alt="" />
+      {/* <div className="h-[120px] w-full bg-gradient-to-b from-[#082A4D] to-[#000000]"></div> */}
+      <section className="h-screen bg-gradient-to-b from-[#082A4D] to-[#000000]  px-40">
+        <div className="relative flex h-[90%] justify-center">
+          <div className="absolute top-0 flex justify-center gap-x-4 bg-transparent w-full py-4 text-base">
+            <button className="rounded-full border border-transparent  bg-black px-5 py-1 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              中正區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-1 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              中山區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              大同區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              大安區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              松山區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              信義區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              北投區
+            </button>
+            <button className="rounded-full border border-transparent bg-black px-5 py-2 text-white hover:border-[rgba(255,255,255,.5)] hover:bg-[#0B374D] hover:text-white">
+              萬華區
+            </button>
+          </div>
+          <div className="no-scrollbar h-full overflow-scroll rounded-3xl">
+            <div className="w-[400vw]">
+              <img className="map" src="../pic/map.jpg" alt="" />
+            </div>
           </div>
         </div>
-      </div>
-      {/* </section> */}
+      </section>
       <section className="flex flex-col gap-y-10 bg-gradient-to-b from-[#082A4D] to-[#000000] px-40 py-5">
         <CourtSearch />
         <div className="grid grid-cols-3 gap-x-20 gap-y-14 ">
