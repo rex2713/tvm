@@ -11,25 +11,39 @@ const HeaderNavBar = () => {
         </div>
       </div>
       <nav className="leading-15 0 ">
-        <div className="flex w-180 justify-between gap-x-8 ">
-          <ul className="mt-[60px] flex h-10 w-160 justify-around space-x-5 rounded-full  bg-gray-800 px-5 leading-10 text-white">
+        <div className="flex justify-between gap-x-2 ">
+          <ul className="mx-2 mt-[60px] flex h-11 items-center justify-center space-x-2 rounded-full  bg-gray-800 px-1 leading-10 text-white">
             <li>
-              <Link to="/" className="font-light">
+              <Link
+                to="/"
+                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+              >
                 首頁
               </Link>
             </li>
             <li>
-              <Link to="/map" className="font-light">
+              <Link
+                to="/map"
+                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+              >
                 球場地圖
               </Link>
             </li>
             <li>
-              <Link to="/team/list" className="font-light" href="">
+              <Link
+                to="/team/list"
+                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                href=""
+              >
                 揪團組隊
               </Link>
             </li>
             <li>
-              <Link to="/news" className="font-light" href="">
+              <Link
+                to="/news"
+                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                href=""
+              >
                 最新消息
               </Link>
             </li>
@@ -38,7 +52,7 @@ const HeaderNavBar = () => {
             to="/member/login"
             className="rounded-full font-light leading-10 text-white"
           >
-            <div className="mt-[40px]">
+            <div className="mt-[50px] ">
               <MemberIcon />
             </div>
           </Link>
