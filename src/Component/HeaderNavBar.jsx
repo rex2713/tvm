@@ -38,7 +38,7 @@ const HeaderNavBar = () => {
             to="/member/login"
             className="rounded-full font-light leading-10 text-white"
           >
-            <div className="mt-[40px] ">
+            <div className="mt-[40px]">
               <MemberIcon />
             </div>
           </Link>
