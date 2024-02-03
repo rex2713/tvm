@@ -1,14 +1,14 @@
 import React from "react";
+import MemberNav from "../Component/MemberNav";
 import { Outlet } from "react-router-dom";
-import TeamNav from "./TeamNav";
 
-const TeamLayout = () => {
+const MemberLayout = () => {
   return (
     <div>
-      <TeamNav />
+      <MemberNav />
       <Outlet />
     </div>
   );
 };
 
-export default TeamLayout;
+export default MemberLayout;

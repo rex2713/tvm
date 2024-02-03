@@ -1,5 +1,4 @@
 import React from "react";
-import Spline from "@splinetool/react-spline";
 import VanillaTilt from "vanilla-tilt";
 import { useEffect } from "react";
 

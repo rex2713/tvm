@@ -18,6 +18,7 @@ const MemberLogin = () => {
     setPassword(e.target.value);
   };
   const handleLogin = async (e) => {
+    //取消表單預設行為
     e.preventDefault();
     try {
       let response = await AuthService.login(email, password);
@@ -45,7 +46,7 @@ const MemberLogin = () => {
             <input
               onChange={handleEmail}
               type="text"
-              id="account"
+              id="email"
               className="h-7 rounded-md text-black"
             />
           </label>
@@ -53,7 +54,7 @@ const MemberLogin = () => {
             密碼：
             <input
               onChange={handlePassword}
-              type="text"
+              type="password"
               id="password"
               className="h-7 rounded-md text-black"
             />

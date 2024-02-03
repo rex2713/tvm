@@ -35,13 +35,6 @@ const MapPage = () => {
           </button>
         </div>
       </nav>
-      {/* <iframe
-        // className="pointer-events-none"
-        src="https://www.google.com/maps/d/embed?mid=1Gg9ZAfd_DxxN_wDaiKNXxW8vjzp7Zzs&ehbc=2E312F"
-        width="1470"
-        height="600"
-      ></iframe> */}
-      {/* <section className="h-page bg-gradient-to-b from-cyan-800 to-blue-900  px-40"> */}
       <div className="h-page overflow-scroll">
         <div className="w-[1000vw]">
           <img className="map" src="../pic/map.jpg" alt="" />

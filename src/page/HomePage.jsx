@@ -5,11 +5,10 @@ import NewsLink from "../Component/NewsLink";
 import CupGame from "../Component/CupGame";
 import IndexTitle from "../Component/IndexTitle";
 import Loading from "../Component/Loading";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../css/main.css";
 
 const HomePage = () => {
-  window.scrollTo(0, 0);
   // loading動畫延遲5秒
   const [delayLoading, setDelayLoading] = useState(true);
   setTimeout(() => {
@@ -20,6 +19,20 @@ const HomePage = () => {
   setTimeout(() => {
     setIndexDelayLoading(false);
   }, 2100);
+
+  //確認是否為首次載入頁面
+  const [showLoading, setShowLoading] = useState(true);
+  useEffect(() => {
+    const hasShowLoading = sessionStorage.getItem("hasShowLoading");
+    if (!hasShowLoading) {
+      //沒有此屬性代表為首次登入，正常顯示並將hasShowLoading屬性存入sessionStorage
+      sessionStorage.setItem("hasShowLoading", "true");
+    } else {
+      //設定不顯示開頭動畫以及立即顯示IndexTitle
+      setShowLoading(false);
+      setIndexDelayLoading(false);
+    }
+  }, []);
 
   // 點擊按鈕滾動至指定元素
   const ref = useRef(null);
@@ -38,7 +51,7 @@ const HomePage = () => {
           <div className="h-[100px]"></div>
           <div className="">
             <div className="absolute left-0 top-0 z-20 w-full ">
-              {delayLoading ? <Loading /> : <></>}
+              {showLoading && (delayLoading ? <Loading /> : <></>)}
             </div>
             <div className="absolute left-0 top-0 h-full w-full">
               {indexDelayLoading ? <></> : <IndexTitle />}
