@@ -3,7 +3,6 @@ import TeamInformation from "../Component/TeamInforMation";
 import TeamInformationAdd from "../Component/TeamInformationAdd";
 
 const TeamManage = () => {
-  window.scrollTo(0, 0);
   return (
     <main className="flex w-full flex-col gap-y-10  bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
       {/* 隊伍資訊-未展開 */}
