@@ -46,7 +46,7 @@ const HomePage = () => {
           </div>
           <button
             onClick={handleClick}
-            className="absolute bottom-10 right-20 rounded-full bg-white/20 px-4 py-3 text-white hover:bg-white/40"
+            className="absolute bottom-10 right-[5vw] rounded-full bg-white/20 px-4 py-3 text-white hover:bg-white/40"
           >
             開始瀏覽
           </button>
@@ -54,29 +54,29 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center  bg-gradient-to-b from-[#082A4D] to-[#000000] px-40"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw]"
         >
-          <div className="h-5/6 overflow-scroll rounded-3xl no-scrollbar">
+          <div className="no-scrollbar h-5/6 overflow-scroll rounded-3xl">
             <div className="w-[1000vw]">
               <img className="map" src="../pic/map.jpg" alt="" />
             </div>
           </div>
         </section>
         {/* 首頁-隊伍 */}
-        <section className="flex h-page w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover">
+        <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
           <div className="flex w-full">
             {/* 左半裝飾字-Teams */}
-            <h2 className="h-page w-[20%] text-bacd font-bold text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="h-page w-[20vw] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               Teams
             </h2>
             {/* 右半內容區 */}
-            <div className="flex w-[80%] flex-col pr-20">
+            <div className="flex w-[70vw] flex-col items-center justify-center">
               {/* 上半部篩選器 */}
-              <div className="mb-10 mt-[50px] h-[110px] w-full ">
+              <div className="h-30 mb-20 w-full ">
                 <TeamSearchBar />
               </div>
               {/* 下半部TeamCard */}
-              <div className="no-scrollbar flex w-full justify-start gap-10 overflow-x-auto ">
+              <div className="no-scrollbar flex w-full justify-start gap-[1.5vw] overflow-x-auto ">
                 <TeamCard />
                 <TeamCard />
                 <TeamCard />
@@ -100,27 +100,29 @@ const HomePage = () => {
           </div>
         </section>
         {/* 首頁-最新消息*/}
-        <section className="flex h-page w-full flex-row-reverse bg-gradient-to-b from-[#026D8A] via-[#011E37] via-[#01405E] to-[#030b17] pt-20">
-          <h2 className="h-page w-1/5 overflow-hidden text-bacd font-bold text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
-            News
-          </h2>
-          <div className="flex w-4/5 flex-col  gap-y-4 px-20">
-            <h3 className="w-full text-2xl font-bold text-[#FFCC66]">
-              熱門新聞
-            </h3>
-            <NewsLink />
-            <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
-              杯賽資訊
-            </h3>
-            <div className="no-scrollbar flex w-full justify-start gap-10 overflow-x-auto">
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
-              <CupGame cardWidth={"w-1/3 shrink-0 "} />
+        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#011E37] via-[#01405E] to-[#030b17] px-[5vw]">
+          <div className="flex w-full flex-row-reverse items-center justify-center">
+            <h2 className="h-screen w-[20vw] overflow-hidden text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+              News
+            </h2>
+            <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-20">
+              <h3 className="w-full text-2xl font-bold text-[#FFCC66]">
+                熱門新聞
+              </h3>
+              <NewsLink />
+              <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
+                杯賽資訊
+              </h3>
+              <div className="no-scrollbar flex w-full justify-start gap-10 overflow-x-auto">
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+              </div>
             </div>
           </div>
         </section>
