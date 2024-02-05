@@ -12,11 +12,11 @@ const HeaderNavBar = () => {
       </div>
       <nav className="leading-15 0 ">
         <div className="flex justify-between gap-x-2 items-center">
-          <ul className="mx-2 flex h-11 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 duration-500 hover:bg-gray-800 px-1 leading-10 text-white">
+          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 duration-500 hover:bg-gray-800 px-1 leading-10 text-white">
             <li>
               <Link
                 to="/"
-                className="rounded-full px-6 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
               >
                 首頁
               </Link>
@@ -24,7 +24,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/map"
-                className="rounded-full px-6 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
               >
                 球場地圖
               </Link>
@@ -32,7 +32,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/team/list"
-                className="rounded-full px-6 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
                 href=""
               >
                 揪團組隊
@@ -41,7 +41,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/news"
-                className="rounded-full px-6 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
                 href=""
               >
                 最新消息

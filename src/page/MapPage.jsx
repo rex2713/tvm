@@ -7,14 +7,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Carousel } from "@material-tailwind/react";
+import { Rating } from "@material-tailwind/react";
 
 const MapPage = () => {
   window.scrollTo(0, 0);
+
   return (
     <main>
-      <section className="flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
+      <section className="flex flex-col items-center justify-between gap-6 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
         {/* 球場輪播圖 */}
-        <figure className="h-[45vh] w-full overflow-hidden">
+        {/* <figure className="h-[45vh] w-full overflow-hidden">
           <Swiper
             cssMode={true}
             navigation={true}
@@ -37,7 +40,40 @@ const MapPage = () => {
               <img src="../../pic/courtPic/outdoorA/outdoorA4.jpg" alt="" />
             </SwiperSlide>
           </Swiper>
-        </figure>
+        </figure> */}
+        <div className="relative flex h-[50vh] w-full overflow-hidden">
+          <button className="group  flex h-full w-[20vw] items-center justify-center bg-black/30">
+            <img
+              className="w-2/5 opacity-20 group-hover:opacity-50"
+              src="../../pic/icon/backward.svg"
+              alt=""
+            />
+          </button>
+          <div className="overflow-hidden">
+            <ul className="flex w-full h-full duration-300">
+              <li className="w-[60vw]">
+                <img src="../../pic/courtPic/outdoorA/outdoorA1.jpg" alt="" />
+              </li>
+              <li>
+                <img src="../../pic/courtPic/outdoorA/outdoorA2.jpg" alt="" />
+              </li>
+              <li>
+                <img src="../../pic/courtPic/outdoorA/outdoorA3.jpg" alt="" />
+              </li>
+              <li>
+                <img src="../../pic/courtPic/outdoorA/outdoorA4.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+          <button className="group flex h-full w-[20vw] items-center justify-center bg-black/30">
+            <img
+              className="w-2/5 opacity-20 group-hover:opacity-50"
+              src="../../pic/icon/forward.svg"
+              alt=""
+            />
+          </button>
+        </div>
+
         {/* 球場內容 */}
         <div className="flex w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-20 py-5">
           <section className="flex w-full px-10">
@@ -202,53 +238,130 @@ const MapPage = () => {
           <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
             <h3 className="text-2xl font-bold text-[#FFCC66]">場地評價</h3>
             {/* 撰寫評論 */}
-            <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-16 py-5 tracking-widest text-white/50">
+            <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-12 py-5 tracking-widest text-white/50">
               <img
                 className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
                 src="../../pic/icon/member/no login.png"
                 alt=""
               />
-              <form action="" className="flex w-full items-center gap-4">
-                <input type="text" className="rounded-xl h-10 w-full bg-white/20 px-4 focus:bg-white/90 focus:text-black/90" placeholder="撰寫評論" />
-                <button type="submit" className="flex w-10 h-10 bg-white/20 rounded-full hover:bg-[#0492D9] ">
-                  <div className="w-10 h-10 flex opacity-20 hover:opacity-100 justify-center items-center">
-                    <img className="w-6 h-6 " src="../../pic/icon/send.svg" alt="" />
+              <form action="" className="flex w-full items-center gap-5">
+                <div className="flex w-full flex-col gap-4">
+                  {/* 星星評分 */}
+                  <div className="flex items-center gap-2">
+                    <p>場地評分</p>
+                    <Rating value={3} className="flex text-[#FFCC66]/80" />
+                  </div>
+                  <textarea
+                    className="h-20 w-full rounded-xl bg-white/20 px-4 py-2 text-white/80 focus:bg-white/90 focus:text-black/90"
+                    name=""
+                    id=""
+                    placeholder="撰寫評論"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="flex h-10 w-10 rounded-full bg-white/20 hover:bg-[#0492D9] "
+                >
+                  <div className="flex h-10 w-10 items-center justify-center opacity-20 hover:opacity-100">
+                    <img
+                      className="h-6 w-6 "
+                      src="../../pic/icon/send.svg"
+                      alt=""
+                    />
                   </div>
                 </button>
               </form>
             </div>
             {/* 其他評論 */}
             <div className="flex w-full flex-col items-center justify-center gap-2">
-              <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-16 py-5 tracking-widest text-white/50">
+              <div className="flex w-full items-center justify-between gap-10 rounded-xl bg-[#011E37] px-12 py-5 leading-8 tracking-wide text-white/60">
+                <div className="w-7/8 flex items-center gap-10">
+                  <img
+                    className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
+                    src="../../pic/icon/member/girl1.png"
+                    alt=""
+                  />
+                  <p className="w-150">
+                    場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-center justify-center gap-2">
+                  <img
+                    className="h-6 w-6"
+                    src="../../pic/icon/star.svg"
+                    alt=""
+                  />
+                  <p className="text-2xl font-bold">4.8</p>
+                </div>
+              </div>
+              <div className="flex w-full items-center justify-between gap-10 rounded-xl bg-[#011E37] px-12 py-5 leading-8 tracking-wide text-white/60">
+                <div className="w-7/8 flex items-center gap-10">
+                  <img
+                    className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
+                    src="../../pic/icon/member/men5.png"
+                    alt=""
+                  />
+                  <p className="w-150">
+                    場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-center justify-center gap-2">
+                  <img
+                    className="h-6 w-6"
+                    src="../../pic/icon/star.svg"
+                    alt=""
+                  />
+                  <p className="text-2xl font-bold">4.2</p>
+                </div>
+              </div>
+              <div className="flex w-full items-center justify-between gap-10 rounded-xl bg-[#011E37] px-12 py-5 leading-8 tracking-wide text-white/60">
+                <div className="w-7/8 flex items-center gap-10">
+                  <img
+                    className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
+                    src="../../pic/icon/member/girl2.png"
+                    alt=""
+                  />
+                  <p className="w-150">
+                    場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
+                  </p>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <img
+                    className="h-6 w-6"
+                    src="../../pic/icon/star.svg"
+                    alt=""
+                  />
+                  <p className="text-2xl font-bold">4.7</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-white/50">
+              <button className="flex h-10 w-10 items-center justify-center rounded-full duration-500 hover:bg-white/10">
                 <img
-                  className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl1.png"
+                  className="opacity-50"
+                  src="../../pic/icon/backward.svg"
                   alt=""
                 />
-                <p>
-                  場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
-                </p>
-              </div>
-              <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-16 py-5 tracking-widest text-white/50">
+              </button>
+              <a
+                className="flex h-10 w-14 items-center justify-center rounded-full bg-white/10 text-white/80 duration-500 hover:bg-white/10 hover:text-white/80"
+                href=""
+              >
+                1
+              </a>
+              <a
+                className="flex h-10 w-14 items-center justify-center rounded-full duration-500 hover:bg-white/10 hover:text-white/80"
+                href=""
+              >
+                2
+              </a>
+              <button className="flex h-10 w-10 items-center justify-center rounded-full duration-500 hover:bg-white/10">
                 <img
-                  className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/men5.png"
+                  className="opacity-50"
+                  src="../../pic/icon/forward.svg"
                   alt=""
                 />
-                <p>
-                  場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
-                </p>
-              </div>
-              <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-16 py-5 tracking-widest text-white/50">
-                <img
-                  className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl2.png"
-                  alt=""
-                />
-                <p>
-                  場地乾淨整潔，，場地乾淨整潔，場地乾淨整潔，場地乾淨整潔。
-                </p>
-              </div>
+              </button>
             </div>
           </section>
         </div>
