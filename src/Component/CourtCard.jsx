@@ -7,9 +7,16 @@ import "../css/courtCard.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import { useState, useEffect } from "react";
 import CourtService from "../../services/court-service";
+import { useNavigate } from "react-router-dom";
 
 const CourtCard = () => {
+  const navigate = useNavigate();
   const [courtData, setCourtData] = useState(null);
+  //處理詳細資訊按鈕
+  const handleToCourtInfo = () => {
+    navigate("/court");
+  };
+  //向伺服器請求所有球場資料
   useEffect(() => {
     CourtService.getAllCourts()
       .then((data) => {
@@ -94,7 +101,10 @@ const CourtCard = () => {
                   <img src="../../pic/courtCard/mrt.svg" alt="" />
                 </figure>
                 <div className="flex justify-between text-white">
-                  <button className="rounded-3xl border-2 border-[#FFF]/50 bg-[#0492D9] px-6 py-2 text-[14px] hover:bg-[#009EED]">
+                  <button
+                    onClick={handleToCourtInfo}
+                    className="rounded-3xl border-2 border-[#FFF]/50 bg-[#0492D9] px-6 py-2 text-[14px] hover:bg-[#009EED]"
+                  >
                     詳細資訊
                   </button>
                   <button className="rounded-3xl border-2 border-[#FFF]/50 bg-[#0492D9] px-6 py-2 text-[14px] hover:bg-[#009EED]">
