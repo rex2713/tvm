@@ -43,20 +43,8 @@ const MapPage = () => {
       {/* </section> */}
       <section className="flex flex-col gap-y-10 bg-gradient-to-b from-[#082A4D] to-[#000000] px-40 py-5">
         <CourtSearch />
-        <div className="grid grid-cols-3 gap-x-20 gap-y-14 ">
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-          <CourtCard />
-        </div>
+
+        <CourtCard />
       </section>
     </main>
   );

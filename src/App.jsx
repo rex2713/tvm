@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="map" element={<MapPage />} />
             <Route path="team" element={<TeamLayout />}>
               <Route path="list" element={<TeamList />} />
