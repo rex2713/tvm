@@ -1,13 +1,9 @@
 import React from "react";
 import CourtCard from "../Component/CourtCard";
 import CourtSearch from "../Component/CourtSearch";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
-import { Carousel } from "@material-tailwind/react";
 import { Rating } from "@material-tailwind/react";
 
 const MapPage = () => {
@@ -16,31 +12,6 @@ const MapPage = () => {
   return (
     <main>
       <section className="flex flex-col items-center justify-between gap-6 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
-        {/* 球場輪播圖 */}
-        {/* <figure className="h-[45vh] w-full overflow-hidden">
-          <Swiper
-            cssMode={true}
-            navigation={true}
-            pagination={true}
-            mousewheel={true}
-            keyboard={true}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <img src="../../pic/courtPic/outdoorA/outdoorA1.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src=".../../pic/courtPic/outdoorA/outdoorA2.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="../../pic/courtPic/outdoorA/outdoorA3.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="../../pic/courtPic/outdoorA/outdoorA4.jpg" alt="" />
-            </SwiperSlide>
-          </Swiper>
-        </figure> */}
         <div className="relative flex h-[50vh] w-full overflow-hidden">
           <button className="group  flex h-full w-[20vw] items-center justify-center bg-black/30">
             <img
@@ -52,16 +23,16 @@ const MapPage = () => {
           <div className="overflow-hidden">
             <ul className="flex h-full w-full duration-300">
               <li className="w-[60vw]">
-                <img src="../../pic/courtPic/outdoorA/outdoorA1.jpg" alt="" />
+                <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" alt="" />
               </li>
               <li>
-                <img src="../../pic/courtPic/outdoorA/outdoorA2.jpg" alt="" />
+                <img src="./pic/courtCard/outdoorA/outdoorA2.jpg" alt="" />
               </li>
               <li>
-                <img src="../../pic/courtPic/outdoorA/outdoorA3.jpg" alt="" />
+                <img src="./pic/courtCard/outdoorA/outdoorA3.jpg" alt="" />
               </li>
               <li>
-                <img src="../../pic/courtPic/outdoorA/outdoorA4.jpg" alt="" />
+                <img src="./pic/courtCard/outdoorA/outdoorA4.jpg" alt="" />
               </li>
             </ul>
           </div>

@@ -16,7 +16,6 @@ const MemberIcon = () => {
   }, []);
 
   return (
-    // <Spline scene="https://prod.spline.design/47TA2LUrvdohFog3/scene.splinecode" />
     <div
       className="vanilla-tilt relative flex h-16 w-16 items-center justify-center [transform-style:preserve-3d]"
       data-tilt
