@@ -2,11 +2,11 @@ import React from "react";
 
 const NewsLink = () => {
   return (
-    <div>
+    <div className="w-full">
       <div className=" w-full rounded-[32px] bg-gradient-to-b from-[#FFF]/80 to-[#FFF]/10 p-[2px]">
         <div className="flex w-full flex-col items-center gap-y-4 rounded-[32px] bg-[#35778F]/70 p-4 text-base text-white backdrop-blur-xl">
           <ul className="flex w-11/12  flex-col gap-y-4">
-            <li className="flex gap-x-6 hover:text-yellow-400">
+            <li className="flex gap-x-4 hover:text-yellow-400">
               <p className="w-[12.5%]">2023/11/28</p>
               <p className="w-[12.5%]">自由時報</p>
               <a className="w-3/4  " href="#">
@@ -14,7 +14,7 @@ const NewsLink = () => {
               </a>
             </li>
             <hr />
-            <li className="flex gap-x-6 hover:text-yellow-400">
+            <li className="flex gap-x-4 hover:text-yellow-400">
               <p className="w-[12.5%]">2023/11/23</p>
               <p className="w-[12.5%]">聯合新聞網</p>
               <a className="w-3/4" href="#">
@@ -22,7 +22,7 @@ const NewsLink = () => {
               </a>
             </li>
             <hr />
-            <li className="flex gap-x-6 hover:text-yellow-400">
+            <li className="flex gap-x-4 hover:text-yellow-400">
               <p className="w-[12.5%]">2023/11/15</p>
               <p className="w-[12.5%]">自由時報</p>
               <a className="w-3/4" href="#">
@@ -30,7 +30,7 @@ const NewsLink = () => {
               </a>
             </li>
             <hr />
-            <li className="flex gap-x-6 hover:text-yellow-400">
+            <li className="flex gap-x-4 hover:text-yellow-400">
               <p className="w-[12.5%]">2023/11/12</p>
               <p className="w-[12.5%]">聯合新聞網</p>
               <a className="w-3/4" href="#">
@@ -38,7 +38,7 @@ const NewsLink = () => {
               </a>
             </li>
             <hr />
-            <li className="flex gap-x-6 hover:text-yellow-400">
+            <li className="flex gap-x-4 hover:text-yellow-400">
               <p className="w-[12.5%]">2023/11/08</p>
               <p className="w-[12.5%]">自由時報</p>
               <a className="w-3/4" href="#">

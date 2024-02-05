@@ -4,19 +4,19 @@ import MemberIcon from "./MemberIcon";
 
 const HeaderNavBar = () => {
   return (
-    <header className="bg-parent fixed z-20 flex w-full justify-between px-20">
+    <header className="bg-parent fixed z-20 flex w-full h-28 justify-between px-[5vw] items-center">
       <div className="flex">
-        <div className="h-15 mr-2 shrink-0 rounded-full pt-10">
+        <div className="h-15 mr-2 shrink-0 rounded-full ">
           <img src="../pic/logo.svg" alt="" />
         </div>
       </div>
       <nav className="leading-15 0 ">
-        <div className="flex justify-between gap-x-2 ">
-          <ul className="mx-2 mt-[60px] flex h-11 items-center justify-center space-x-2 rounded-full  bg-gray-800 px-1 leading-10 text-white">
+        <div className="flex justify-between gap-x-2 items-center">
+          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 duration-500 hover:bg-gray-800 px-1 leading-10 text-white">
             <li>
               <Link
                 to="/"
-                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
               >
                 首頁
               </Link>
@@ -24,7 +24,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/map"
-                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
               >
                 球場地圖
               </Link>
@@ -32,7 +32,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/team/list"
-                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
                 href=""
               >
                 揪團組隊
@@ -41,7 +41,7 @@ const HeaderNavBar = () => {
             <li>
               <Link
                 to="/news"
-                className="rounded-full px-8 py-2 font-light duration-500 hover:[background-color:rgba(255,255,255,.1)]"
+                className="text-m rounded-full px-7 py-2 font-light duration-500 hover:bg-white/20 tracking-[.18rem]"
                 href=""
               >
                 最新消息
@@ -52,7 +52,7 @@ const HeaderNavBar = () => {
             to="/member/login"
             className="rounded-full font-light leading-10 text-white"
           >
-            <div className="mt-[50px] ">
+            <div className="">
               <MemberIcon />
             </div>
           </Link>
