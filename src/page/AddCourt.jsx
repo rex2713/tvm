@@ -10,6 +10,19 @@ import CourtService from "../../services/court-service";
 
 const AddCourt = () => {
   const navigate = useNavigate();
+  //判別是否為管理員身份，如果不是則自動導向回首頁
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user.user.role);
+    if (user.user.role !== "admin") {
+      window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
+      navigate("/");
+    }
+  }, []);
+
+  // if (user.user.role !== "admin") {
+  //   navigate("/map");
+  // }
   const [courtData, setCourtData] = useState(null);
   useEffect(() => {
     CourtService.getAllCourts().then((data) => {
@@ -32,8 +45,20 @@ const AddCourt = () => {
   const [message, setMessage] = useState("");
 
   //上半部球場卡片相關
-  const handleDelete = () => {
-    console.log(courtData);
+  const handleDelete = (e) => {
+    if (window.confirm("確定要刪除嗎？")) {
+      // console.log(e.target.id);
+      const _id = e.target.id;
+      CourtService.deleteCourt(_id)
+        .then(() => {
+          window.alert("刪除球場成功");
+          // window.location.reload();
+          // window.scroll(0, 0);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   //下半部表單相關
@@ -182,6 +207,7 @@ const AddCourt = () => {
                     <button
                       onClick={handleDelete}
                       className="rounded-3xl border-2 border-[#FFF]/50 bg-[#d93904] px-6 py-2 text-[14px] hover:bg-[#d95604]"
+                      id={court._id}
                     >
                       刪除球場
                     </button>
