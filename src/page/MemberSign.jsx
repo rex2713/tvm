@@ -1,9 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import { useState } from "react";
 
 const MemberSign = () => {
+  const data = useOutletContext();
+  const isLogIn = data.isLogIn;
   //設置導航功能
   const navigate = useNavigate();
   //設置各input狀態

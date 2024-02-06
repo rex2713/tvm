@@ -2,9 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const MemberLogin = () => {
   const navigate = useNavigate();
+  //使用useOutletContext來同步isLogIn狀態
+  const outlet = useOutletContext();
+  const { isLogIn, setIsLogIn } = outlet;
+  console.log(isLogIn);
 
   //處理input輸入
   const [email, setEmail] = useState("");
@@ -24,8 +29,9 @@ const MemberLogin = () => {
       let response = await AuthService.login(email, password);
       // console.log(response);
       localStorage.setItem("user", JSON.stringify(response.data));
+      setIsLogIn(true);
       window.alert("登入成功，現在將為您導向個人資料頁面");
-      navigate("/");
+      navigate("/member/Info");
     } catch (e) {
       // console.log(e);
       setMessage(e.response.data);

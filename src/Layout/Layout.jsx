@@ -9,7 +9,7 @@ const Layout = () => {
   const [isLogIn, setIsLogIn] = useState(!!localStorage.getItem("user"));
   return (
     <div>
-      <HeaderNavBar />
+      <HeaderNavBar isLogIn={isLogIn} setIsLogIn={setIsLogIn} />
       <Outlet context={{ isLogIn: isLogIn, setIsLogIn: setIsLogIn }} />
       <Footer />
     </div>
