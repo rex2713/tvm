@@ -5,6 +5,7 @@ import NewsLink from "../Component/NewsLink";
 import CupGame from "../Component/CupGame";
 import IndexTitle from "../Component/IndexTitle";
 import Loading from "../Component/Loading";
+import ScrollAnimate from "../Component/ScrollAnimate";
 import { useState, useEffect, useRef } from "react";
 import "../css/main.css";
 
@@ -59,9 +60,9 @@ const HomePage = () => {
           </div>
           <button
             onClick={handleClick}
-            className="absolute bottom-10 right-[5vw] rounded-full bg-white/20 px-4 py-3 text-white hover:bg-white/40"
+            className="flex justify-center items-center absolute bottom-10 right-[5vw] w-20 h-30 rounded-full bg-transparent hover:bg-white/10"
           >
-            開始瀏覽
+            <ScrollAnimate />
           </button>
         </section>
         {/* 首頁-地圖 */}

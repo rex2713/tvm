@@ -46,12 +46,12 @@ const MemberSign = () => {
   return (
     <main className="relative flex h-[70vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       <div className="absolute top-20 flex h-full w-full flex-col items-center gap-10 ">
-      <form
-        action=""
-        className="flex h-3/5 w-1/3 flex-col items-center justify-center gap-12 text-white rounded-3xl bg-[#123659] px-20"
-      >
-        {/* <!-- 資料輸入欄 --> */}
-          <label htmlFor="account" className="flex w-full gap-2 items-center">
+        <form
+          action=""
+          className="flex h-3/5 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white"
+        >
+          {/* <!-- 資料輸入欄 --> */}
+          <label htmlFor="account" className="flex w-full items-center gap-2">
             <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
             <input
               onChange={handleUsername}
@@ -61,7 +61,7 @@ const MemberSign = () => {
               placeholder="請輸入使用者名稱 ( 暱稱 )"
             />
           </label>
-          <label htmlFor="email" className="flex w-full gap-2 items-center">
+          <label htmlFor="email" className="flex w-full items-center gap-2">
             <span className="w-24 shrink-0 tracking-widest">Email</span>
             <input
               onChange={handleEmail}
@@ -71,7 +71,10 @@ const MemberSign = () => {
               placeholder="請輸入信箱 ( 將作為登入帳號 )"
             />
           </label>
-          <label htmlFor="setPassword" className="flex w-full gap-2 items-center">
+          <label
+            htmlFor="setPassword"
+            className="flex w-full items-center gap-2"
+          >
             <span className="w-24 shrink-0 tracking-widest">密碼</span>
             <input
               onChange={handlePassword}
@@ -81,7 +84,10 @@ const MemberSign = () => {
               placeholder="請輸入密碼"
             />
           </label>
-          <label htmlFor="confirmPassword" className="flex w-full gap-2 items-center">
+          <label
+            htmlFor="confirmPassword"
+            className="flex w-full items-center gap-2"
+          >
             <span className="w-24 shrink-0 tracking-widest">確認密碼</span>
             <input
               onChange={handlePasswordCheck}
@@ -91,16 +97,18 @@ const MemberSign = () => {
               placeholder="請再次輸入密碼"
             />
           </label>
-      </form>
-      {/* 錯誤訊息 */}
+        </form>
+        {/* 錯誤訊息 */}
         {message && (
-          <div className="px-auto h-12 text-lg text-[#FFCC66]">{message}</div>
+          <div className="flex items-center justify-center">
+            <p className="text-lg text-[#FFCC66]">{message}</p>
+          </div>
         )}
 
         {/* <!-- 註冊按鈕 --> */}
         <button
           onClick={handleRegister}
-          className="w-1/12 cursor-pointer rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg text-white tracking-[.2rem]"
+          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg tracking-[.2rem] text-white"
         >
           註冊會員
         </button>

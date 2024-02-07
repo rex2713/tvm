@@ -1,22 +1,20 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../../public/loading-mode/loader.json";
+import animationScroll from "../../public/scrollAnimate.json";
 
 const Loading = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: animationData,
+    animationData: animationScroll,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-    style: { width: "100vw", height: "100vh" },
+    style: { width: "200px", height: "300px" },
   };
   return (
-    <div className="font-3xl leading-96 h-full w-full  text-center text-black">
-      <div className="">
+    <div className="">
         <Lottie options={defaultOptions} />
-      </div>
     </div>
   );
 };
