@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 // import required modules
 import { FreeMode, Pagination, Navigation, Thumbs } from "swiper/modules";
-import "../css/01.css";
+import "../css/swiper.css";
 
 const CourtInfo = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -33,7 +33,7 @@ const CourtInfo = () => {
           }}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Pagination, Thumbs]}
-          className="mySwiper h-full rounded-2xl flex justify-center"
+          className="mySwiper flex h-full justify-center rounded-2xl"
         >
           <SwiperSlide>
             <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
