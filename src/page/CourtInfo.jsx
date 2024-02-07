@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 // import required modules
 import { FreeMode, Pagination, Navigation, Thumbs } from "swiper/modules";
+import "../css/swiper.css";
 
 const CourtInfo = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -32,7 +33,7 @@ const CourtInfo = () => {
           }}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Pagination, Thumbs]}
-          className="mySwiper2 h-full rounded-2xl"
+          className="mySwiper flex h-full justify-center rounded-2xl"
         >
           <SwiperSlide>
             <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
@@ -258,7 +259,7 @@ const CourtInfo = () => {
               </div>
               <div className="flex shrink-0 items-center justify-center gap-2">
                 <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
-                <p className="text-2xl font-bold">4.8</p>
+                <p className="text-2xl font-bold">4</p>
               </div>
             </div>
             <div className="flex w-full items-center justify-between gap-10 rounded-xl bg-[#011E37] px-12 py-5 leading-8 tracking-wide text-white/60">
@@ -274,7 +275,7 @@ const CourtInfo = () => {
               </div>
               <div className="flex shrink-0 items-center justify-center gap-2">
                 <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
-                <p className="text-2xl font-bold">4.2</p>
+                <p className="text-2xl font-bold">5</p>
               </div>
             </div>
             <div className="flex w-full items-center justify-between gap-10 rounded-xl bg-[#011E37] px-12 py-5 leading-8 tracking-wide text-white/60">
@@ -290,7 +291,7 @@ const CourtInfo = () => {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
-                <p className="text-2xl font-bold">4.7</p>
+                <p className="text-2xl font-bold">4</p>
               </div>
             </div>
           </div>

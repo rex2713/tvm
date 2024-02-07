@@ -10,7 +10,7 @@ const Loading = () => {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-    style: { width: "200px", height: "300px" },
+    style: { width: "100%", height: "100%" },
   };
   return (
     <div className="">
