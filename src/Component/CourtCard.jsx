@@ -20,7 +20,10 @@ const CourtCard = () => {
 
   //獲得local-storage使用者身份資料
   const user = AuthService.getCurrentUser();
-  const userRole = user.user.role;
+  let userRole;
+  if (user) {
+    userRole = user.user.role;
+  }
 
   //處理新增球場按鈕
   const linkToAddCourt = () => {

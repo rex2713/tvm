@@ -13,8 +13,13 @@ const AddCourt = () => {
   //判別是否為管理員身份，如果不是則自動導向回首頁
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user.user.role);
-    if (user.user.role !== "admin") {
+    // console.log(user.user.role);
+    if (user) {
+      if (user.user.role !== "admin") {
+        window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
+        navigate("/");
+      }
+    } else if (!user) {
       window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
       navigate("/");
     }
