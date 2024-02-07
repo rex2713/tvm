@@ -8,6 +8,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import { useState, useEffect } from "react";
 import CourtService from "../../services/court-service";
 import { useNavigate } from "react-router-dom";
+import AuthService from "../../services/auth-service";
 
 const CourtCard = () => {
   const navigate = useNavigate();
@@ -16,11 +17,24 @@ const CourtCard = () => {
   const handleToCourtInfo = () => {
     navigate("/court");
   };
+
+  //獲得local-storage使用者身份資料
+  const user = AuthService.getCurrentUser();
+  let userRole;
+  if (user) {
+    userRole = user.user.role;
+  }
+
+  //處理新增球場按鈕
+  const linkToAddCourt = () => {
+    navigate("/AddCourt");
+  };
+
   //向伺服器請求所有球場資料
   useEffect(() => {
     CourtService.getAllCourts()
       .then((data) => {
-        console.log(data.data);
+        // console.log(data.data);
 
         setCourtData(data.data);
         // console.log(data.data[0].courtName);
@@ -29,7 +43,7 @@ const CourtCard = () => {
         console.log(e);
       });
   }, []);
-
+  //
   return (
     <div className="grid grid-cols-3 gap-x-20 gap-y-14">
       {courtData &&
@@ -115,6 +129,11 @@ const CourtCard = () => {
             </div>
           );
         })}
+      {user && userRole == "admin" && (
+        <button onClick={linkToAddCourt} className="text-white">
+          管理球場
+        </button>
+      )}
     </div>
   );
 };
