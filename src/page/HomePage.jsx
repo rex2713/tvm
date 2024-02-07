@@ -60,7 +60,7 @@ const HomePage = () => {
           </div>
           <button
             onClick={handleClick}
-            className="flex justify-center items-center absolute bottom-10 right-[5vw] w-20 h-30 rounded-full bg-transparent hover:bg-white/10"
+            className="flex justify-center items-center absolute bottom-8 right-[5vw] w-20 h-30 rounded-full bg-transparent hover:bg-white/10"
           >
             <ScrollAnimate />
           </button>

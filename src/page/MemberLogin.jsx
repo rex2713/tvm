@@ -71,7 +71,7 @@ const MemberLogin = () => {
         {/* <!-- 登入按鈕 --> */}
         <button
           onClick={handleLogin}
-          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg tracking-[.2rem] text-white"
+          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg tracking-[.2rem] text-white hover:bg-[#05abff] "
         >
           登入
         </button>
