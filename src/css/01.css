@@ -1,0 +1,22 @@
+.mySwiper:hover .swiper-button-prev,
+.mySwiper:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+  visibility: visible;
+}
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.swiper-button-prev {
+  transform: translateX(30px);
+}
+
+.swiper-button-next {
+  transform: translateX(-30px);
+}

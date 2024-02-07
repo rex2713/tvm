@@ -13,28 +13,28 @@ const MapPage = () => {
         <div className="relative flex h-full w-full justify-center ">
           {/* 行政區快速跳轉 */}
           <div className="absolute top-0 flex w-full justify-center gap-x-4 bg-transparent py-4 text-base">
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-1 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               中正區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-1 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               中山區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               大同區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               大安區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               松山區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               信義區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               北投區
             </button>
-            <button className="rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white duration-500 hover:border-white/50 hover:bg-black hover:text-white">
+            <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               萬華區
             </button>
           </div>
@@ -46,7 +46,7 @@ const MapPage = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-y-10 bg-gradient-to-b from-[#082A4D] to-[#000000] px-60 py-10">
+      <section className="flex flex-col gap-y-10 bg-gradient-to-b from-[#082A4D] to-[#000000] px-[8vw] py-10">
         <CourtSearch />
 
         <CourtCard />

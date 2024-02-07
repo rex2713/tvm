@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationScroll from "../../public/scrollAnimate.json";
+import animationScroll from "../js/lottie/scrollAnimate.json";
 
 const Loading = () => {
   const defaultOptions = {
@@ -10,10 +10,10 @@ const Loading = () => {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-    style: { width: "200px", height: "300px" },
+    style: { width: "100%", height: "100%" },
   };
   return (
-    <div className="">
+    <div className="w-25 h-[150px]">
         <Lottie options={defaultOptions} />
     </div>
   );
