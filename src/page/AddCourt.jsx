@@ -25,17 +25,13 @@ const AddCourt = () => {
     }
   }, []);
 
-  // if (user.user.role !== "admin") {
-  //   navigate("/map");
-  // }
   const [courtData, setCourtData] = useState(null);
   useEffect(() => {
     CourtService.getAllCourts().then((data) => {
       // console.log(data.data);
       setCourtData(data.data);
-    }),
-      [];
-  });
+    });
+  }, []);
   //處理頁面input
   const [courtName, setCourtName] = useState("");
   const [startTime, setStartTime] = useState("08:00");
@@ -48,6 +44,9 @@ const AddCourt = () => {
   const [isMRT, setIsMRT] = useState(false);
   const [price, setPrice] = useState(0);
   const [message, setMessage] = useState("");
+  const [file, setFile] = useState();
+  const [cover, setCover] = useState("");
+  const [preview, setPreview] = useState(null);
 
   //上半部球場卡片相關
   const handleDelete = (e) => {
@@ -67,7 +66,6 @@ const AddCourt = () => {
   };
 
   //下半部表單相關
-  //處理營業時間資料
   const handleOpeningHours = () => {
     const openingHours = "營業時間：" + startTime + "~" + endTime;
     setOpeningHours(openingHours);
@@ -105,7 +103,33 @@ const AddCourt = () => {
     setPrice(e.target.value);
   };
 
-  //處理提交按鈕
+  //設定上傳圖片預覽畫面
+  const handleCoverPreview = (e) => {
+    if (!e.target.files[0] || e.target.files[0].length == 0) return;
+    setCover(e.target.files[0].name);
+    // console.log(cover);
+    setPreview(URL.createObjectURL(e.target.files[0]));
+  };
+  //設定input更新file
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+  //設定上傳照片按鈕
+  const handleUpload = (e) => {
+    console.log(file);
+    const formdata = new FormData();
+    formdata.append("file", file);
+    // console.log(formdata);
+    CourtService.uploadImg(formdata)
+      .then(() => {
+        console.log("success");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  //處理提交球場資料函式
   const postCourt = () => {
     handleOpeningHours();
     CourtService.postAddCourt(
@@ -287,10 +311,23 @@ const AddCourt = () => {
 
         <button
           className="mx-auto w-20 bg-yellow-500 text-2xl"
-          onClick={postCourt}
+          onClick={() => {
+            postCourt();
+          }}
         >
           提交
         </button>
+        <div>
+          <input
+            type="file"
+            onChange={(e) => {
+              handleFileChange(e), handleCoverPreview(e);
+            }}
+          />
+          <button onClick={handleUpload}>上傳照片</button>
+        </div>
+        <div>{cover}</div>
+        <img src={preview} />
       </div>
     </div>
   );

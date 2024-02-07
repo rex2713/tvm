@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationScroll from "../../public/scrollAnimate.json";
+import animationScroll from "../js/lottie/scrollAnimate.json";
 
 const Loading = () => {
   const defaultOptions = {
@@ -14,7 +14,7 @@ const Loading = () => {
   };
   return (
     <div className="">
-        <Lottie options={defaultOptions} />
+      <Lottie options={defaultOptions} />
     </div>
   );
 };
