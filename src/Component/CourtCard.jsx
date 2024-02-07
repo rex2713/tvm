@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import CourtService from "../../services/court-service";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
-import "../css/01.css";
+import "../css/swiper.css";
 
 const CourtCard = () => {
   const navigate = useNavigate();
