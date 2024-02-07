@@ -12,7 +12,7 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
       </div>
       <nav className="leading-15 0 ">
         <div className="flex items-center justify-between gap-x-2">
-          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 px-1 leading-10 text-white duration-500 hover:bg-gray-800">
+          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 px-2 leading-10 text-white duration-500 hover:bg-gray-800">
             <li>
               <Link
                 to="/"

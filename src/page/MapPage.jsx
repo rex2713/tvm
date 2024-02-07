@@ -1,9 +1,7 @@
 import React from "react";
 import CourtCard from "../Component/CourtCard";
 import CourtSearch from "../Component/CourtSearch";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 
 const MapPage = () => {
   // window.scrollTo(0, 0);

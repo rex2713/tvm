@@ -2,7 +2,10 @@ import React from "react";
 
 const MemberInfo = () => {
   window.scrollTo(0, 0);
-  return <div>MemberInfo</div>;
+  return
+    <main>
+      
+    </main>
 };
 
 export default MemberInfo;

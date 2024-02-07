@@ -47,7 +47,7 @@ const Footer = () => {
         </nav>
         {/* 版權宣告 */}
         <div className="my-auto self-end text-xs font-light leading-4 tracking-wider text-white">
-          © 2023 Taipei Volleyball Map - All rights reserved
+          © 2024 Taipei Volleyball Map - All rights reserved
         </div>
       </div>
     </footer>

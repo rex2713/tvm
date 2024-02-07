@@ -39,46 +39,49 @@ const MemberLogin = () => {
   };
 
   return (
-    <main className="flex h-[500px] w-full flex-col items-center justify-center gap-10 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-20">
+    <main className="relative flex h-[60vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       {/* <!-- 登入表單 --> */}
-      <form
-        action=""
-        className="flex w-[30%] items-end justify-center  gap-10 rounded-3xl bg-[#123659] px-20 py-12"
-      >
-        {/* <!-- 帳密輸入 --> */}
-        <article className="flex flex-col gap-10 py-2 text-white">
-          <label htmlFor="account" className="">
-            Email:
+      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-10 ">
+        <form
+          action=""
+          className="flex h-1/2 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white "
+        >
+          {/* <!-- 帳密輸入 --> */}
+          <label htmlFor="account" className="flex w-full items-center gap-2">
+            <span className="w-20 shrink-0 tracking-widest">Email</span>
             <input
               onChange={handleEmail}
               type="text"
               id="email"
-              className="h-7 rounded-md text-black"
+              className="h-8 w-full rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
+              placeholder="請輸入信箱"
             />
           </label>
-          <label htmlFor="password" className="">
-            密碼：
+          <label htmlFor="password" className="flex w-full items-center gap-2">
+            <span className="w-20 shrink-0 tracking-widest">密碼</span>
             <input
               onChange={handlePassword}
               type="password"
               id="password"
-              className="h-7 rounded-md text-black"
+              className="h-8 w-full rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
+              placeholder="請輸入至少6位數密碼"
             />
           </label>
-        </article>
-
+        </form>
+        {/* 錯誤訊息 */}
+        {message && (
+          <div className="flex items-center justify-center ">
+            <p className="text-lg text-[#FFCC66]">{message}</p>
+          </div>
+        )}
         {/* <!-- 登入按鈕 --> */}
         <button
           onClick={handleLogin}
-          className="h-4/5 w-1/3 shrink-0 cursor-pointer rounded-xl border-2 border-white/50 bg-[#0492D9] text-white"
+          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg tracking-[.2rem] text-white"
         >
           登入
         </button>
-      </form>
-      {/* 錯誤訊息 */}
-      {message && (
-        <div className="px-auto h-12 text-lg text-[#FFCC66]">{message}</div>
-      )}
+      </div>
     </main>
   );
 };
