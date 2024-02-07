@@ -12,7 +12,7 @@ const HeaderNavBar = () => {
       </div>
       <nav className="leading-15 0 ">
         <div className="flex justify-between gap-x-2 items-center">
-          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 duration-500 hover:bg-gray-800 px-1 leading-10 text-white">
+          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 duration-500 hover:bg-gray-800 px-2 leading-10 text-white">
             <li>
               <Link
                 to="/"

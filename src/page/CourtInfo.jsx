@@ -1,41 +1,53 @@
 import React from "react";
 import { Rating } from "@material-tailwind/react";
 
+import { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+// import required modules
+import { FreeMode, Pagination, Navigation, Thumbs } from "swiper/modules";
+
 const CourtInfo = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   return (
-    <section className="flex flex-col items-center justify-between gap-6 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
-      <div className="relative flex h-[50vh] w-full overflow-hidden">
-        <button className="group  flex h-full w-[20vw] items-center justify-center bg-black/30">
-          <img
-            className="w-2/5 opacity-20 group-hover:opacity-50"
-            src="../../pic/icon/backward.svg"
-            alt=""
-          />
-        </button>
-        <div className="overflow-hidden">
-          <ul className="flex h-full w-full duration-300">
-            <li className="w-[60vw]">
-              <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" alt="" />
-            </li>
-            <li>
-              <img src="./pic/courtCard/outdoorA/outdoorA2.jpg" alt="" />
-            </li>
-            <li>
-              <img src="./pic/courtCard/outdoorA/outdoorA3.jpg" alt="" />
-            </li>
-            <li>
-              <img src="./pic/courtCard/outdoorA/outdoorA4.jpg" alt="" />
-            </li>
-          </ul>
-        </div>
-        <button className="group flex h-full w-[20vw] items-center justify-center bg-black/30">
-          <img
-            className="w-2/5 opacity-20 group-hover:opacity-50"
-            src="../../pic/icon/forward.svg"
-            alt=""
-          />
-        </button>
-      </div>
+    <section className="flex flex-col items-center justify-between gap-2 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
+      <figure className="flex h-[60vh] w-7/12 flex-col gap-2">
+        <Swiper
+          style={{
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          }}
+          spaceBetween={10}
+          navigation={true}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Navigation, Pagination, Thumbs]}
+          className="mySwiper2 h-full rounded-2xl"
+        >
+          <SwiperSlide>
+            <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="./pic/courtCard/outdoorA/outdoorA2.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="./pic/courtCard/outdoorA/outdoorA3.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="./pic/courtCard/outdoorA/outdoorA4.jpg" />
+          </SwiperSlide>
+        </Swiper>
+      </figure>
 
       {/* 球場內容 */}
       <div className="flex w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-20 py-5">
