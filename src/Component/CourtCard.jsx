@@ -4,7 +4,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../css/courtCard.css";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import "swiper/css/free-mode";
+import { FreeMode, Navigation, Pagination, Keyboard } from "swiper/modules";
 import { useState, useEffect } from "react";
 import CourtService from "../../services/court-service";
 import { useNavigate } from "react-router-dom";
@@ -45,31 +46,32 @@ const CourtCard = () => {
       });
   }, []);
   //
+
   return (
-    <div className="grid grid-cols-3 gap-x-24 gap-y-14">
+    <div className="grid grid-cols-3 gap-x-[5vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
           return (
             <div
               key={court._id}
-              className="courtCard w-full overflow-hidden rounded-2xl border border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#072a4d]"
+              className="courtCard w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
             >
               {/* 輪播圖 */}
-              <figure>
+              <figure className="w-full">
                 <Swiper
                   style={{
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                   }}
                   loop={true}
-                  cssMode={true}
+                  speed={1000}
                   navigation={true}
                   pagination={true}
                   mousewheel={true}
                   keyboard={true}
-                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                  className="mySwiper"
+                  modules={[FreeMode, Navigation, Pagination, Keyboard]}
+                  className="mySwiper h-full w-full"
                 >
                   <SwiperSlide>
                     <img src="../../pic/courtCard/figure-1.png" alt="" />
@@ -88,51 +90,54 @@ const CourtCard = () => {
               {/* 內容 */}
               <button
                 onClick={handleToCourtInfo}
-                className="flex h-full w-full flex-col gap-y-4 px-6 py-4"
+                className="flex h-full w-full flex-col gap-2 px-6 py-4"
               >
                 {/* 標題欄 */}
-                <div className="flex justify-between">
-                  <h3 className="text-xl text-[#FFCC66]">{court.courtName}</h3>
-                  <div className="flex gap-x-2">
-                    <img src="../../pic/courtCard/star.svg" alt="" />
-                    <span className="leading-[28px] text-white">
-                      {court.score}
-                    </span>
+                <div className="flex w-full flex-col flex-wrap items-start border-b border-white/40 pb-2 gap-2">
+                  <div className="flex w-full flex-wrap justify-between">
+                    <h3 className="text-left text-2xl tracking-wider text-[#FFCC66]">
+                      {court.courtName}
+                    </h3>
+                    <div className="flex items-center gap-x-2">
+                      <img
+                        className="h-6 w-6"
+                        src="../../pic/courtCard/star.svg"
+                        alt=""
+                      />
+                      <span className="text-2xl leading-[28px] text-white">
+                        {court.score}
+                      </span>
+                    </div>
                   </div>
+                  {/* 球場類型 */}
+                  <p className="text-[#FFFFFF]/70">
+                    球場類型：{court.courtType}
+                  </p>
                 </div>
-                {/* 分隔線 */}
-                <hr className="border-[#0492D9]" />
-                {/* 球場 */}
-                <p className="text-[#FFFFFF]/70">
-                  <span>球場類型：</span>
-                  <span>{court.courtType}</span>
-                </p>
-                {/* icon */}
-                <figure className="flex gap-x-2">
-                  <span>{court.traffic}</span>
-                  {court.isPark ? (
-                    <img src="./pic/courtCard/parking_true.svg"></img>
-                  ) : (
-                    <img src="./pic/courtCard/parking_false.svg"></img>
-                  )}
-                  {court.isBus ? (
-                    <img src="./pic/courtCard/bus_true.svg"></img>
-                  ) : (
-                    <img src="./pic/courtCard/bus_false.svg"></img>
-                  )}
-                  {court.isMRT ? (
-                    <img src="./pic/courtCard/mrt_true.svg"></img>
-                  ) : (
-                    <img src="./pic/courtCard/mrt_false.svg"></img>
-                  )}
-                  <img src="../../pic/courtCard/parking.svg" alt="" />
-                  <img src="../../pic/courtCard/bus.svg" alt="" />
-                  <img src="../../pic/courtCard/mrt.svg" alt="" />
-                </figure>
-                {/* 按鈕 */}
-                <div className="flex justify-between text-white">
-                  <button className="rounded-3xl border-2 border-[#FFF]/50 bg-[#0492D9] px-6 py-2 text-[14px] hover:bg-[#009EED]">
-                    前往球場
+                {/* 下方資訊 */}
+                <div className="flex w-full flex-wrap justify-between gap-4 text-white">
+                  {/* icon */}
+                  <figure className="flex gap-x-2">
+                    <span>{court.traffic}</span>
+                    {court.isPark ? (
+                      <img src="./pic/courtCard/parking_true.svg"></img>
+                    ) : (
+                      <img src="./pic/courtCard/parking_false.svg"></img>
+                    )}
+                    {court.isBus ? (
+                      <img src="./pic/courtCard/bus_true.svg"></img>
+                    ) : (
+                      <img src="./pic/courtCard/bus_false.svg"></img>
+                    )}
+                    {court.isMRT ? (
+                      <img src="./pic/courtCard/mrt_true.svg"></img>
+                    ) : (
+                      <img src="./pic/courtCard/mrt_false.svg"></img>
+                    )}
+                  </figure>
+                  {/* 按鈕 */}
+                  <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-[14px] hover:bg-[#0492D9]">
+                    開啟地圖
                   </button>
                 </div>
               </button>
@@ -140,7 +145,7 @@ const CourtCard = () => {
           );
         })}
       {user && userRole == "admin" && (
-        <button onClick={linkToAddCourt} className="text-white">
+        <button onClick={linkToAddCourt} className="w-full h-full rounded-2xl bg-white/5 text-xl tracking-widest text-white/50 border-2 border-white/10 hover:bg-white/10 hover:border-white/20 duration-500 ">
           管理球場
         </button>
       )}

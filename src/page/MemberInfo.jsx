@@ -265,7 +265,7 @@ const MemberInfo = () => {
           {/* <!-- 儲存變更按鈕 --> */}
           <button
             // onClick={}
-            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white hover:bg-[#05abff]"
+            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white hover:bg-[#05abff] duration-300"
           >
             儲存
           </button>

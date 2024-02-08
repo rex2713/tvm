@@ -60,7 +60,7 @@ const HomePage = () => {
           </div>
           <button
             onClick={handleClick}
-            className="flex justify-center items-center overflow-visible absolute bottom-6 right-[5vw] w-20 h-30 rounded-full bg-transparent hover:bg-white/5 duration-500"
+            className="h-30 absolute bottom-6 right-[5vw] flex w-20 items-center justify-center overflow-visible rounded-full bg-transparent duration-500 hover:bg-white/5"
           >
             <ScrollAnimate />
           </button>
@@ -70,12 +70,43 @@ const HomePage = () => {
           ref={ref}
           className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw]"
         >
-          <div className="no-scrollbar h-5/6 overflow-scroll rounded-3xl">
-            <div className="w-[1000vw]">
-              <img className="map" src="../pic/map.jpg" alt="" />
+          <div className="relative flex h-full w-full justify-center items-center">
+            {/* 行政區快速跳轉 */}
+            <div className="absolute top-[10vh] flex w-full justify-center gap-4 py-4 text-base">
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                中正區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                中山區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                大同區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                大安區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                松山區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                信義區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                北投區
+              </button>
+              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
+                萬華區
+              </button>
+            </div>
+            {/* 地圖 */}
+            <div className="no-scrollbar h-[80vh] overflow-scroll rounded-3xl">
+              <div className="w-[400vw]">
+                <img className="map" src="../pic/map.jpg" alt="" />
+              </div>
             </div>
           </div>
         </section>
+
         {/* 首頁-隊伍 */}
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
           <div className="flex w-full">
@@ -116,7 +147,7 @@ const HomePage = () => {
         {/* 首頁-最新消息*/}
         <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#011E37] via-[#01405E] to-[#030b17] px-[5vw]">
           <div className="flex w-full flex-row-reverse items-center justify-center">
-            <h2 className="h-screen w-[20vw] font-['Ubuntu'] overflow-hidden text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="h-screen w-[20vw] overflow-hidden font-['Ubuntu'] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               News
             </h2>
             <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-20">
