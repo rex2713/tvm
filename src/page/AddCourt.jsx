@@ -45,7 +45,6 @@ const AddCourt = () => {
   const [price, setPrice] = useState(0);
   const [message, setMessage] = useState("");
   const [file, setFile] = useState();
-  const [cover, setCover] = useState("");
   const [preview, setPreview] = useState(null);
 
   //上半部球場卡片相關
@@ -61,6 +60,7 @@ const AddCourt = () => {
         })
         .catch((error) => {
           console.log(error);
+          q;
         });
     }
   };
@@ -103,24 +103,32 @@ const AddCourt = () => {
     setPrice(e.target.value);
   };
 
+  //設定input更新file
+  const handleFileChange = (e) => {
+    const filesArray = Array.from(e.target.files);
+    setFile(filesArray);
+  };
   //設定上傳圖片預覽畫面
   const handleCoverPreview = (e) => {
     if (!e.target.files[0] || e.target.files[0].length == 0) return;
-    setCover(e.target.files[0].name);
-    // console.log(cover);
-    setPreview(URL.createObjectURL(e.target.files[0]));
+    const previewImg = [];
+    for (let i = 0; i < e.target.files.length; i++) {
+      const file = e.target.files[i];
+      const name = file.name;
+      const previewURL = URL.createObjectURL(file);
+      previewImg.push({ name, previewURL });
+    }
+    setPreview(previewImg);
   };
-  //設定input更新file
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-  //設定上傳照片按鈕
+  //設定上傳照片按鈕(一次四張)
   const handleUpload = (e) => {
-    console.log(file);
-    const formdata = new FormData();
-    formdata.append("file", file);
-    // console.log(formdata);
-    CourtService.uploadImg(formdata)
+    // console.log(file);
+    const formData = new FormData();
+    for (let i = 0; i < file.length; i++) {
+      formData.append("file", file[i]);
+    }
+    // console.log(formData);
+    CourtService.uploadImg(formData)
       .then(() => {
         console.log("success");
       })
@@ -318,16 +326,25 @@ const AddCourt = () => {
           提交
         </button>
         <div>
+          {/* 上傳複數檔案需加上multiple */}
           <input
             type="file"
+            multiple
             onChange={(e) => {
               handleFileChange(e), handleCoverPreview(e);
             }}
           />
           <button onClick={handleUpload}>上傳照片</button>
         </div>
-        <div>{cover}</div>
-        <img src={preview} />
+        {preview &&
+          preview.map((item) => {
+            return (
+              <div key={item.name}>
+                <p>{item.name}</p>
+                <img src={item.previewURL} />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
