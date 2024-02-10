@@ -48,7 +48,7 @@ const CourtCard = () => {
   //
 
   return (
-    <div className="grid grid-cols-3 gap-x-[5vw] gap-y-14">
+    <div className="grid grid-cols-3 gap-x-[5vw] gap-y-14 justify-items-center items-center">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
@@ -145,7 +145,7 @@ const CourtCard = () => {
           );
         })}
       {user && userRole == "admin" && (
-        <button onClick={linkToAddCourt} className="w-full h-full rounded-2xl bg-white/5 text-xl tracking-widest text-white/50 border-2 border-white/10 hover:bg-white/10 hover:border-white/20 duration-500 ">
+        <button onClick={linkToAddCourt} className="w-64 h-72 rounded-2xl bg-white/5 text-xl tracking-widest text-white/50 border-2 border-white/10 hover:bg-white/10 hover:border-white/20 duration-500 ">
           管理球場
         </button>
       )}
