@@ -9,43 +9,64 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 // import required modules
-import { FreeMode, Pagination, Navigation, Thumbs } from "swiper/modules";
+import {
+  FreeMode,
+  Pagination,
+  Navigation,
+  Keyboard,
+  EffectCoverflow,
+} from "swiper/modules";
 import "../css/swiper.css";
+import "swiper/css/effect-coverflow";
 
 const CourtInfo = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <section className="flex flex-col items-center justify-between gap-2 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
-      <figure className="flex h-[60vh] w-7/12 flex-col gap-2">
+      <figure className="flex h-[50vh] w-full flex-col gap-2">
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
-          spaceBetween={10}
           navigation={true}
           loop={true}
           pagination={{
             clickable: true,
           }}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Pagination, Thumbs]}
+          keyboard={true}
+          speed={1300}
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 30,
+            stretch: -50,
+            depth: 20,
+            modifier: 0.8,
+            slideShadows: true,
+          }}
+          modules={[
+            FreeMode,
+            Navigation,
+            Pagination,
+            Keyboard,
+            EffectCoverflow,
+          ]}
           className="mySwiper flex h-full justify-center rounded-2xl"
         >
-          <SwiperSlide>
-            <img src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
+          <SwiperSlide className="h-full w-1/2 rounded-3xl ">
+            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
           </SwiperSlide>
-          <SwiperSlide>
-            <img src="./pic/courtCard/outdoorA/outdoorA2.jpg" />
+          <SwiperSlide className="h-full w-1/2 rounded-3xl ">
+            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA2.jpg" />
           </SwiperSlide>
-          <SwiperSlide>
-            <img src="./pic/courtCard/outdoorA/outdoorA3.jpg" />
+          <SwiperSlide className="h-full w-1/2 rounded-3xl ">
+            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA3.jpg" />
           </SwiperSlide>
-          <SwiperSlide>
-            <img src="./pic/courtCard/outdoorA/outdoorA4.jpg" />
+          <SwiperSlide className="h-full w-1/2 rounded-3xl ">
+            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA4.jpg" />
           </SwiperSlide>
         </Swiper>
       </figure>
@@ -102,11 +123,11 @@ const CourtInfo = () => {
           <div className="mt-8 h-80 w-5/12 rounded-xl bg-white py-1"></div>
         </section>
         {/* 加入隊伍 */}
-        <section className="flex w-full flex-col items-center justify-center gap-5">
+        <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
           <h3 className="text-2xl font-bold text-[#FFCC66]">加入隊伍</h3>
           <div className="no-scrollbar flex w-full justify-start gap-[1.5vw] overflow-x-auto">
             {/* 隊伍 */}
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -120,7 +141,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -134,7 +155,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -148,7 +169,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -162,7 +183,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -176,7 +197,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>
@@ -190,7 +211,7 @@ const CourtInfo = () => {
                 加入隊伍
               </p>
             </button>
-            <button className="h-45 flex w-56 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
+            <button className="h-45 flex w-60 shrink-0 flex-col items-center justify-center rounded-xl border border-transparent bg-[#011E37] p-4 duration-300 hover:border-white/30 hover:bg-[#01213d]">
               <h4 className="w-full text-center text-xl font-black tracking-widest text-white">
                 Team-Apple
               </h4>

@@ -12,11 +12,11 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
       </div>
       <nav className="leading-15 0 ">
         <div className="flex items-center justify-between gap-x-2">
-          <ul className="mx-2 flex h-12 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 px-2 leading-10 text-white duration-500 hover:bg-gray-800">
+          <ul className="mx-2 flex h-11 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 px-1 leading-10 text-white duration-500 hover:bg-gray-800">
             <li>
               <Link
                 to="/"
-                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/20"
+                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
               >
                 首頁
               </Link>
@@ -24,7 +24,7 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
             <li>
               <Link
                 to="/map"
-                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/20"
+                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
               >
                 球場地圖
               </Link>
@@ -32,7 +32,7 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
             <li>
               <Link
                 to="/team/list"
-                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/20"
+                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
                 href=""
               >
                 揪團組隊
@@ -41,7 +41,7 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
             <li>
               <Link
                 to="/news"
-                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/20"
+                className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
                 href=""
               >
                 最新消息

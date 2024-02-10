@@ -12,7 +12,7 @@ const MapPage = () => {
       <section className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000]  px-[5vw] pb-10 pt-28">
         <div className="relative flex h-full w-full justify-center ">
           {/* 行政區快速跳轉 */}
-          <div className="absolute top-0 flex w-full justify-center gap-x-4 bg-transparent py-4 text-base">
+          <div className="absolute top-0 flex w-full justify-center gap-4 py-4 text-base">
             <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
               中正區
             </button>

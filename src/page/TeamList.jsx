@@ -1,26 +1,26 @@
 import React from "react";
 import TeamCard from "../Component/TeamCard";
 import TeamSearchBar from "../Component/TeamSearchBar";
+import "../css/main.css";
 
 const TeamList = () => {
   window.scrollTo(0, 0);
   return (
-    <main className="flex w-full flex-col justify-center gap-y-10 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] p-10 px-40">
-      <section className="w-full rounded-3xl border-2 border-[#FFE8A3] px-10 py-4">
-        <h4 className="mb-1 text-center text-xl font-medium text-white">
+    <main className="flex w-full flex-col justify-center gap-10 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] py-10 px-40">
+      <section className="w-full rounded-3xl border-2 border-[#FFE8A3]/50 px-10 py-4">
+        <h4 className="mb-1 text-center text-xl font-medium text-[#FFCC66]">
           系統公告
         </h4>
-        <marquee className="text-center leading-8 text-white">
-          本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流
-          <br />
-          本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流
-          <br />
-          本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流，本網站旨在提供球友們便利的揪團平台，請大家友善交流
-        </marquee>
+        <div className="w-full overflow-hidden">
+          <ul className="marquee-content text-white/60 gap-2 list-disc tracking-wider">
+            <li>本網站旨在提供球友們便利的揪團平台，請大家友善交流。</li>
+            <li>因應寒暑假及國定假日，球場開放時間可能會有異動。</li>
+          </ul>
+        </div>
       </section>
 
       {/* 搜尋區 */}
-      <form className="flex justify-center gap-x-2">
+      {/* <form className="flex justify-center gap-x-2">
         <input
           placeholder="場地/場館名稱"
           className="w-1/2 rounded-md text-center"
@@ -33,7 +33,7 @@ const TeamList = () => {
         >
           搜尋
         </button>
-      </form>
+      </form> */}
 
       <TeamSearchBar />
 

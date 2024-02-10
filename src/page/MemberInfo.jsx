@@ -143,13 +143,13 @@ const MemberInfo = () => {
               <div className="grid w-full grid-cols-4 gap-[1vw]">
                 {/* 好友卡片 */}
                 {/* button設定刪除好友功能 */}
-                <button className="relative h-52 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50 group">
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
                   {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
-                  <div className="flex justify-center items-center text-xl absolute top-2 right-2 h-5 w-5 rounded-full bg-white/20 bg-clip-border group-hover:bg-white/50 duration-500">
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
                     -
                   </div>
                   {/* 卡片內容 */}
-                  <div className="flex flex-col items-center gap-4 absolute top-4">
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
                     <img
                       className="w-1/2 rounded-full bg-white bg-clip-border"
                       src="../../pic/icon/member/men3.png"
@@ -168,96 +168,129 @@ const MemberInfo = () => {
                     </div>
                   </div>
                 </button>
-                <div className="flex h-52 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50">
-                  <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men6.png"
-                    alt=""
-                  />
-                  <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-lg font-bold tracking-widest">
-                      北商學生2
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      主攻、攔中
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      體保
-                    </p>
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
+                  {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
+                    -
                   </div>
-                </div>
-                <div className="flex h-52 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50">
-                  <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl2.png"
-                    alt=""
-                  />
-                  <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-lg font-bold tracking-widest">
-                      北商學生3
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      舉球、自由
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      體保
-                    </p>
+                  {/* 卡片內容 */}
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
+                    <img
+                      className="w-1/2 rounded-full bg-white bg-clip-border"
+                      src="../../pic/icon/member/men6.png"
+                      alt=""
+                    />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <p className="text-lg font-bold tracking-widest">
+                        北商學生2
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        主攻、攔中
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        體保
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex h-52 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50">
-                  <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men1.png"
-                    alt=""
-                  />
-                  <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-lg font-bold tracking-widest">
-                      北商學生4
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      舉球
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      新手
-                    </p>
+                </button>
+
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
+                  {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
+                    -
                   </div>
-                </div>
-                <div className="flex h-52 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50">
-                  <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl4.png"
-                    alt=""
-                  />
-                  <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-lg font-bold tracking-widest">
-                      北商學生5
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      副攻
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      體保
-                    </p>
+                  {/* 卡片內容 */}
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
+                    <img
+                      className="w-1/2 rounded-full bg-white bg-clip-border"
+                      src="../../pic/icon/member/girl2.png"
+                      alt=""
+                    />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <p className="text-lg font-bold tracking-widest">
+                        北商學生3
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        舉球、自由
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        體保
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex h-52 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-[#0B214D] duration-500 hover:border-white/50">
-                  <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl5.png"
-                    alt=""
-                  />
-                  <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-lg font-bold tracking-widest">
-                      北商學生5
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      副攻
-                    </p>
-                    <p className="text-sm tracking-widest text-white/70">
-                      體保
-                    </p>
+                </button>
+
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
+                    -
                   </div>
-                </div>
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
+                    <img
+                      className="w-1/2 rounded-full bg-white bg-clip-border"
+                      src="../../pic/icon/member/men1.png"
+                      alt=""
+                    />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <p className="text-lg font-bold tracking-widest">
+                        北商學生4
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        舉球
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        新手
+                      </p>
+                    </div>
+                  </div>
+                </button>
+
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
+                    -
+                  </div>
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
+                    <img
+                      className="w-1/2 rounded-full bg-white bg-clip-border"
+                      src="../../pic/icon/member/girl4.png"
+                      alt=""
+                    />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <p className="text-lg font-bold tracking-widest">
+                        北商學生5
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        副攻
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        校隊
+                      </p>
+                    </div>
+                  </div>
+                </button>
+
+                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
+                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
+                    -
+                  </div>
+                  <div className="absolute top-4 flex flex-col items-center gap-4">
+                    <img
+                      className="w-1/2 rounded-full bg-white bg-clip-border"
+                      src="../../pic/icon/member/girl5.png"
+                      alt=""
+                    />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <p className="text-lg font-bold tracking-widest">
+                        北商學生6
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        主攻
+                      </p>
+                      <p className="text-sm tracking-widest text-white/70">
+                        系隊
+                      </p>
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
           </form>
@@ -265,7 +298,7 @@ const MemberInfo = () => {
           {/* <!-- 儲存變更按鈕 --> */}
           <button
             // onClick={}
-            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white hover:bg-[#05abff]"
+            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
           >
             儲存
           </button>
