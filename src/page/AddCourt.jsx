@@ -56,8 +56,8 @@ const AddCourt = () => {
       CourtService.deleteCourt(_id)
         .then(() => {
           window.alert("刪除球場成功");
-          // window.location.reload();
-          // window.scroll(0, 0);
+          window.location.reload();
+          window.scroll(0, 0);
         })
         .catch((error) => {
           console.log(error);
@@ -422,27 +422,27 @@ const AddCourt = () => {
           </div>
           {/* 右欄-上傳照片 */}
           <div className="flex w-1/2 flex-col gap-4">
-            <div className="flex w-full justify-between gap-4">
-              <label
-                htmlFor="Upload"
-                className="1/6 flex shrink-0 items-center"
-              >
-                上傳照片
-              </label>
-              <input
-                id="Upload"
-                type="file"
-                onChange={(e) => {
-                  handleFileChange(e), handleCoverPreview(e);
-                }}
-                className="w-full rounded-full border border-white/30 bg-white/5 px-8 py-2 hover:bg-white/10"
-              />
-            </div>
-            <div>{cover}</div>
-            <img src={preview} className="w-full object-cover" />
+            {/* 上傳複數檔案需加上multiple */}
+            <input
+              className="w-full rounded-full border border-white/30 bg-white/5 px-8 py-2 hover:bg-white/10"
+              type="file"
+              multiple
+              onChange={(e) => {
+                handleFileChange(e), handleCoverPreview(e);
+              }}
+            />
+            <button onClick={handleUpload}>上傳照片</button>
+            {preview &&
+              preview.map((item) => {
+                return (
+                  <div key={item.name}>
+                    <p>{item.name}</p>
+                    <img src={item.previewURL} />
+                  </div>
+                );
+              })}
           </div>
         </div>
-
         {message && <p className="text-center text-[#FFCC66]">{message}</p>}
         <button
           className="rounded-xl border-2 border-white/50 bg-[#0492D9] px-8 py-1 text-xl font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
@@ -452,26 +452,6 @@ const AddCourt = () => {
         >
           提交
         </button>
-        <div>
-          {/* 上傳複數檔案需加上multiple */}
-          <input
-            type="file"
-            multiple
-            onChange={(e) => {
-              handleFileChange(e), handleCoverPreview(e);
-            }}
-          />
-          <button onClick={handleUpload}>上傳照片</button>
-        </div>
-        {preview &&
-          preview.map((item) => {
-            return (
-              <div key={item.name}>
-                <p>{item.name}</p>
-                <img src={item.previewURL} />
-              </div>
-            );
-          })}
       </div>
     </div>
   );
