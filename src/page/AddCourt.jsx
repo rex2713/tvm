@@ -91,11 +91,11 @@ const AddCourt = () => {
     setCourtAddress(e.target.value);
   };
   const handleIsPark = (e) => {
+    console.log(e.target.checked);
     setIsPark(e.target.checked);
   };
   const handleIsBus = (e) => {
     setIsBus(e.target.checked);
-    console.log(isBus);
   };
   const handleIsMRT = (e) => {
     setIsMRT(e.target.checked);
@@ -121,36 +121,40 @@ const AddCourt = () => {
     }
     setPreview(previewImg);
   };
-  //設定上傳照片按鈕(一次四張)
-  const handleUpload = (e) => {
-    // console.log(file);
-    const formData = new FormData();
-    for (let i = 0; i < file.length; i++) {
-      formData.append("file", file[i]);
-    }
-    // console.log(formData);
-    CourtService.uploadImg(formData)
-      .then(() => {
-        console.log("success");
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  // 設定上傳照片按鈕(一次四張)
+  // const handleUpload = (e) => {
+  //   // console.log(file);
+  //   const formData = new FormData();
+  //   for (let i = 0; i < file.length; i++) {
+  //     formData.append("file", file[i]);
+  //   }
+  //   // console.log(formData);
+  //   CourtService.uploadImg(formData)
+  //     .then(() => {
+  //       console.log("success");
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // };
 
   //處理提交球場資料函式
   const postCourt = () => {
     handleOpeningHours();
-    CourtService.postAddCourt(
-      courtName,
-      openingHours,
-      courtType,
-      courtAddress,
-      isPark,
-      isBus,
-      isMRT,
-      price,
-    )
+    const formData = new FormData();
+    formData.append("courtName", courtName);
+    formData.append("openingHours", openingHours);
+    formData.append("courtType", courtType);
+    formData.append("courtAddress", courtAddress);
+    formData.append("isPark", isPark);
+    formData.append("isBus", isBus);
+    formData.append("isMRT", isMRT);
+    formData.append("price", price);
+    for (let i = 0; i < file.length; i++) {
+      formData.append("file", file[i]);
+    }
+
+    CourtService.postAddCourt(formData)
       .then(() => {
         window.alert("創建球場成功");
         window.location.reload();
@@ -190,16 +194,28 @@ const AddCourt = () => {
                     className="mySwiper h-full w-full"
                   >
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-1.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[0]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-2.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[1]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-3.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[2]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-4.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[3]}
+                        alt=""
+                      />
                     </SwiperSlide>
                   </Swiper>
                 </figure>
@@ -233,7 +249,7 @@ const AddCourt = () => {
                     <figure className="flex gap-x-2">
                       <span>{court.traffic}</span>
                       {court.isPark ? (
-                        <img src="./pic/courtCard/parking_true.svg"></img>
+                        <img src={"./pic/courtCard/parking_true.svg"}></img>
                       ) : (
                         <img src="./pic/courtCard/parking_false.svg"></img>
                       )}
@@ -431,16 +447,17 @@ const AddCourt = () => {
                 handleFileChange(e), handleCoverPreview(e);
               }}
             />
-            <button onClick={handleUpload}>上傳照片</button>
-            {preview &&
-              preview.map((item) => {
-                return (
-                  <div key={item.name}>
-                    <p>{item.name}</p>
-                    <img src={item.previewURL} />
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-2 gap-x-2">
+              {preview &&
+                preview.map((item) => {
+                  return (
+                    <div key={item.name}>
+                      <p>{item.name}</p>
+                      <img src={item.previewURL} />
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </div>
         {message && <p className="text-center text-[#FFCC66]">{message}</p>}
