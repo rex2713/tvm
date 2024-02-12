@@ -7,90 +7,266 @@ const TeamCreate = () => {
     // padding有調整過
     <main className="flex w-full justify-around bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
       {/* 左側創建隊伍表單 */}
-      <div className="flex w-3/5 flex-col gap-y-4 ">
-        <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
-          隊伍資訊
-        </h3>
-        <form className="flex flex-col gap-y-5 rounded-[20px] bg-[#114273] px-10 py-8 text-xl text-white">
-          <label className="flex justify-between">
-            隊伍名稱
-            <input className="h-8 w-4/5 rounded-md text-black" type="text" />
+      <div className="flex w-3/5 flex-col gap-4">
+        <h3 className="w-full text-2xl font-bold text-[#FFCC66]">隊伍資訊</h3>
+        <form className="flex flex-col gap-8 rounded-3xl justify-center items-center bg-[#114273] p-10 text-white">
+          <label htmlFor="teamName" className="flex w-full items-center gap-2">
+            <span className="w-24 shrink-0 tracking-widest">隊伍名稱</span>
+            <input
+              type="text"
+              id="teamName"
+              className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white/50 focus:bg-white/90 focus:text-black/90"
+              placeholder="請輸入隊伍名稱"
+            />
           </label>
-          <label className="flex justify-between">
-            選擇球場
-            <select className="h-8 w-4/5 rounded-md text-black">
-              <option value="">台北商業大學</option>
-              <option value="">台北師範大學</option>
+          <label
+            htmlFor="selectCourt"
+            className="flex w-full items-center gap-2"
+          >
+            <span className="w-24 shrink-0 tracking-widest">選擇球場</span>
+            <select
+              name=""
+              id="selectCourt"
+              className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
+            >
+              <option value="台北商業大學">台北商業大學</option>
+              <option value="台北師範大學">台北師範大學</option>
+              <option value="台灣大學">台灣大學</option>
+              <option value="百齡高中">百齡高中</option>
             </select>
           </label>
-          <label className="flex justify-between">
-            選擇日期
-            <input className="h-8 w-4/5 rounded-md text-black" type="date" />
+          <label htmlFor="date" className="flex w-full items-center gap-2">
+            <span className="w-24 shrink-0 tracking-widest">選擇日期</span>
+            <input
+              type="date"
+              id="date"
+              className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
+            />
           </label>
-          <label className="flex justify-between">
-            增加隊員
-            <div className="flex w-4/5 flex-col gap-y-3">
-              <input className="h-8 w-full rounded-md text-black" type="text" />
-              <div className="flex gap-x-2">
-                <div className="flex aspect-[3/4] w-1/5 flex-col items-center gap-y-4  rounded-2xl bg-[#123659] px-9 py-4">
-                  <div className="whitespace-nowrap text-center text-base font-medium tracking-wider">
-                    隊長
-                  </div>
-                </div>
-                <div className="flex w-1/5 flex-col items-center justify-between gap-y-4  rounded-2xl bg-[#123659] px-9 py-4">
-                  <div className="whitespace-nowrap text-center text-base font-medium tracking-wider">
-                    隊員一
-                  </div>
-                  <button className="w-full">
-                    <img
-                      src="../../pic/big_plus.svg"
-                      className="mb-5 w-full overflow-hidden fill-orange-300 object-contain object-center"
-                    />
-                  </button>
+
+          <label htmlFor="teammate" className="flex justify-between w-full gap-2">
+            <span className="w-24 shrink-0 tracking-widest">增加隊員</span>
+            <div className="flex w-full flex-col gap-4 overflow-clip">
+              <input
+                type="text"
+                id="teammate"
+                className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white/50 focus:bg-white/90 focus:text-black/90"
+                placeholder="請輸入隊員信箱"
+              />
+              <div className="flex flex-col w-full gap-2">
+                <p className="text-white/70">快速加入好友</p>
+                <div className="no-scrollbar flex w-full justify-start gap-[1vw] overflow-x-auto">
+                  {/* 好友卡片 */}
+                  <label htmlFor="friend1" className="">
+                    <input
+                      type="checkbox"
+                      id="friend1"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/girl2.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生1
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          舉球、自由
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          體保
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <label htmlFor="friend2" className="">
+                    <input
+                      type="checkbox"
+                      id="friend2"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/men4.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生2
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          主攻
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          校隊
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <label htmlFor="friend3" className="">
+                    <input
+                      type="checkbox"
+                      id="friend3"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/girl4.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生3
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          攔中
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          新手
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <label htmlFor="friend4" className="">
+                    <input
+                      type="checkbox"
+                      id="friend4"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/men2.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生4
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          攔中
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          新手
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <label htmlFor="friend5" className="">
+                    <input
+                      type="checkbox"
+                      id="friend5"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/men1.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生5
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          主攻
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          系隊
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <label htmlFor="friend6" className="">
+                    <input
+                      type="checkbox"
+                      id="friend6"
+                      className="peer hidden"
+                    ></input>
+                    <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                      <img
+                        className="w-1/2 rounded-full bg-white bg-clip-border"
+                        src="../../pic/icon/member/girl6.png"
+                        alt=""
+                      />
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <p className="text-lg font-bold tracking-widest">
+                          北商學生6
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          主攻
+                        </p>
+                        <p className="text-sm tracking-widest text-white/70">
+                          系隊
+                        </p>
+                      </div>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
           </label>
-          <label className="flex justify-between">
-            徵求隊員
-            <div className="flex w-4/5 flex-col gap-y-2">
-              <input className="h-8 w-full rounded-full" type="text" />
-              <div className="flex gap-x-2 text-sm">
-                <button className="flex items-center gap-x-1 rounded-full bg-[#41688F] px-2">
-                  主攻 <img src="../../pic/small_plus.svg" alt="主攻手" />
-                </button>
-                <button className="flex items-center gap-x-1 rounded-full bg-[#41688F] px-2">
-                  欄中 <img src="../../pic/small_plus.svg" alt="欄中手" />
-                </button>
-                <button className="flex items-center gap-x-1 rounded-full bg-[#41688F] px-2">
-                  自由 <img src="../../pic/small_plus.svg" alt="自由球員" />
-                </button>
-                <button className="flex items-center gap-x-1 rounded-full bg-[#41688F] px-2">
-                  舉球 <img src="../../pic/small_plus.svg" alt="舉球員" />
-                </button>
-                <button className="flex items-center gap-x-1 rounded-full bg-[#41688F] px-2">
-                  副攻 <img src="../../pic/small_plus.svg" alt="副攻手" />
-                </button>
-              </div>
+
+          <label className="flex justify-between w-full">
+          <span className="w-24 shrink-0 tracking-widest">徵求隊員</span>
+            <div className="flex flex-wrap w-full gap-4">
+                <label htmlFor="spiker">
+                  <input type="checkbox" id="spiker" className="peer hidden" />
+                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#FCA311]">
+                    主攻
+                  </div>
+                </label>
+                <label htmlFor="middleBlocker">
+                  <input
+                    type="checkbox"
+                    id="middleBlocker"
+                    className="peer hidden"
+                  />
+                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#FCA311]">
+                    攔中
+                  </div>
+                </label>
+                <label htmlFor="opposite">
+                  <input
+                    type="checkbox"
+                    id="opposite"
+                    className="peer hidden"
+                  />
+                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#FCA311]">
+                    副攻
+                  </div>
+                </label>
+                <label htmlFor="setter">
+                  <input type="checkbox" id="setter" className="peer hidden" />
+                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#FCA311]">
+                    舉球
+                  </div>
+                </label>
+                <label htmlFor="libero">
+                  <input type="checkbox" id="libero" className="peer hidden" />
+                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#FCA311]">
+                    自由
+                  </div>
+                </label>
             </div>
           </label>
-          <label className="flex items-start justify-between">
-            備註
-            <textarea
-              className="w-4/5 rounded-md text-black"
-              name=""
-              id=""
-              cols="50"
-              rows="3"
-            ></textarea>
-          </label>
+          {/* 按鈕 */}
+          <button
+            // onClick={}
+            className="w-1/5 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff] mt-4"
+          >
+            建立隊伍
+          </button>
         </form>
       </div>
       {/* 右側即時預覽 */}
-      <div className="flex w-1/4 flex-col items-center gap-y-4">
-        <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
-          即時預覽
-        </h3>
+      <div className="flex w-1/4 flex-col items-center gap-4">
+        <h3 className="w-full text-2xl font-bold text-[#FFCC66]">即時預覽</h3>
         <TeamCard />
       </div>
     </main>

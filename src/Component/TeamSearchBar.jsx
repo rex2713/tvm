@@ -3,12 +3,12 @@ import "../css/main.css";
 
 const TeamSearchBar = () => {
   return (
-    <div className="flex w-full flex-col items-start gap-y-5">
+    <div className="flex w-full flex-col items-start gap-2">
       {/* 第一排SearchBar */}
       <div className="flex w-full items-center justify-start gap-5">
-        <div className="my-auto whitespace-nowrap text-xl font-bold leading-8 tracking-wider text-white">
+        <p className="my-auto whitespace-nowrap text-xl font-bold leading-8 tracking-wider text-white">
           球場：
-        </div>
+        </p>
         <div className="scroll-style no-scrollbar flex w-full gap-2 overflow-x-auto">
           <label htmlFor="台北教育大學" className="">
             <input type="checkbox" id="台北教育大學" className="peer hidden" />
@@ -100,9 +100,9 @@ const TeamSearchBar = () => {
       </div>
       {/* 第二排SerchBar */}
       <div className="flex w-full items-center justify-start gap-5">
-        <div className="my-auto whitespace-nowrap text-xl font-bold leading-8 tracking-wider text-white">
+        <p className="my-auto whitespace-nowrap text-xl font-bold leading-8 tracking-wider text-white">
           日期：
-        </div>
+        </p>
         <div className="no-scrollbar flex w-full gap-2 overflow-x-auto">
           <label htmlFor="1201" className="">
             <input type="checkbox" id="1201" className="peer hidden" />
