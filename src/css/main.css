@@ -15,17 +15,17 @@
 .marquee-content {
   display: inline-block;
   white-space: nowrap;
-  animation: marquee 30s linear infinite;
+  animation: marquee 20s linear infinite;
 }
-.marquee-content:hover  {
+.marquee-content:hover {
   animation-play-state: paused;
 }
 @keyframes marquee {
   0% {
-    transform: translateX(70svw);
+    transform: translateX(80svw);
     opacity: 0;
   }
-  15%{
+  20% {
     opacity: 1;
   }
   100% {

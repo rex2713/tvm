@@ -46,7 +46,6 @@ const AddCourt = () => {
   const [price, setPrice] = useState(0);
   const [message, setMessage] = useState("");
   const [file, setFile] = useState();
-  const [cover, setCover] = useState("");
   const [preview, setPreview] = useState(null);
 
   //上半部球場卡片相關
@@ -57,11 +56,12 @@ const AddCourt = () => {
       CourtService.deleteCourt(_id)
         .then(() => {
           window.alert("刪除球場成功");
-          // window.location.reload();
-          // window.scroll(0, 0);
+          window.location.reload();
+          window.scroll(0, 0);
         })
         .catch((error) => {
           console.log(error);
+          q;
         });
     }
   };
@@ -91,11 +91,11 @@ const AddCourt = () => {
     setCourtAddress(e.target.value);
   };
   const handleIsPark = (e) => {
+    console.log(e.target.checked);
     setIsPark(e.target.checked);
   };
   const handleIsBus = (e) => {
     setIsBus(e.target.checked);
-    console.log(isBus);
   };
   const handleIsMRT = (e) => {
     setIsMRT(e.target.checked);
@@ -104,45 +104,57 @@ const AddCourt = () => {
     setPrice(e.target.value);
   };
 
+  //設定input更新file
+  const handleFileChange = (e) => {
+    const filesArray = Array.from(e.target.files);
+    setFile(filesArray);
+  };
   //設定上傳圖片預覽畫面
   const handleCoverPreview = (e) => {
     if (!e.target.files[0] || e.target.files[0].length == 0) return;
-    setCover(e.target.files[0].name);
-    // console.log(cover);
-    setPreview(URL.createObjectURL(e.target.files[0]));
+    const previewImg = [];
+    for (let i = 0; i < e.target.files.length; i++) {
+      const file = e.target.files[i];
+      const name = file.name;
+      const previewURL = URL.createObjectURL(file);
+      previewImg.push({ name, previewURL });
+    }
+    setPreview(previewImg);
   };
-  //設定input更新file
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-  //設定上傳照片按鈕
-  const handleUpload = (e) => {
-    console.log(file);
-    const formdata = new FormData();
-    formdata.append("file", file);
-    // console.log(formdata);
-    CourtService.uploadImg(formdata)
-      .then(() => {
-        console.log("success");
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  // 設定上傳照片按鈕(一次四張)
+  // const handleUpload = (e) => {
+  //   // console.log(file);
+  //   const formData = new FormData();
+  //   for (let i = 0; i < file.length; i++) {
+  //     formData.append("file", file[i]);
+  //   }
+  //   // console.log(formData);
+  //   CourtService.uploadImg(formData)
+  //     .then(() => {
+  //       console.log("success");
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // };
 
   //處理提交球場資料函式
   const postCourt = () => {
     handleOpeningHours();
-    CourtService.postAddCourt(
-      courtName,
-      openingHours,
-      courtType,
-      courtAddress,
-      isPark,
-      isBus,
-      isMRT,
-      price,
-    )
+    const formData = new FormData();
+    formData.append("courtName", courtName);
+    formData.append("openingHours", openingHours);
+    formData.append("courtType", courtType);
+    formData.append("courtAddress", courtAddress);
+    formData.append("isPark", isPark);
+    formData.append("isBus", isBus);
+    formData.append("isMRT", isMRT);
+    formData.append("price", price);
+    for (let i = 0; i < file.length; i++) {
+      formData.append("file", file[i]);
+    }
+
+    CourtService.postAddCourt(formData)
       .then(() => {
         window.alert("創建球場成功");
         window.location.reload();
@@ -182,16 +194,28 @@ const AddCourt = () => {
                     className="mySwiper h-full w-full"
                   >
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-1.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[0]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-2.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[1]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-3.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[2]}
+                        alt=""
+                      />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img src="../../pic/courtCard/figure-4.png" alt="" />
+                      <img
+                        src={"http://localhost:8080" + court.imgPath[3]}
+                        alt=""
+                      />
                     </SwiperSlide>
                   </Swiper>
                 </figure>
@@ -225,7 +249,7 @@ const AddCourt = () => {
                     <figure className="flex gap-x-2">
                       <span>{court.traffic}</span>
                       {court.isPark ? (
-                        <img src="./pic/courtCard/parking_true.svg"></img>
+                        <img src={"./pic/courtCard/parking_true.svg"}></img>
                       ) : (
                         <img src="./pic/courtCard/parking_false.svg"></img>
                       )}
@@ -414,30 +438,31 @@ const AddCourt = () => {
           </div>
           {/* 右欄-上傳照片 */}
           <div className="flex w-1/2 flex-col gap-4">
-            <div className="flex w-full justify-between gap-4">
-              <label
-                htmlFor="Upload"
-                className="1/6 flex shrink-0 items-center"
-              >
-                上傳照片
-              </label>
-              <input
-                id="Upload"
-                type="file"
-                onChange={(e) => {
-                  handleFileChange(e), handleCoverPreview(e);
-                }}
-                className="w-full rounded-full border border-white/30 bg-white/5 px-8 py-2 hover:bg-white/10"
-              />
+            {/* 上傳複數檔案需加上multiple */}
+            <input
+              className="w-full rounded-full border border-white/30 bg-white/5 px-8 py-2 hover:bg-white/10"
+              type="file"
+              multiple
+              onChange={(e) => {
+                handleFileChange(e), handleCoverPreview(e);
+              }}
+            />
+            <div className="grid grid-cols-2 gap-x-2">
+              {preview &&
+                preview.map((item) => {
+                  return (
+                    <div key={item.name}>
+                      <p>{item.name}</p>
+                      <img src={item.previewURL} />
+                    </div>
+                  );
+                })}
             </div>
-            <div>{cover}</div>
-            <img src={preview} className="w-full object-cover" />
           </div>
         </div>
-
         {message && <p className="text-center text-[#FFCC66]">{message}</p>}
         <button
-          className="px-8 py-1 rounded-xl border-2 border-white/50 bg-[#0492D9] text-xl font-bold tracking-[.2rem] text-white hover:bg-[#05abff] duration-300"
+          className="rounded-xl border-2 border-white/50 bg-[#0492D9] px-8 py-1 text-xl font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
           onClick={() => {
             postCourt();
           }}

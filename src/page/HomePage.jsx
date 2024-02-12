@@ -70,7 +70,7 @@ const HomePage = () => {
           ref={ref}
           className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw]"
         >
-          <div className="relative flex h-full w-full justify-center items-center">
+          <div className="relative flex h-full w-full items-center justify-center">
             {/* 行政區快速跳轉 */}
             <div className="absolute top-[10vh] flex w-full justify-center gap-4 py-4 text-base">
               <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">

@@ -10,40 +10,18 @@ class CourtService {
     return axios.get(API_URL);
   }
   //新增球場
-  postAddCourt(
-    courtName,
-    openingHours,
-    courtType,
-    courtAddress,
-    isPark,
-    isBus,
-    isMRT,
-    price,
-  ) {
+  postAddCourt(formData) {
     let token;
     if (localStorage.getItem("user")) {
       token = JSON.parse(localStorage.getItem("user")).token;
     } else {
       token = "";
     }
-    return axios.post(
-      addCourt_URL,
-      {
-        courtName,
-        openingHours,
-        courtType,
-        courtAddress,
-        isPark,
-        isBus,
-        isMRT,
-        price,
+    return axios.post(addCourt_URL, formData, {
+      headers: {
+        Authorization: token,
       },
-      {
-        headers: {
-          Authorization: token,
-        },
-      },
-    );
+    });
   }
   //刪除球場
   deleteCourt(_id) {
@@ -59,24 +37,6 @@ class CourtService {
         Authorization: token,
       },
     });
-  }
-  //上傳球場圖片
-  uploadImg(formdata) {
-    let token;
-    if (localStorage.getItem("user")) {
-      token = JSON.parse(localStorage.getItem("user")).token;
-      // console.log(token);
-    } else {
-      token = "";
-    }
-
-    return axios.post(uploadImg_URL, formdata, {
-      headers: {
-        Authorization: token,
-      },
-    });
-    // .then((res) => console.log(res))
-    // .catch((e) => console.log(e));
   }
 }
 
