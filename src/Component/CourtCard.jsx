@@ -48,52 +48,70 @@ const CourtCard = () => {
   //
 
   return (
-    <div className="grid grid-cols-3 gap-x-[5vw] gap-y-14 justify-items-center items-center">
+    <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
           return (
             <div
               key={court._id}
-              className="courtCard w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+              className="courtCard flex w-full flex-col overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
             >
               {/* 輪播圖 */}
-              <figure className="w-full">
-                <Swiper
-                  style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                  }}
-                  loop={true}
-                  speed={1000}
-                  navigation={true}
-                  pagination={true}
-                  mousewheel={true}
-                  keyboard={true}
-                  modules={[FreeMode, Navigation, Pagination, Keyboard]}
-                  className="mySwiper h-full w-full"
-                >
-                  <SwiperSlide>
-                    <img src="../../pic/courtCard/figure-1.png" alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="../../pic/courtCard/figure-2.png" alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="../../pic/courtCard/figure-3.png" alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="../../pic/courtCard/figure-4.png" alt="" />
-                  </SwiperSlide>
-                </Swiper>
-              </figure>
+              <div className="flex h-3/5 w-full shrink-0">
+                <figure className="h-full w-full overflow-hidden">
+                  <Swiper
+                    style={{
+                      "--swiper-navigation-color": "#fff",
+                      "--swiper-pagination-color": "#fff",
+                    }}
+                    loop={true}
+                    speed={1000}
+                    navigation={true}
+                    pagination={true}
+                    mousewheel={true}
+                    keyboard={true}
+                    modules={[FreeMode, Navigation, Pagination, Keyboard]}
+                    className="mySwiper h-full w-full"
+                  >
+                    <SwiperSlide className="object-cover">
+                      <img
+                        src="../../pic/courtCard/figure-1.png"
+                        alt=""
+                        className="h-full w-full"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="object-cover">
+                      <img
+                        src="../../pic/courtCard/figure-2.png"
+                        alt=""
+                        className="h-full w-full"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="object-cover">
+                      <img
+                        src="../../pic/courtCard/figure-3.png"
+                        alt=""
+                        className="h-full w-full"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="object-cover">
+                      <img
+                        src="../../pic/courtCard/figure-4.png"
+                        alt=""
+                        className="h-full w-full"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </figure>
+              </div>
               {/* 內容 */}
-              <button
+              <a
                 onClick={handleToCourtInfo}
-                className="flex h-full w-full flex-col gap-2 px-6 py-4"
+                className="flex h-2/5 w-full flex-col gap-2 px-6 py-4"
               >
                 {/* 標題欄 */}
-                <div className="flex w-full flex-col flex-wrap items-start border-b border-white/40 pb-2 gap-2">
+                <div className="flex w-full flex-col flex-wrap items-start gap-2 border-b border-white/40 pb-2">
                   <div className="flex w-full flex-wrap justify-between">
                     <h3 className="text-left text-2xl tracking-wider text-[#FFCC66]">
                       {court.courtName}
@@ -140,12 +158,15 @@ const CourtCard = () => {
                     開啟地圖
                   </button>
                 </div>
-              </button>
+              </a>
             </div>
           );
         })}
       {user && userRole == "admin" && (
-        <button onClick={linkToAddCourt} className="w-64 h-72 rounded-2xl bg-white/5 text-xl tracking-widest text-white/50 border-2 border-white/10 hover:bg-white/10 hover:border-white/20 duration-500 ">
+        <button
+          onClick={linkToAddCourt}
+          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
+        >
           管理球場
         </button>
       )}

@@ -8,6 +8,7 @@ import TeamLayout from "./Layout/TeamLayout";
 import TeamList from "./page/TeamList";
 import TeamCreate from "./page/TeamCreate";
 import TeamManage from "./page/TeamManage";
+import TeamInfo from "./page/TeamInfo";
 import MemberLayout from "./Layout/MemberLayout";
 import MemberSign from "./page/MemberSign";
 import MemberLogin from "./page/MemberLogin";
@@ -29,6 +30,7 @@ function App() {
               <Route path="list" element={<TeamList />} />
               <Route path="create" element={<TeamCreate />} />
               <Route path="manage" element={<TeamManage />} />
+              <Route path="teamInfo" element={<TeamInfo />} />
             </Route>
             <Route path="news" element={<NewsPage />} />
             <Route path="member" element={<MemberLayout />}>

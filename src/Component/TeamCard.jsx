@@ -9,7 +9,7 @@ const TeamCard = () => {
           台北教育大學體育館
         </h3>
         <h2 className="whitespace-nowrap text-center text-xl font-bold leading-8 tracking-wider text-[#FFE8A3]">
-          12/01(五)-下午
+          12/01(五)
         </h2>
       </div>
       <div className="flex w-4/5 items-center justify-center whitespace-nowrap border-t border-white/30 px-4 py-2 text-2xl font-bold leading-8 tracking-wider text-white/70">
