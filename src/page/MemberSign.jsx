@@ -30,10 +30,15 @@ const MemberSign = () => {
   //設定註冊按鈕click
   let handleRegister = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", password);
+
     if (password !== passwordCheck) {
       setMessage('"password" must match the "confirmation password"');
     } else {
-      AuthService.register(username, email, password)
+      AuthService.register(formData)
         .then(() => {
           window.alert("註冊成功，即將為您跳轉到登入頁面");
           navigate("/member/login");
@@ -110,7 +115,7 @@ const MemberSign = () => {
         {/* <!-- 註冊按鈕 --> */}
         <button
           onClick={handleRegister}
-          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white hover:bg-[#05abff] duration-300"
+          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           註冊會員
         </button>

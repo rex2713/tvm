@@ -2,7 +2,6 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/tvm/court";
 const addCourt_URL = "http://localhost:8080/tvm/admin/addcourt";
 const deleteCourt_URL = "http://localhost:8080/tvm/admin/";
-const uploadImg_URL = "http://localhost:8080/tvm/admin/upload";
 
 class CourtService {
   //搜尋所有場地

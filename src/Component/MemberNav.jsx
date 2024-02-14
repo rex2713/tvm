@@ -1,7 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import AuthService from "../../services/auth-service";
 
 const MemberNav = ({ isLogIn, setIsLogIn }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    AuthService.logout();
+    setIsLogIn(false);
+    window.alert("登出成功，即將為您跳轉首頁");
+    navigate("/");
+  };
   return (
     <section className="flex h-[240px] w-full justify-between bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 pt-5">
       <h2 className="align-bottom font-['Ubuntu'] text-[140px] font-bold leading-[300px] text-white [text-shadow:4px_4px_#A8D916]">
@@ -25,12 +33,12 @@ const MemberNav = ({ isLogIn, setIsLogIn }) => {
           </Link>
         )}
         {isLogIn && (
-          <Link
-            to="/member/Info"
+          <button
+            onClick={handleLogout}
             className="text-m relative rounded-full border-2  border-solid border-[#3c3c3c]  bg-[#040F26] px-6 py-2 tracking-[.2rem] text-white/70 transition-all duration-[300ms] transform-style-3d  before:absolute before:bottom-0 before:left-0  before:right-0 before:top-0 before:h-full before:w-full before:rounded-full before:bg-[#3c3c3c] before:transition-all before:duration-300 before:[transform:translate3d(0,6px,-1em)] hover:border-[#E8F8B9] hover:bg-[#BACC85] hover:text-[#FFFFFF] hover:[transform:translate3d(0em,-3px,0)] hover:before:bg-[#E8F8B9] hover:before:shadow-[0_4px_0_#E8F8B9] hover:before:[transform:translate3d(0em,4px,-1em)] active:bg-[#98C414] active:[transform:translate3d(0,3px,0)] active:before:bg-[#E8F8B9] active:before:shadow-[0_0_0_#E8F8B9] active:before:[transform:translate3d(0,3px,-1em)]"
           >
             登出
-          </Link>
+          </button>
         )}
       </div>
     </section>
