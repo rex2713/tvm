@@ -58,53 +58,35 @@ const CourtCard = () => {
               className="courtCard flex w-full flex-col overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
             >
               {/* 輪播圖 */}
-              <div className="flex h-3/5 w-full shrink-0">
-                <figure className="h-full w-full overflow-hidden">
-                  <Swiper
-                    style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
-                    loop={true}
-                    speed={1000}
-                    navigation={true}
-                    pagination={true}
-                    mousewheel={true}
-                    keyboard={true}
-                    modules={[FreeMode, Navigation, Pagination, Keyboard]}
-                    className="mySwiper h-full w-full"
-                  >
-                    <SwiperSlide className="object-cover">
-                      <img
-                        src="../../pic/courtCard/figure-1.png"
-                        alt=""
-                        className="h-full w-full"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide className="object-cover">
-                      <img
-                        src="../../pic/courtCard/figure-2.png"
-                        alt=""
-                        className="h-full w-full"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide className="object-cover">
-                      <img
-                        src="../../pic/courtCard/figure-3.png"
-                        alt=""
-                        className="h-full w-full"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide className="object-cover">
-                      <img
-                        src="../../pic/courtCard/figure-4.png"
-                        alt=""
-                        className="h-full w-full"
-                      />
-                    </SwiperSlide>
-                  </Swiper>
-                </figure>
-              </div>
+              <figure className="w-full">
+                <Swiper
+                  style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                  }}
+                  loop={true}
+                  speed={1000}
+                  navigation={true}
+                  pagination={true}
+                  mousewheel={true}
+                  keyboard={true}
+                  modules={[FreeMode, Navigation, Pagination, Keyboard]}
+                  className="mySwiper h-full w-full"
+                >
+                  <SwiperSlide>
+                    <img src={court.imgPath[0]} alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={court.imgPath[1]} alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={court.imgPath[2]} alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={court.imgPath[3]} alt="" />
+                  </SwiperSlide>
+                </Swiper>
+              </figure>
               {/* 內容 */}
               <a
                 onClick={handleToCourtInfo}

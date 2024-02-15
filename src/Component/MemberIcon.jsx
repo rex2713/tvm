@@ -1,8 +1,11 @@
 import React from "react";
 import VanillaTilt from "vanilla-tilt";
 import { useEffect } from "react";
+import AuthService from "../../services/auth-service";
 
 const MemberIcon = () => {
+  const user = AuthService.getCurrentUser();
+
   useEffect(() => {
     VanillaTilt.init(document.querySelector(".vanilla-tilt"), {
       max: 15,
@@ -21,11 +24,19 @@ const MemberIcon = () => {
       data-tilt
     >
       <figure className="flex items-center justify-center [transform-style:preserve-3d]">
-        <img
-          src="../../pic/icon/member/no login.png"
-          alt=""
-          className="absolute h-10 w-10 [transform:translateZ(5px)]"
-        />
+        {user && user.user.photoSelected ? (
+          <img
+            src={user.user.photoSelected}
+            alt=""
+            className="absolute h-10 w-10 [transform:translateZ(5px)]"
+          />
+        ) : (
+          <img
+            src="../../pic/icon/member/no login.png"
+            alt=""
+            className="absolute h-10 w-10 [transform:translateZ(5px)]"
+          />
+        )}
         <img
           src="../../pic/icon/member/member_icon_bg.png"
           alt=""

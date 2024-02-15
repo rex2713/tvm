@@ -61,7 +61,6 @@ const AddCourt = () => {
         })
         .catch((error) => {
           console.log(error);
-          q;
         });
     }
   };
@@ -121,22 +120,6 @@ const AddCourt = () => {
     }
     setPreview(previewImg);
   };
-  // 設定上傳照片按鈕(一次四張)
-  // const handleUpload = (e) => {
-  //   // console.log(file);
-  //   const formData = new FormData();
-  //   for (let i = 0; i < file.length; i++) {
-  //     formData.append("file", file[i]);
-  //   }
-  //   // console.log(formData);
-  //   CourtService.uploadImg(formData)
-  //     .then(() => {
-  //       console.log("success");
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
 
   //處理提交球場資料函式
   const postCourt = () => {
@@ -194,28 +177,16 @@ const AddCourt = () => {
                     className="mySwiper h-full w-full"
                   >
                     <SwiperSlide>
-                      <img
-                        src={"http://localhost:8080" + court.imgPath[0]}
-                        alt=""
-                      />
+                      <img src={court.imgPath[0]} alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img
-                        src={"http://localhost:8080" + court.imgPath[1]}
-                        alt=""
-                      />
+                      <img src={court.imgPath[1]} alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img
-                        src={"http://localhost:8080" + court.imgPath[2]}
-                        alt=""
-                      />
+                      <img src={court.imgPath[2]} alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img
-                        src={"http://localhost:8080" + court.imgPath[3]}
-                        alt=""
-                      />
+                      <img src={court.imgPath[3]} alt="" />
                     </SwiperSlide>
                   </Swiper>
                 </figure>
