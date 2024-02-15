@@ -1,12 +1,13 @@
 import axios from "axios";
 const AUTH_URL = "http://localhost:8080/tvm/user";
+const Render_URL = "https://tvm-api.onrender.com/tvm/user";
 
 class AuthService {
   register(formData) {
-    return axios.post(AUTH_URL + "/register", formData);
+    return axios.post(Render_URL + "/register", formData);
   }
   login(email, password) {
-    return axios.post(AUTH_URL + "/login", {
+    return axios.post(Render_URL + "/login", {
       email,
       password,
     });
@@ -24,7 +25,7 @@ class AuthService {
     } else {
       token = "";
     }
-    return axios.patch(AUTH_URL + "/update/" + _id, formData, {
+    return axios.patch(Render_URL + "/update/" + _id, formData, {
       headers: {
         Authorization: token,
       },
