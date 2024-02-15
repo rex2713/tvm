@@ -88,79 +88,81 @@ const MapPage = () => {
       <section className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000]  px-[5vw] pb-10 pt-28">
         <div className="relative flex h-full w-full justify-center ">
           {/* 行政區快速跳轉 */}
-          <div className="no-scrollbar absolute top-0 flex w-full gap-4 overflow-scroll px-10 py-4 text-base">
-            <button
-              onClick={() => handleScrollToRegion("中正區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-1 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              中正區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("中山區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-1 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              中山區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("大同區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              大同區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("大安區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              大安區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("松山區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              松山區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("信義區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              信義區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("北投區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              北投區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("士林區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              士林區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("內湖區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              內湖區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("南港區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              南港區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("萬華區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              萬華區
-            </button>
-            <button
-              onClick={() => handleScrollToRegion("文山區")}
-              className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
-            >
-              文山區
-            </button>
+          <div className="absolute top-0 flex w-full justify-center py-4 text-base">
+            <div className="no-scrollbar flex w-[95%] items-start gap-4 overflow-scroll">
+              <button
+                onClick={() => handleScrollToRegion("中正區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                中正區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("中山區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                中山區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("大同區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                大同區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("大安區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                大安區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("松山區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                松山區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("信義區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                信義區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("北投區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                北投區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("士林區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                士林區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("內湖區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                內湖區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("南港區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                南港區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("萬華區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                萬華區
+              </button>
+              <button
+                onClick={() => handleScrollToRegion("文山區")}
+                className="shrink-0 rounded-full border border-transparent bg-black/70 px-5 py-2 text-sm tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+              >
+                文山區
+              </button>
+            </div>
           </div>
           {/* 地圖 */}
           <div
@@ -171,6 +173,11 @@ const MapPage = () => {
           >
             <div className="w-[4200px] ">
               <img className="map" src="../pic/map.jpg" alt="" />
+              {/* 球場排球icon */}
+              <div className="">
+                <CourtCard />
+                <img src="" alt="" />
+              </div>
             </div>
           </div>
         </div>
