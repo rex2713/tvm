@@ -245,7 +245,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men2.png"
+                    src="/pic/icon/member/men2.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -263,7 +263,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men3.png"
+                    src="/pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -281,7 +281,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men4.png"
+                    src="/pic/icon/member/men4.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -299,7 +299,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men5.png"
+                    src="/pic/icon/member/men5.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -317,7 +317,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men6.png"
+                    src="/pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -335,7 +335,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl1.png"
+                    src="/pic/icon/member/girl1.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -353,7 +353,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl2.png"
+                    src="/pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -371,7 +371,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl3.png"
+                    src="/pic/icon/member/girl3.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -389,7 +389,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl4.png"
+                    src="/pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -407,7 +407,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl5.png"
+                    src="/pic/icon/member/girl5.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -425,7 +425,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl6.png"
+                    src="/pic/icon/member/girl6.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
