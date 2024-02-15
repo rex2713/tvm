@@ -1,5 +1,5 @@
 import axios from "axios";
-const AUTH_URL = "http://localhost:8080/tvm/user";
+const Local_URL = "http://localhost:8080/tvm/user";
 const Render_URL = "https://tvm-api.onrender.com/tvm/user";
 
 class AuthService {
