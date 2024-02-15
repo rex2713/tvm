@@ -49,7 +49,6 @@ const CourtCard = () => {
 
   return (
     <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
-    <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
