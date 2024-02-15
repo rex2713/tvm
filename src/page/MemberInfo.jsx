@@ -216,7 +216,7 @@ const MemberInfo = () => {
                 <label htmlFor="men1">
                   <input
                     name="photo"
-                    checked={photoSelected === "men1"}
+                    checked={photoSelected.includes("men1")}
                     onChange={handleMen1}
                     type="radio"
                     id="men1"
@@ -234,7 +234,7 @@ const MemberInfo = () => {
                 <label htmlFor="men2">
                   <input
                     name="photo"
-                    checked={photoSelected === "men2"}
+                    checked={photoSelected.includes("men2")}
                     onChange={handleMen2}
                     type="radio"
                     id="men2"
@@ -252,7 +252,7 @@ const MemberInfo = () => {
                 <label htmlFor="men3">
                   <input
                     name="photo"
-                    checked={photoSelected === "men3"}
+                    checked={photoSelected.includes("men3")}
                     onChange={handleMen3}
                     type="radio"
                     id="men3"
@@ -270,7 +270,7 @@ const MemberInfo = () => {
                 <label htmlFor="men4">
                   <input
                     name="photo"
-                    checked={photoSelected === "men4"}
+                    checked={photoSelected.includes("men4")}
                     onChange={handleMen4}
                     type="radio"
                     id="men4"
@@ -288,7 +288,7 @@ const MemberInfo = () => {
                 <label htmlFor="men5">
                   <input
                     name="photo"
-                    checked={photoSelected === "men5"}
+                    checked={photoSelected.includes("men5")}
                     onChange={handleMen5}
                     type="radio"
                     id="men5"
@@ -306,7 +306,7 @@ const MemberInfo = () => {
                 <label htmlFor="men6">
                   <input
                     name="photo"
-                    checked={photoSelected === "men6"}
+                    checked={photoSelected.includes("men6")}
                     onChange={handleMen6}
                     type="radio"
                     id="men6"
@@ -324,7 +324,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl1">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl1"}
+                    checked={photoSelected.includes("girl1")}
                     onChange={handleGirl1}
                     type="radio"
                     id="girl1"
@@ -342,7 +342,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl2">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl2"}
+                    checked={photoSelected.includes("girl2")}
                     onChange={handleGirl2}
                     type="radio"
                     id="girl2"
@@ -360,7 +360,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl3">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl3"}
+                    checked={photoSelected.includes("girl3")}
                     onChange={handleGirl3}
                     type="radio"
                     id="girl3"
@@ -378,7 +378,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl4">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl4"}
+                    checked={photoSelected.includes("girl4")}
                     onChange={handleGirl4}
                     type="radio"
                     id="girl4"
@@ -396,7 +396,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl5">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl5"}
+                    checked={photoSelected.includes("girl5")}
                     onChange={handleGirl5}
                     type="radio"
                     id="girl5"
@@ -414,7 +414,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl6">
                   <input
                     name="photo"
-                    checked={photoSelected === "girl6"}
+                    checked={photoSelected.includes("girl6")}
                     onChange={handleGirl6}
                     type="radio"
                     id="girl6"
@@ -586,162 +586,6 @@ const MemberInfo = () => {
                     自由
                   </div>
                 </label>
-              </div>
-            </div>
-            {/* 好友 */}
-            <div className="flex w-full items-start gap-4">
-              <span className="w-24 shrink-0 tracking-widest">好友管理</span>
-              <div className="grid w-full grid-cols-4 gap-[1vw]">
-                {/* 好友卡片 */}
-                {/* button設定刪除好友功能 */}
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  {/* 卡片內容 */}
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/men3.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生1
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        主攻、副攻
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        體保
-                      </p>
-                    </div>
-                  </div>
-                </button>
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  {/* 卡片內容 */}
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/men6.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生2
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        主攻、攔中
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        體保
-                      </p>
-                    </div>
-                  </div>
-                </button>
-
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  {/* 刪除icon(僅視覺示意)，button功能設在整張卡片，可以做alert確認防呆機制 */}
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  {/* 卡片內容 */}
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/girl2.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生3
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        舉球、自由
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        體保
-                      </p>
-                    </div>
-                  </div>
-                </button>
-
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/men1.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生4
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        舉球
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        新手
-                      </p>
-                    </div>
-                  </div>
-                </button>
-
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/girl4.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生5
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        副攻
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        校隊
-                      </p>
-                    </div>
-                  </div>
-                </button>
-
-                <button className="group relative h-52 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                  <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
-                    -
-                  </div>
-                  <div className="absolute top-4 flex flex-col items-center gap-4">
-                    <img
-                      className="w-1/2 rounded-full bg-white bg-clip-border"
-                      src="../../pic/icon/member/girl5.png"
-                      alt=""
-                    />
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <p className="text-lg font-bold tracking-widest">
-                        北商學生6
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        主攻
-                      </p>
-                      <p className="text-sm tracking-widest text-white/70">
-                        系隊
-                      </p>
-                    </div>
-                  </div>
-                </button>
               </div>
             </div>
           </form>
