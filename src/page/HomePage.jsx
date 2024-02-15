@@ -156,7 +156,7 @@ const HomePage = () => {
               </h3>
               <NewsLink />
               <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
-                杯賽資訊
+                盃賽資訊
               </h3>
               <div className="no-scrollbar flex w-full justify-start gap-10 overflow-x-auto">
                 <CupGame cardWidth={"w-1/3 shrink-0 "} />

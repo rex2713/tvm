@@ -49,13 +49,14 @@ const CourtCard = () => {
 
   return (
     <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
+    <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
           return (
             <div
               key={court._id}
-              className="courtCard w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+              className="courtCard flex w-full flex-col overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
             >
               {/* 輪播圖 */}
               <figure className="w-full">
@@ -88,9 +89,9 @@ const CourtCard = () => {
                 </Swiper>
               </figure>
               {/* 內容 */}
-              <button
+              <a
                 onClick={handleToCourtInfo}
-                className="flex h-full w-full flex-col gap-2 px-6 py-4"
+                className="flex h-2/5 w-full flex-col gap-2 px-6 py-4"
               >
                 {/* 標題欄 */}
                 <div className="flex w-full flex-col flex-wrap items-start gap-2 border-b border-white/40 pb-2">
@@ -140,7 +141,7 @@ const CourtCard = () => {
                     開啟地圖
                   </button>
                 </div>
-              </button>
+              </a>
             </div>
           );
         })}
