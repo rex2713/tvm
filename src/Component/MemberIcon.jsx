@@ -3,7 +3,7 @@ import VanillaTilt from "vanilla-tilt";
 import { useEffect } from "react";
 import AuthService from "../../services/auth-service";
 
-const MemberIcon = () => {
+const MemberIcon = ({ memberIconSrc, setMemberIconSrc }) => {
   const user = AuthService.getCurrentUser();
 
   useEffect(() => {

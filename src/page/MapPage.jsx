@@ -75,10 +75,14 @@ const MapPage = () => {
     clearTimeout(scrollTimer);
     //延遲兩秒顯示目前scroll位置
     scrollTimer = setTimeout(() => {
+      //獲取容器寬高
+      const containerWidth = mapContainerRef.current.offsetWidth;
+      const containerHeight = mapContainerRef.current.offsetHeight;
+      //獲取座標值
       const scrollTop = mapContainerRef.current.scrollTop;
       const scrollLeft = mapContainerRef.current.scrollLeft;
-      console.log("scrollTop:", scrollTop);
-      console.log("scrollLeft:", scrollLeft);
+      console.log("scrollTop:", scrollTop + containerHeight / 2);
+      console.log("scrollLeft:", scrollLeft + containerWidth / 2);
     }, 2000);
   };
 

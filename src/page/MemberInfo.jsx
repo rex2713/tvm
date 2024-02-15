@@ -1,9 +1,11 @@
 import React from "react";
 import AuthService from "../../services/auth-service";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const MemberInfo = () => {
+  const outlet = useOutletContext();
+  const { memberIconSrc, setMemberIconSrc } = outlet;
   useEffect(() => {
     window.scrollTo(0, 0);
     //如果已經存在上傳頭像，處理預覽
@@ -173,11 +175,11 @@ const MemberInfo = () => {
 
   //設定儲存按鈕
   const handleSave = () => {
-    console.log(photoSelected);
-    console.log(file);
-    console.log(username);
-    console.log(skillLevel);
-    console.log(goodAtPosition);
+    // console.log(photoSelected);
+    // console.log(file);
+    // console.log(username);
+    // console.log(skillLevel);
+    // console.log(goodAtPosition);
     const formData = new FormData();
     if (photoSelected) formData.append("photoSelected", photoSelected);
     if (file) formData.append("file", file);
@@ -194,6 +196,7 @@ const MemberInfo = () => {
         user.user = res.data.updateUser;
         localStorage.setItem("user", JSON.stringify(user));
         window.alert("儲存資料成功");
+        setMemberIconSrc(photoSelected);
       })
       .catch((e) => {
         console.log(e.response.data);
