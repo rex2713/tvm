@@ -48,8 +48,8 @@ const MapPage = () => {
         scrollTopPosition = 960;
         break;
       case "南港區":
-        scrollLeftPosition = 2929;
-        scrollTopPosition = 1600;
+        scrollLeftPosition = 3830;
+        scrollTopPosition = 1633;
         break;
       case "萬華區":
         scrollLeftPosition = 670;
