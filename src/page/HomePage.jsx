@@ -7,9 +7,19 @@ import IndexTitle from "../Component/IndexTitle";
 import Loading from "../Component/Loading";
 import ScrollAnimate from "../Component/ScrollAnimate";
 import { useState, useEffect, useRef } from "react";
+import AuthService from "../../services/auth-service";
 import "../css/main.css";
 
 const HomePage = () => {
+  useEffect(() => {
+    AuthService.copyRenderDisk()
+      .then(() => {
+        console.log("成功複製RenderDisk資料");
+      })
+      .catch((e) => {
+        console.error("複製RenderDisk失敗:" + e);
+      });
+  }, []);
   // loading動畫延遲5秒
   const [delayLoading, setDelayLoading] = useState(true);
   setTimeout(() => {

@@ -3,6 +3,9 @@ const Local_URL = "http://localhost:8080/tvm/user";
 const Render_URL = "https://tvm-api.onrender.com/tvm/user";
 
 class AuthService {
+  copyRenderDisk() {
+    return axios.get(Render_URL + "/");
+  }
   register(formData) {
     return axios.post(Render_URL + "/register", formData);
   }
