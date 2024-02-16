@@ -32,13 +32,13 @@ const MemberIcon = ({ memberIconSrc, setMemberIconSrc }) => {
           />
         ) : (
           <img
-            src="../../pic/icon/member/no login.png"
+            src="/pic/icon/member/no login.png"
             alt=""
             className="absolute h-10 w-10 [transform:translateZ(5px)]"
           />
         )}
         <img
-          src="../../pic/icon/member/member_icon_bg.png"
+          src="/pic/icon/member/member_icon_bg.png"
           alt=""
           className="h-full w-full"
         />

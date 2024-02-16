@@ -5,7 +5,7 @@ const Render_URL = "https://tvm-api.onrender.com/tvm";
 class CourtService {
   //搜尋所有場地
   getAllCourts() {
-    return axios.get(Render_URL + "/court/");
+    return axios.get(Render_URL + "/court");
   }
   //新增球場
   postAddCourt(formData) {
