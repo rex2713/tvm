@@ -159,10 +159,10 @@ const MemberInfo = () => {
 
   //設定頭像上傳
   const handleFileChange = (e) => {
-    setPhotoSelected(null);
     setFile(e.target.files[0]);
     const previewURL = URL.createObjectURL(e.target.files[0]);
     setPreview(previewURL);
+    setPhotoSelected(null);
     // console.log(e.target.files[0]);
     // console.log(URL.createObjectURL(e.target.files[0]));
   };
