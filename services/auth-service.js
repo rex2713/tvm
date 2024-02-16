@@ -4,7 +4,7 @@ const Render_URL = "https://tvm-api.onrender.com/tvm/user";
 
 class AuthService {
   copyRenderDisk() {
-    return axios.get("https://tvm-api.onrender.com/");
+    return axios.get(Render_URL + "/");
   }
   register(formData) {
     return axios.post(Render_URL + "/register", formData);
