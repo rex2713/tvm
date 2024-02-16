@@ -219,7 +219,7 @@ const MemberInfo = () => {
                 <label htmlFor="men1">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men1")}
+                    checked={photoSelected && photoSelected == "men1"}
                     onChange={handleMen1}
                     type="radio"
                     id="men1"
@@ -237,7 +237,7 @@ const MemberInfo = () => {
                 <label htmlFor="men2">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men2")}
+                    checked={photoSelected && photoSelected == "men2"}
                     onChange={handleMen2}
                     type="radio"
                     id="men2"
@@ -255,7 +255,7 @@ const MemberInfo = () => {
                 <label htmlFor="men3">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men3")}
+                    checked={photoSelected && photoSelected == "men3"}
                     onChange={handleMen3}
                     type="radio"
                     id="men3"
@@ -273,7 +273,7 @@ const MemberInfo = () => {
                 <label htmlFor="men4">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men4")}
+                    checked={photoSelected && photoSelected == "men4"}
                     onChange={handleMen4}
                     type="radio"
                     id="men4"
@@ -291,7 +291,7 @@ const MemberInfo = () => {
                 <label htmlFor="men5">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men5")}
+                    checked={photoSelected && photoSelected == "men5"}
                     onChange={handleMen5}
                     type="radio"
                     id="men5"
@@ -309,7 +309,7 @@ const MemberInfo = () => {
                 <label htmlFor="men6">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men6")}
+                    checked={photoSelected && photoSelected == "men6"}
                     onChange={handleMen6}
                     type="radio"
                     id="men6"
@@ -327,7 +327,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl1">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl1")}
+                    checked={photoSelected && photoSelected == "girl1"}
                     onChange={handleGirl1}
                     type="radio"
                     id="girl1"
@@ -345,7 +345,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl2">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl2")}
+                    checked={photoSelected && photoSelected == "girl2"}
                     onChange={handleGirl2}
                     type="radio"
                     id="girl2"
@@ -363,7 +363,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl3">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl3")}
+                    checked={photoSelected && photoSelected == "girl3"}
                     onChange={handleGirl3}
                     type="radio"
                     id="girl3"
@@ -381,7 +381,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl4">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl4")}
+                    checked={photoSelected && photoSelected == "girl4"}
                     onChange={handleGirl4}
                     type="radio"
                     id="girl4"
@@ -399,7 +399,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl5">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl5")}
+                    checked={photoSelected && photoSelected == "girl5"}
                     onChange={handleGirl5}
                     type="radio"
                     id="girl5"
@@ -417,7 +417,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl6">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl6")}
+                    checked={photoSelected && photoSelected == "girl6"}
                     onChange={handleGirl6}
                     type="radio"
                     id="girl6"
