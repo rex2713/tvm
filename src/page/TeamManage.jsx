@@ -1,6 +1,4 @@
 import React from "react";
-import TeamInformation from "../Component/TeamInforMation";
-import TeamInformationAdd from "../Component/TeamInformationAdd";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +10,7 @@ const TeamManage = () => {
 
   return (
     <main className="flex w-full flex-col gap-14 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-52 py-10">
-      {/* 隊伍資訊-已展開 */}
+      {/* 隊伍資訊 */}
       <div className="flex flex-col gap-2">
         {/* title */}
         <div className="flex items-center gap-4 px-6">
@@ -22,7 +20,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="../../pic/edit.svg"
+              src="/pic/edit.svg"
               alt=""
             />
           </figure>
@@ -66,8 +64,8 @@ const TeamManage = () => {
                 </div>
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men3.png"
+                    className="w-1/2 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-4 outline-[#FFCC66]"
+                    src="/pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -90,7 +88,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men6.png"
+                    src="/pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -114,7 +112,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl2.png"
+                    src="/pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -138,7 +136,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men1.png"
+                    src="/pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -162,7 +160,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl4.png"
+                    src="/pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -202,42 +200,6 @@ const TeamManage = () => {
                 </select>
               </label>
             </div>
-
-            {/* 留言板 */}
-            {/* <div className="flex justify-between">
-            <div className="flex w-[55%] flex-col gap-y-2">
-              <p className="text-xl">留言板</p>
-              <div className="flex h-[200px]  flex-col justify-between rounded-2xl bg-[#B8C3CD] p-4 font-normal">
-                <div className="text-base text-black ">
-                  <div className="flex gap-x-4">
-                    <p className="text-center text-sm leading-[24px]">
-                      2023.12.4 15:23
-                    </p>
-                    <p>隊員A:</p>
-                    <p>明天幾點在球場集合?</p>
-                  </div>
-                </div>
-                <input
-                  className="h-fit w-full rounded-md text-base text-black"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div className="flex w-[43%] flex-col  gap-y-2">
-              <p className="text-xl">公告</p>
-              <div className="flex h-[200px] flex-col justify-between rounded-2xl bg-[#B8C3CD] p-4 font-normal">
-                <div className="text-base text-black ">
-                  <div className="flex gap-x-4">
-                    <p className="text-center text-sm leading-[24px]">
-                      2023.12.4 15:23
-                    </p>
-                    <p>6點在球場集合，大家自己帶裝備</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
           </section>
         </label>
       </div>
@@ -251,7 +213,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="../../pic/edit.svg"
+              src="/pic/edit.svg"
               alt=""
             />
           </figure>
@@ -295,8 +257,8 @@ const TeamManage = () => {
                 </div>
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men3.png"
+                    className="w-1/2 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-4 outline-[#FFCC66]"
+                    src="/pic/icon/member/men5.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -319,7 +281,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men6.png"
+                    src="/pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -343,7 +305,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl2.png"
+                    src="/pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -367,7 +329,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men1.png"
+                    src="/pic/icon/member/men2.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -391,7 +353,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl4.png"
+                    src="/pic/icon/member/girl6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -444,7 +406,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="../../pic/edit.svg"
+              src="/pic/edit.svg"
               alt=""
             />
           </figure>
@@ -488,8 +450,8 @@ const TeamManage = () => {
                 </div>
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
-                    className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men3.png"
+                    className="w-1/2 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-4 outline-[#FFCC66]"
+                    src="/pic/icon/member/men4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -512,7 +474,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men6.png"
+                    src="/pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -536,7 +498,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl2.png"
+                    src="/pic/icon/member/girl5.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -560,7 +522,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/men1.png"
+                    src="/pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -584,7 +546,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="../../pic/icon/member/girl4.png"
+                    src="/pic/icon/member/girl3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">

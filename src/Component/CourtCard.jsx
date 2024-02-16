@@ -90,7 +90,7 @@ const CourtCard = () => {
               {/* 內容 */}
               <a
                 onClick={handleToCourtInfo}
-                className="flex h-2/5 w-full flex-col gap-2 px-6 py-4"
+                className="flex h-2/5 w-full flex-col gap-2 px-6 py-4 cursor-pointer"
               >
                 {/* 標題欄 */}
                 <div className="flex w-full flex-col flex-wrap items-start gap-2 border-b border-white/40 pb-2">
@@ -111,7 +111,7 @@ const CourtCard = () => {
                   </div>
                   {/* 球場類型 */}
                   <p className="text-[#FFFFFF]/70">
-                    球場類型：{court.courtType}
+                    {court.courtType}
                   </p>
                 </div>
                 {/* 下方資訊 */}
@@ -136,8 +136,8 @@ const CourtCard = () => {
                     )}
                   </figure>
                   {/* 按鈕 */}
-                  <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-[14px] hover:bg-[#0492D9]">
-                    開啟地圖
+                  <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-[14px] duration-500 hover:bg-[#0492D9]">
+                    詳細資訊
                   </button>
                 </div>
               </a>
