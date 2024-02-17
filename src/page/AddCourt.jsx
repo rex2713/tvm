@@ -144,14 +144,12 @@ const AddCourt = () => {
         AuthService.copyRenderDisk()
           .then(() => {
             console.log("成功複製RenderDisk資料");
+            window.alert("創建球場成功");
+            window.reload();
           })
           .catch((e) => {
             console.error("複製RenderDisk失敗:" + e);
           });
-
-        window.alert("創建球場成功");
-        window.location.reload();
-        window.scroll(0, 0);
       })
       .catch((error) => {
         setMessage(error.response.data);
