@@ -140,6 +140,15 @@ const AddCourt = () => {
 
     CourtService.postAddCourt(formData)
       .then(() => {
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            console.log("成功複製RenderDisk資料");
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
+
         window.alert("創建球場成功");
         window.location.reload();
         window.scroll(0, 0);
@@ -148,16 +157,6 @@ const AddCourt = () => {
         setMessage(error.response.data);
         // console.log(error.response.data);
       });
-
-    //處理永久硬碟複製
-    AuthService.copyRenderDisk()
-      .then(() => {
-        console.log("成功複製RenderDisk資料");
-      })
-      .catch((e) => {
-        console.error("複製RenderDisk失敗:" + e);
-      });
-    window.alert("創建球場成功");
   };
 
   return (
