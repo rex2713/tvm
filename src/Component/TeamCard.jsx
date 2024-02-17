@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper/modules";
-import "../css/sweepLight.css";
+import "../css/SweepLight.css";
 
 const TeamCard = () => {
   return (
