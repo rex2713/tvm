@@ -163,6 +163,7 @@ const MemberInfo = () => {
     const previewURL = URL.createObjectURL(e.target.files[0]);
     setPreview(previewURL);
     setPhotoSelected(null);
+    setMemberIconSrc("連動NavIcon");
     // console.log(e.target.files[0]);
     // console.log(URL.createObjectURL(e.target.files[0]));
   };
@@ -200,6 +201,14 @@ const MemberInfo = () => {
       })
       .catch((e) => {
         console.log(e.response.data);
+      });
+    //處理永久硬碟複製
+    AuthService.copyRenderDisk()
+      .then(() => {
+        console.log("成功複製RenderDisk資料");
+      })
+      .catch((e) => {
+        console.error("複製RenderDisk失敗:" + e);
       });
   };
 

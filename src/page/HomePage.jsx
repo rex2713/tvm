@@ -12,6 +12,7 @@ import "../css/main.css";
 
 const HomePage = () => {
   useEffect(() => {
+    //處理永久硬碟複製
     AuthService.copyRenderDisk()
       .then(() => {
         console.log("成功複製RenderDisk資料");
