@@ -196,19 +196,21 @@ const MemberInfo = () => {
         const user = JSON.parse(localStorage.getItem("user"));
         user.user = res.data.updateUser;
         localStorage.setItem("user", JSON.stringify(user));
+
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            console.log("成功複製RenderDisk資料");
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
+
         window.alert("儲存資料成功");
         setMemberIconSrc(photoSelected);
       })
       .catch((e) => {
         console.log(e.response.data);
-      });
-    //處理永久硬碟複製
-    AuthService.copyRenderDisk()
-      .then(() => {
-        console.log("成功複製RenderDisk資料");
-      })
-      .catch((e) => {
-        console.error("複製RenderDisk失敗:" + e);
       });
   };
 
