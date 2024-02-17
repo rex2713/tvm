@@ -8,6 +8,7 @@ import "../css/courtCard.css";
 import "swiper/css/free-mode";
 import { FreeMode, Navigation, Pagination, Keyboard } from "swiper/modules";
 import CourtService from "../../services/court-service";
+import AuthService from "../../services/auth-service";
 
 const AddCourt = () => {
   const navigate = useNavigate();
@@ -147,6 +148,16 @@ const AddCourt = () => {
         setMessage(error.response.data);
         // console.log(error.response.data);
       });
+
+    //處理永久硬碟複製
+    AuthService.copyRenderDisk()
+      .then(() => {
+        console.log("成功複製RenderDisk資料");
+      })
+      .catch((e) => {
+        console.error("複製RenderDisk失敗:" + e);
+      });
+    window.alert("創建球場成功");
   };
 
   return (
