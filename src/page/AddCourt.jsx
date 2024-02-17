@@ -91,7 +91,7 @@ const AddCourt = () => {
     setCourtAddress(e.target.value);
   };
   const handleIsPark = (e) => {
-    console.log(e.target.checked);
+    // console.log(e.target.checked);
     setIsPark(e.target.checked);
   };
   const handleIsBus = (e) => {
@@ -143,7 +143,6 @@ const AddCourt = () => {
         //處理永久硬碟複製
         AuthService.copyRenderDisk()
           .then(() => {
-            console.log("成功複製RenderDisk資料");
             window.alert("創建球場成功");
             window.location.reload();
           })
