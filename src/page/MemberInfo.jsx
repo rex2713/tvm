@@ -192,7 +192,7 @@ const MemberInfo = () => {
 
     AuthService.updateUser(formData, _id)
       .then((res) => {
-        console.log(res.data.updateUser);
+        // console.log(res.data.updateUser);
         const user = JSON.parse(localStorage.getItem("user"));
         user.user = res.data.updateUser;
         localStorage.setItem("user", JSON.stringify(user));

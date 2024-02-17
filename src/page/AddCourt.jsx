@@ -145,7 +145,7 @@ const AddCourt = () => {
           .then(() => {
             console.log("成功複製RenderDisk資料");
             window.alert("創建球場成功");
-            window.reload();
+            window.location.reload();
           })
           .catch((e) => {
             console.error("複製RenderDisk失敗:" + e);
