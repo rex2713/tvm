@@ -1,0 +1,23 @@
+.sweepLight {
+  background: linear-gradient(-10deg, #b35f5f, #ba3434, #b35f5f);
+  /* 裁剪掉文字以外的区域 */
+  -webkit-background-clip: text;
+  background-size: 80%;
+  background-repeat: repeat;
+  animation: move 0.5s linear infinite;
+  animation-delay: 3s;
+  background-position: center;
+}
+
+@keyframes move {
+  0% {
+    background-position: -500%;
+  }
+  20% {
+  }
+  80% {
+  }
+  100% {
+    background-position: 500%;
+  }
+}

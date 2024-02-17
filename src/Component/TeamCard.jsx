@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+// import required modules
+import { Autoplay } from "swiper/modules";
+import "../css/SweepLight.css";
 
 const TeamCard = () => {
   return (
@@ -22,15 +29,34 @@ const TeamCard = () => {
             <img
               loading="lazy"
               src="/pic/icon/member/men2.png"
-              className="h-14 w-14  rounded-full bg-white bg-clip-border"
+              className="h-14 w-14  rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
             />
             <p className="w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
               Derek
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-            <p className="whitespace-nowrap">主攻</p>
+          <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+            <div className="flex w-full items-center justify-center">
+              <Swiper
+                loop={true}
+                speed={500}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper sweepLight flex h-full w-full justify-center "
+              >
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  主攻
+                </SwiperSlide>
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  副攻
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <p className="whitespace-nowrap">體保</p>
           </div>
         </div>
@@ -46,8 +72,27 @@ const TeamCard = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-            <p className="whitespace-nowrap">舉球</p>
+          <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+            <div className="flex w-full items-center justify-center">
+              <Swiper
+                loop={true}
+                speed={500}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 3050,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper flex h-full w-full justify-center "
+              >
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  舉球
+                </SwiperSlide>
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  自由
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <p className="whitespace-nowrap">校隊</p>
           </div>
         </div>
@@ -63,8 +108,27 @@ const TeamCard = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-            <p className="whitespace-nowrap">攔中</p>
+          <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+            <div className="flex w-full items-center justify-center">
+              <Swiper
+                loop={true}
+                speed={500}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 3100,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper flex h-full w-full justify-center "
+              >
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  欄中
+                </SwiperSlide>
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  欄中
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <p className="whitespace-nowrap">新手</p>
           </div>
         </div>
@@ -80,8 +144,27 @@ const TeamCard = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-            <p className="whitespace-nowrap">副攻</p>
+          <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+            <div className="flex w-full items-center justify-center">
+              <Swiper
+                loop={true}
+                speed={500}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 3150,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper flex h-full w-full justify-center "
+              >
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  副攻
+                </SwiperSlide>
+                <SwiperSlide className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide ">
+                  舉球
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <p className="whitespace-nowrap">系隊</p>
           </div>
         </div>

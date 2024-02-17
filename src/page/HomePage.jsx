@@ -6,6 +6,7 @@ import CupGame from "../Component/CupGame";
 import IndexTitle from "../Component/IndexTitle";
 import Loading from "../Component/Loading";
 import ScrollAnimate from "../Component/ScrollAnimate";
+import Map from "../Component/Map";
 import { useState, useEffect, useRef } from "react";
 import AuthService from "../../services/auth-service";
 import "../css/main.css";
@@ -79,43 +80,9 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw]"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pt-28 pb-10"
         >
-          <div className="relative flex h-full w-full items-center justify-center">
-            {/* 行政區快速跳轉 */}
-            <div className="absolute top-[10vh] flex w-full justify-center gap-4 py-4 text-base">
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                中正區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-1 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                中山區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                大同區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                大安區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                松山區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                信義區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                北投區
-              </button>
-              <button className="rounded-full border border-transparent bg-black/60 px-5 py-2 text-sm tracking-[0.2rem] text-white/60 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white">
-                萬華區
-              </button>
-            </div>
-            {/* 地圖 */}
-            <div className="no-scrollbar h-[80vh] overflow-scroll rounded-3xl">
-              <div className="w-[400vw]">
-                <img className="map" src="../pic/map.jpg" alt="" />
-              </div>
-            </div>
-          </div>
+          <Map/>
         </section>
 
         {/* 首頁-隊伍 */}

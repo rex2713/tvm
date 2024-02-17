@@ -1,6 +1,24 @@
 import React from "react";
-import TeamInformation from "../Component/TeamInforMation";
-import TeamInformationAdd from "../Component/TeamInformationAdd";
+
+import { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import {
+  FreeMode,
+  Pagination,
+  Navigation,
+  Keyboard,
+  EffectCoverflow,
+} from "swiper/modules";
+import "../css/swiper.css";
+import "swiper/css/effect-coverflow";
+
 
 const TeamInfo = () => {
   return (
@@ -18,7 +36,7 @@ const TeamInfo = () => {
               <figure className="my-auto flex items-center">
                 <img
                   className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-                  src="../../pic/edit.svg"
+                  src="/pic/edit.svg"
                   alt=""
                 />
               </figure>
@@ -76,15 +94,16 @@ const TeamInfo = () => {
               </div>
               <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                 <img
-                  className="w-1/3 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/men3.png"
+                  className="w-1/3 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-4 outline-[#FFCC66]"
+                  src="/pic/icon/member/men3.png"
                   alt=""
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
                   <p className="text-base font-bold tracking-wide">北商學生1</p>
-                  <p className="text-sm tracking-widest text-white/70">
-                    主攻、副攻
-                  </p>
+                  <div className="text-sm tracking-widest text-white/70">
+                    <p>主攻</p>
+                    <p>副攻</p>
+                  </div>
                   <p className="text-sm tracking-widest text-white/70">體保</p>
                 </div>
               </div>
@@ -97,7 +116,7 @@ const TeamInfo = () => {
               <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <img
                   className="w-1/3 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/men6.png"
+                  src="/pic/icon/member/men6.png"
                   alt=""
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -117,7 +136,7 @@ const TeamInfo = () => {
               <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <img
                   className="w-1/3 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl2.png"
+                  src="/pic/icon/member/girl2.png"
                   alt=""
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -137,7 +156,7 @@ const TeamInfo = () => {
               <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <img
                   className="w-1/3 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/men1.png"
+                  src="/pic/icon/member/men1.png"
                   alt=""
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -155,7 +174,7 @@ const TeamInfo = () => {
               <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <img
                   className="w-1/3 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl4.png"
+                  src="/pic/icon/member/girl4.png"
                   alt=""
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -194,7 +213,7 @@ const TeamInfo = () => {
         {/* 場地評論 */}
         <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
           <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
-          <div className="flex h-80 w-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
+          <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
             <div className="no-scrollbar flex flex-col gap-1 overflow-scroll text-base">
               <div className="flex gap-4">
                 <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
