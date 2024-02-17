@@ -100,61 +100,61 @@ const MemberInfo = () => {
   //設定頭像選擇
   const handleMen1 = () => {
     setPhotoSelected("men1");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen2 = () => {
     setPhotoSelected("men2");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen3 = () => {
     setPhotoSelected("men3");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen4 = () => {
     setPhotoSelected("men4");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen5 = () => {
     setPhotoSelected("men5");
   };
   const handleMen6 = () => {
     setPhotoSelected("men6");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl1 = () => {
     setPhotoSelected("girl1");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl2 = () => {
     setPhotoSelected("girl2");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl3 = () => {
     setPhotoSelected("girl3");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl4 = () => {
     setPhotoSelected("girl4");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl5 = () => {
     setPhotoSelected("girl5");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl6 = () => {
     setPhotoSelected("girl6");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
 
   //設定頭像上傳
@@ -162,15 +162,16 @@ const MemberInfo = () => {
     setFile(e.target.files[0]);
     const previewURL = URL.createObjectURL(e.target.files[0]);
     setPreview(previewURL);
-    setPhotoSelected(null);
+    setPhotoSelected("");
     setMemberIconSrc("連動NavIcon");
+    e.target.value = null; //清空input值，使下次重複選擇相同檔案也可觸發
     // console.log(e.target.files[0]);
     // console.log(URL.createObjectURL(e.target.files[0]));
   };
   //設定清除上傳頭像
   const handleClear = () => {
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
     setPhotoSelected("men1");
   };
 

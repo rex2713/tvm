@@ -1,6 +1,4 @@
 import React from "react";
-import TeamInformation from "../Component/TeamInforMation";
-import TeamInformationAdd from "../Component/TeamInformationAdd";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
