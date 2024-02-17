@@ -122,7 +122,7 @@ const HomePage = () => {
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
           <div className="flex w-full">
             {/* 左半裝飾字-Teams */}
-            <h2 className="h-page w-[20vw] font-['Ubuntu'] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="text-bg h-page w-[20vw] font-['Ubuntu'] font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               Teams
             </h2>
             {/* 右半內容區 */}
@@ -156,9 +156,9 @@ const HomePage = () => {
           </div>
         </section>
         {/* 首頁-最新消息*/}
-        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#011E37] via-[#01405E] to-[#030b17] px-[5vw]">
+        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#01405E] to-[#030b17] px-[5vw]">
           <div className="flex w-full flex-row-reverse items-center justify-center">
-            <h2 className="h-screen w-[20vw] overflow-hidden font-['Ubuntu'] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="text-bg h-screen w-[20vw] overflow-hidden font-['Ubuntu'] font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               News
             </h2>
             <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-20">
