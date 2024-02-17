@@ -514,26 +514,18 @@ const MemberInfo = () => {
               />
             </label> */}
             {/* 球技程度 */}
-            <label htmlFor="" className="flex w-full items-center gap-2">
+            <label htmlFor="skill" className="flex w-full items-center gap-2">
               <span className="w-24 shrink-0 tracking-widest">球技程度</span>
               <select
                 onChange={handleSkillLevel}
                 name=""
-                id=""
+                id="skill"
                 className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
               >
-                <option selected={user.user.skillLevel == "新手"} value="新手">
-                  新手
-                </option>
-                <option selected={user.user.skillLevel == "系隊"} value="系隊">
-                  系隊
-                </option>
-                <option selected={user.user.skillLevel == "校隊"} value="校隊">
-                  校隊
-                </option>
-                <option selected={user.user.skillLevel == "體保"} value="體保">
-                  體保
-                </option>
+                <option value="新手">新手</option>
+                <option value="系隊">系隊</option>
+                <option value="校隊">校隊</option>
+                <option value="體保">體保</option>
               </select>
             </label>
             {/* 擅長位置 */}
