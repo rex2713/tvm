@@ -50,6 +50,7 @@ const AddCourt = () => {
   const [preview, setPreview] = useState(null);
 
   //上半部球場卡片相關
+  //處理球場刪除
   const handleDelete = (e) => {
     if (window.confirm("確定要刪除嗎？")) {
       // console.log(e.target.id);

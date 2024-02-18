@@ -1,36 +1,35 @@
 import axios from "axios";
-
 const Default_URL = import.meta.env.VITE_Default_URL;
 
-class CourtService {
-  //搜尋所有場地
-  getAllCourts() {
-    return axios.get(Default_URL + "/court");
+class TeamService {
+  getAllTeam() {
+    return axios.get(Default_URL + "/team");
   }
-  //新增球場
-  postAddCourt(formData) {
+  teamJoin(teamId, userId) {
     let token;
     if (localStorage.getItem("user")) {
       token = JSON.parse(localStorage.getItem("user")).token;
     } else {
       token = "";
     }
-    return axios.post(Default_URL + "/admin/addcourt", formData, {
-      headers: {
-        Authorization: token,
+    return axios.patch(
+      Default_URL + "/team/auth/teamJoin/" + teamId + "/" + userId,
+      {},
+      {
+        headers: {
+          Authorization: token,
+        },
       },
-    });
+    );
   }
-  //刪除球場
-  deleteCourt(_id) {
+  getUserByName(username) {
     let token;
     if (localStorage.getItem("user")) {
       token = JSON.parse(localStorage.getItem("user")).token;
-      // console.log(token);
     } else {
       token = "";
     }
-    return axios.delete(Default_URL + "/admin/" + _id, {
+    return axios.get(Dafult_URl + "/team/" + username, {
       headers: {
         Authorization: token,
       },
@@ -38,4 +37,4 @@ class CourtService {
   }
 }
 
-export default new CourtService();
+export default new TeamService();

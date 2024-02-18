@@ -54,12 +54,12 @@ const MemberInfo = () => {
   };
   const handleMiddleBlocker = (e) => {
     if (e.target.checked) {
-      if (!goodAtPosition.includes("欄中")) {
-        setGoodAtPosition([...goodAtPosition, "欄中"]);
+      if (!goodAtPosition.includes("攔中")) {
+        setGoodAtPosition([...goodAtPosition, "攔中"]);
       }
     } else {
-      if (goodAtPosition.includes("欄中")) {
-        setGoodAtPosition(goodAtPosition.filter((value) => value !== "欄中"));
+      if (goodAtPosition.includes("攔中")) {
+        setGoodAtPosition(goodAtPosition.filter((value) => value !== "攔中"));
       }
     }
   };
@@ -551,7 +551,7 @@ const MemberInfo = () => {
                     id="middleBlocker"
                     className="peer hidden"
                     onChange={handleMiddleBlocker}
-                    checked={goodAtPosition.includes("欄中")}
+                    checked={goodAtPosition.includes("攔中")}
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                     攔中

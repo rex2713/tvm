@@ -80,9 +80,9 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pt-28 pb-10"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pb-10 pt-28"
         >
-          <Map/>
+          <Map />
         </section>
 
         {/* 首頁-隊伍 */}
@@ -100,23 +100,6 @@ const HomePage = () => {
               </div>
               {/* 下半部TeamCard */}
               <div className="no-scrollbar flex w-full justify-start gap-[1.5vw] overflow-x-auto ">
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
                 <TeamCard />
               </div>
             </div>
