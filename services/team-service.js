@@ -22,14 +22,27 @@ class TeamService {
       },
     );
   }
-  getUserByName(username) {
+  getUserByEmail(email) {
     let token;
     if (localStorage.getItem("user")) {
       token = JSON.parse(localStorage.getItem("user")).token;
     } else {
       token = "";
     }
-    return axios.get(Dafult_URl + "/team/" + username, {
+    return axios.get(Default_URL + "/team/" + email, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+  getRadomTenUsers() {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.get(Default_URL + "/team/auth/radomTen", {
       headers: {
         Authorization: token,
       },

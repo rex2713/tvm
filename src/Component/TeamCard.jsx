@@ -58,7 +58,7 @@ const TeamCard = () => {
         teamData.map((team) => {
           // console.log(team.court.courtName);
 
-          if (team.court.courtName != "臺北教育大學") return;
+          // if (team.court.courtName != "臺北教育大學") return;
           return (
             <div
               key={uuidv4()}
