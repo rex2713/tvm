@@ -52,9 +52,10 @@ const TeamCard = () => {
 
   return (
     // <div className="no-scrollbar flex w-full items-start justify-start gap-10 overflow-x-auto">
-    <div className="grid w-full grid-cols-3 2xl:grid-cols-4 items-start justify-items-center gap-y-10">
+    <div className="grid w-full grid-cols-3 items-start justify-items-center gap-y-10 2xl:grid-cols-4">
       {teamData &&
         teamData.length !== 0 &&
+        Array.isArray(teamData) &&
         teamData.map((team) => {
           // console.log(team.court.courtName);
 
@@ -62,7 +63,7 @@ const TeamCard = () => {
           return (
             <div
               key={uuidv4()}
-              className="flex h-[480px] w-[320px] 2xl:w-[340px] shrink-0 flex-col items-center justify-between gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30"
+              className="flex h-[480px] w-[320px] shrink-0 flex-col items-center justify-between gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 2xl:w-[340px]"
             >
               {/* 隊伍基本資訊 */}
               <div className="flex flex-col gap-2">
@@ -77,7 +78,7 @@ const TeamCard = () => {
                 {team.teamName}
               </div>
               {/* 球員名單 */}
-              <div className="grid w-full h-[300px] grid-cols-3 gap-x-2 gap-y-2">
+              <div className="grid h-[300px] w-full grid-cols-3 gap-x-2 gap-y-2">
                 {/* 隊長資料 */}
                 <div className="flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2">
                   <div className="flex w-full flex-col items-center justify-center gap-1">

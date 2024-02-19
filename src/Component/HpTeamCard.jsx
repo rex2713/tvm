@@ -54,6 +54,7 @@ const HpTeamCard = () => {
     <div className="no-scrollbar flex w-full items-start justify-start gap-[1.5vw] overflow-x-auto ">
       {teamData &&
         teamData.length !== 0 &&
+        Array.isArray(teamData) &&
         teamData.map((team) => {
           // console.log(team.court.courtName);
 

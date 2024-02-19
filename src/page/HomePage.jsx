@@ -1,6 +1,6 @@
 import React from "react";
 import TeamSearchBar from "../Component/TeamSearchBar";
-// import HpTeamCard from "../Component/HpTeamCard";
+import HpTeamCard from "../Component/HpTeamCard";
 import NewsLink from "../Component/NewsLink";
 import CupGame from "../Component/CupGame";
 import IndexTitle from "../Component/IndexTitle";
@@ -100,7 +100,7 @@ const HomePage = () => {
               </div>
               {/* 下半部TeamCard */}
 
-              {/* <HpTeamCard /> */}
+              <HpTeamCard />
             </div>
           </div>
         </section>
