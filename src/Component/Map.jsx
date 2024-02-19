@@ -437,7 +437,7 @@ const Map = () => {
                   <img src="/pic/courtCard/outdoorB/outdoorB3.jpg" alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/pic/courtCard/outdoorB/outdoorB4.jpg" alt="" />
+                  <img src="/pic/courtCard/outdoorB/outdoorB3.jpg" alt="" />
                 </SwiperSlide>
               </Swiper>
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
@@ -638,7 +638,7 @@ const Map = () => {
                   <img src="/pic/courtCard/outdoorB/outdoorB3.jpg" alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/pic/courtCard/outdoorB/outdoorB4.jpg" alt="" />
+                  <img src="/pic/courtCard/outdoorB/outdoorB3.jpg" alt="" />
                 </SwiperSlide>
               </Swiper>
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
@@ -706,7 +706,7 @@ const Map = () => {
                   <img src="/pic/courtCard/outdoorB/outdoorB1.jpg" alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/pic/courtCard/outdoorB/outdoorB4.jpg" alt="" />
+                  <img src="/pic/courtCard/outdoorB/outdoorB3.jpg" alt="" />
                 </SwiperSlide>
               </Swiper>
               <div className="flex h-1/2 w-full flex-col justify-between p-4">

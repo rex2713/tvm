@@ -257,7 +257,7 @@ const CourtInfo = () => {
           <div className="flex w-full items-center gap-10 rounded-xl bg-[#011E37] px-12 py-5 tracking-widest text-white/50">
             <img
               className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-              src="../../pic/icon/member/no login.png"
+              src="/pic/icon/member/no login.png"
               alt=""
             />
             <form action="" className="flex w-full items-center gap-5">
@@ -279,11 +279,7 @@ const CourtInfo = () => {
                 className="flex h-10 w-10 rounded-full bg-white/20 hover:bg-[#0492D9] "
               >
                 <div className="flex h-10 w-10 items-center justify-center opacity-20 hover:opacity-100">
-                  <img
-                    className="h-6 w-6 "
-                    src="../../pic/icon/send.svg"
-                    alt=""
-                  />
+                  <img className="h-6 w-6 " src="/pic/icon/send.svg" alt="" />
                 </div>
               </button>
             </form>
@@ -294,7 +290,7 @@ const CourtInfo = () => {
               <div className="w-7/8 flex items-center gap-10">
                 <img
                   className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl1.png"
+                  src="/pic/icon/member/girl1.png"
                   alt=""
                 />
                 <p className="w-150">
@@ -302,7 +298,7 @@ const CourtInfo = () => {
                 </p>
               </div>
               <div className="flex shrink-0 items-center justify-center gap-2">
-                <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
+                <img className="h-6 w-6" src="/pic/icon/star.svg" alt="" />
                 <p className="text-2xl font-bold">4</p>
               </div>
             </div>
@@ -310,7 +306,7 @@ const CourtInfo = () => {
               <div className="w-7/8 flex items-center gap-10">
                 <img
                   className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/men5.png"
+                  src="/pic/icon/member/men5.png"
                   alt=""
                 />
                 <p className="w-150">
@@ -318,7 +314,7 @@ const CourtInfo = () => {
                 </p>
               </div>
               <div className="flex shrink-0 items-center justify-center gap-2">
-                <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
+                <img className="h-6 w-6" src="/pic/icon/star.svg" alt="" />
                 <p className="text-2xl font-bold">5</p>
               </div>
             </div>
@@ -326,7 +322,7 @@ const CourtInfo = () => {
               <div className="w-7/8 flex items-center gap-10">
                 <img
                   className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
-                  src="../../pic/icon/member/girl2.png"
+                  src="/pic/icon/member/girl2.png"
                   alt=""
                 />
                 <p className="w-150">
@@ -334,18 +330,14 @@ const CourtInfo = () => {
                 </p>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <img className="h-6 w-6" src="../../pic/icon/star.svg" alt="" />
+                <img className="h-6 w-6" src="/pic/icon/star.svg" alt="" />
                 <p className="text-2xl font-bold">4</p>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-2 text-white/50">
             <button className="flex h-10 w-10 items-center justify-center rounded-full duration-500 hover:bg-white/10">
-              <img
-                className="opacity-50"
-                src="../../pic/icon/backward.svg"
-                alt=""
-              />
+              <img className="opacity-50" src="/pic/icon/backward.svg" alt="" />
             </button>
             <a
               className="flex h-10 w-14 items-center justify-center rounded-full bg-white/10 text-white/80 duration-500 hover:bg-white/10 hover:text-white/80"
@@ -360,11 +352,7 @@ const CourtInfo = () => {
               2
             </a>
             <button className="flex h-10 w-10 items-center justify-center rounded-full duration-500 hover:bg-white/10">
-              <img
-                className="opacity-50"
-                src="../../pic/icon/forward.svg"
-                alt=""
-              />
+              <img className="opacity-50" src="/pic/icon/forward.svg" alt="" />
             </button>
           </div>
         </section>
