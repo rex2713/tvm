@@ -13,6 +13,7 @@ import "../css/main.css";
 
 const HomePage = () => {
   useEffect(() => {
+    window.scroll(0, 0);
     //處理永久硬碟複製
     AuthService.copyRenderDisk()
       .then(() => {

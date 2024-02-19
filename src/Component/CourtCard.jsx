@@ -50,9 +50,7 @@ const CourtCard = () => {
   return (
     <div className="grid grid-cols-3 items-center justify-items-center gap-[2vw] gap-y-14">
       {console.log(Array.isArray(courtData))}
-      {courtData === null ? (
-        <div>Loading</div>
-      ) : (
+      {courtData &&
         courtData.length != 0 &&
         Array.isArray(courtData) &&
         courtData.map((court) => {
@@ -145,8 +143,7 @@ const CourtCard = () => {
               </a>
             </div>
           );
-        })
-      )}
+        })}
       {user && userRole == "admin" && (
         <button
           onClick={linkToAddCourt}

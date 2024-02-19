@@ -209,6 +209,7 @@ const MemberInfo = () => {
 
         window.alert("儲存資料成功");
         setMemberIconSrc(photoSelected);
+        navigate("/");
       })
       .catch((e) => {
         console.log(e.response.data);
@@ -228,7 +229,7 @@ const MemberInfo = () => {
             <div className="flex w-full items-start gap-2">
               <span className="w-24 shrink-0 tracking-widest">頭像選擇</span>
               <div className="flex w-full items-start gap-4">
-                <div className="grid w-2/3 grid-cols-6 gap-4 shrink-0">
+                <div className="grid w-2/3 shrink-0 grid-cols-6 gap-4">
                   <label
                     htmlFor="men1"
                     className="flex flex-col items-center justify-center"
@@ -498,7 +499,10 @@ const MemberInfo = () => {
                     {preview && (
                       <>
                         {/* <p className="text-center">預覽</p> */}
-                        <img src={preview} className="h-36 w-36 object-cover border rounded-full bg-clip-border" />
+                        <img
+                          src={preview}
+                          className="h-36 w-36 rounded-full border bg-clip-border object-cover"
+                        />
                         <button
                           onClick={handleClear}
                           className="w-1/2 rounded-full bg-black/30 py-1 text-white/70 hover:bg-black/50 hover:text-white"
