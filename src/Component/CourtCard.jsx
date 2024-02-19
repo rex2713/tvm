@@ -51,7 +51,7 @@ const CourtCard = () => {
     <div className="grid grid-cols-3 items-center justify-items-center gap-[2vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
-        Array.isArray(courtData) &&
+        // Array.isArray(courtData) &&
         courtData.map((court) => {
           return (
             <div
