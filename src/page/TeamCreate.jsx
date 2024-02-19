@@ -23,13 +23,14 @@ const TeamCreate = () => {
   const [court, setCourt] = useState("場地名稱");
   const [date, setDate] = useState(todayFix);
   const [teamLeader, setTeamLeader] = useState("");
-  const [friend, setFriend] = useState("");
   const [teamMember, setTeamMember] = useState([]);
   const [email, setEmail] = useState("");
   const [radomTenUsers, setRadomTenUsers] = useState([]);
+  const [message, setMessage] = useState("");
 
   const user = AuthService.getCurrentUser();
   useEffect(() => {
+    setTeamLeader(user.user._id);
     async function getData() {
       const response = await TeamService.getRadomTenUsers();
       setRadomTenUsers(response.data);
@@ -66,14 +67,14 @@ const TeamCreate = () => {
             })
             .includes(data.data._id)
         ) {
-          window.alert("此隊友已在隊伍中");
+          setMessage("此隊友已在隊伍中");
         } else if (teamMember.length >= 5) {
-          window.alert("此隊伍已滿員");
+          setMessage("此隊伍已滿員");
         } else if (email == "") {
-          window.alert("信箱不能為空");
+          setMessage("信箱不能為空");
         } else {
           if (data.data == "") {
-            window.alert("找不到此用戶");
+            setMessage("找不到此用戶");
           } else {
             setTeamMember([...teamMember, data.data]);
           }
@@ -102,9 +103,9 @@ const TeamCreate = () => {
         })
         .includes(radomUser._id)
     ) {
-      window.alert("此隊友已在隊伍中");
+      setMessage("此隊友已在隊伍中");
     } else if (teamMember.length >= 5) {
-      window.alert("此隊伍已滿員");
+      setMessage("此隊伍已滿員");
     } else {
       console.log(e.target.checked);
       setTeamMember([...teamMember, radomUser]);
@@ -117,8 +118,33 @@ const TeamCreate = () => {
   //處理建立隊伍按鈕
   const handleTeamCreate = (e) => {
     e.preventDefault();
-    // console.log(user.user._id);
-    setTeamLeader(user.user._id);
+    const teamMemberId = teamMember.map((member) => {
+      return member._id;
+    });
+
+    if (teamName == "隊伍名稱" || teamName == "") {
+      setMessage("隊伍名稱不能為空");
+      return;
+    } else if (court == "場地名稱" || court == "") {
+      setMessage("場地名稱不能為空");
+      return;
+    }
+    const formData = new FormData();
+
+    formData.append("court", court);
+    formData.append("teamName", teamName);
+    formData.append("date", date);
+    formData.append("teamLeader", teamLeader);
+    formData.append("teamMember", JSON.stringify(teamMemberId));
+    console.log(Object.fromEntries(formData));
+
+    TeamService.teamCreate(formData)
+      .then(() => {
+        window.alert("創建隊伍成功");
+      })
+      .catch((e) => {
+        setMessage(e.response.data);
+      });
   };
 
   return (
@@ -148,10 +174,15 @@ const TeamCreate = () => {
               id="selectCourt"
               className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
               onChange={handleCourt}
+              defaultValue="請選擇"
             >
-              <option value="台北商業大學">台北商業大學</option>
-              <option value="台北師範大學">台北師範大學</option>
-              <option value="台灣大學">台灣大學</option>
+              <option value="請選擇" disabled hidden>
+                請選擇
+              </option>
+              <option value="臺北商業大學">臺北商業大學</option>
+              <option value="臺北教育大學">臺北教育大學</option>
+              <option value="臺北師範大學">臺北師範大學</option>
+              <option value="臺灣大學">臺灣大學</option>
               <option value="百齡高中">百齡高中</option>
             </select>
           </label>
@@ -268,6 +299,14 @@ const TeamCreate = () => {
               </label>
             </div>
           </label> */}
+
+          {/* 報錯訊息 */}
+          {message ? (
+            <div className="h-5 text-red-500">{message}</div>
+          ) : (
+            <div className="h-5"></div>
+          )}
+
           {/* 按鈕 */}
           <button
             onClick={handleTeamCreate}
