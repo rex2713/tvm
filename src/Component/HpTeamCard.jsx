@@ -53,6 +53,7 @@ const HpTeamCard = () => {
   return (
     <div className="no-scrollbar flex w-full items-start justify-start gap-[1.5vw] overflow-x-auto ">
       {teamData &&
+        Array.isArray(team.teamMember) &&
         teamData.length !== 0 &&
         teamData.map((team) => {
           // console.log(team.court.courtName);
@@ -76,7 +77,7 @@ const HpTeamCard = () => {
                 {team.teamName}
               </div>
               {/* 球員名單 */}
-              <div className="grid w-full h-[300px] grid-cols-3 gap-x-2 gap-y-2">
+              <div className="grid h-[300px] w-full grid-cols-3 gap-x-2 gap-y-2">
                 {/* 隊長資料 */}
                 <div className="flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2">
                   <div className="flex w-full flex-col items-center justify-center gap-1">
@@ -85,12 +86,12 @@ const HpTeamCard = () => {
                       src={team.teamLeader.photoSelected}
                       className="h-14 w-14  shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
                     />
-                    <p className="w-full h-5 whitespace-nowrap text-center text-sm tracking-wide text-white">
+                    <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                       {team.teamLeader.username}
                     </p>
                   </div>
                   <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-                    <div className="flex w-full h-4 items-center justify-center">
+                    <div className="flex h-4 w-full items-center justify-center">
                       <Swiper
                         loop={false}
                         speed={500}
@@ -115,7 +116,7 @@ const HpTeamCard = () => {
                           })}
                       </Swiper>
                     </div>
-                    <p className="whitespace-nowrap h-4">
+                    <p className="h-4 whitespace-nowrap">
                       {team.teamLeader.skillLevel}
                     </p>
                   </div>
@@ -134,12 +135,12 @@ const HpTeamCard = () => {
                             src={member.photoSelected}
                             className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border"
                           />
-                          <p className="w-full h-5 whitespace-nowrap text-center text-sm tracking-wide text-white">
+                          <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                             {member.username}
                           </p>
                         </div>
                         <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-                          <div className="flex w-full h-4 items-center justify-center">
+                          <div className="flex h-4 w-full items-center justify-center">
                             <Swiper
                               loop={false}
                               speed={500}
@@ -164,7 +165,7 @@ const HpTeamCard = () => {
                                 })}
                             </Swiper>
                           </div>
-                          <p className="whitespace-nowrap h-4">
+                          <p className="h-4 whitespace-nowrap">
                             {member.skillLevel}
                           </p>
                         </div>
