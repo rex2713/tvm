@@ -5,6 +5,19 @@ class TeamService {
   getAllTeam() {
     return axios.get(Default_URL + "/team");
   }
+  teamCreate(formData) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.post(Default_URL + "/team/auth/teamCreate", formData, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
   teamJoin(teamId, userId) {
     let token;
     if (localStorage.getItem("user")) {
