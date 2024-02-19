@@ -10,7 +10,7 @@ import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
 import { v4 as uuidv4 } from "uuid";
 
-const TeamCard = () => {
+const HpTeamCard = () => {
   //取出所有隊伍資料
   const [teamData, setTeamData] = useState(null);
 
@@ -51,8 +51,7 @@ const TeamCard = () => {
   };
 
   return (
-    // <div className="no-scrollbar flex w-full items-start justify-start gap-10 overflow-x-auto">
-    <div className="grid w-full grid-cols-3 2xl:grid-cols-4 items-start justify-items-center gap-y-10">
+    <div className="no-scrollbar flex w-full items-start justify-start gap-[1.5vw] overflow-x-auto ">
       {teamData &&
         teamData.length !== 0 &&
         teamData.map((team) => {
@@ -62,7 +61,7 @@ const TeamCard = () => {
           return (
             <div
               key={uuidv4()}
-              className="flex h-[480px] w-[320px] 2xl:w-[340px] shrink-0 flex-col items-center justify-between gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30"
+              className="flex h-[480px] w-[380px] shrink-0 flex-col items-center justify-between gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30"
             >
               {/* 隊伍基本資訊 */}
               <div className="flex flex-col gap-2">
@@ -84,14 +83,14 @@ const TeamCard = () => {
                     <img
                       loading="lazy"
                       src={team.teamLeader.photoSelected}
-                      className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
+                      className="h-14 w-14  shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
                     />
-                    <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                    <p className="w-full h-5 whitespace-nowrap text-center text-sm tracking-wide text-white">
                       {team.teamLeader.username}
                     </p>
                   </div>
                   <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-                    <div className="flex h-4 w-full items-center justify-center">
+                    <div className="flex w-full h-4 items-center justify-center">
                       <Swiper
                         loop={false}
                         speed={500}
@@ -116,7 +115,7 @@ const TeamCard = () => {
                           })}
                       </Swiper>
                     </div>
-                    <p className="h-4 whitespace-nowrap">
+                    <p className="whitespace-nowrap h-4">
                       {team.teamLeader.skillLevel}
                     </p>
                   </div>
@@ -135,12 +134,12 @@ const TeamCard = () => {
                             src={member.photoSelected}
                             className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border"
                           />
-                          <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                          <p className="w-full h-5 whitespace-nowrap text-center text-sm tracking-wide text-white">
                             {member.username}
                           </p>
                         </div>
                         <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-                          <div className="flex h-4 w-full items-center justify-center">
+                          <div className="flex w-full h-4 items-center justify-center">
                             <Swiper
                               loop={false}
                               speed={500}
@@ -165,7 +164,7 @@ const TeamCard = () => {
                                 })}
                             </Swiper>
                           </div>
-                          <p className="h-4 whitespace-nowrap">
+                          <p className="whitespace-nowrap h-4">
                             {member.skillLevel}
                           </p>
                         </div>
@@ -195,4 +194,4 @@ const TeamCard = () => {
   );
 };
 
-export default TeamCard;
+export default HpTeamCard;

@@ -120,7 +120,12 @@ const CourtInfo = () => {
             </div>
           </article>
           {/* Google地圖 */}
-          <div className="mt-8 h-80 w-5/12 rounded-xl bg-white py-1"></div>
+          <div className="mt-8  w-5/12 py-1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4688.712712909191!2d121.50749111670898!3d25.017380504548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c0a858831b%3A0x4bc743b409278152!2z57ag5a-255-z5o6S55CD5aC0!5e0!3m2!1szh-TW!2stw!4v1708307906466!5m2!1szh-TW!2stw"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            className="w-full h-80 rounded-xl border border-transparent bg-clip-border">
+            </iframe>
+          </div>
         </section>
         {/* 加入隊伍 */}
         <section className="flex w-full flex-col items-center justify-center gap-5 px-10">

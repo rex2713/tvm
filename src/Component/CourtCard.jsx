@@ -48,17 +48,17 @@ const CourtCard = () => {
   //
 
   return (
-    <div className="grid grid-cols-3 items-center justify-items-center gap-x-[5vw] gap-y-14">
+    <div className="grid grid-cols-3 items-center justify-items-center gap-[3vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
           return (
             <div
               key={court._id}
-              className="courtCard flex w-full flex-col overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+              className="courtCard flex h-full w-full flex-col overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
             >
               {/* 輪播圖 */}
-              <figure className="w-full">
+              <figure className="h-3/5 w-full">
                 <Swiper
                   style={{
                     "--swiper-navigation-color": "#fff",
@@ -90,10 +90,10 @@ const CourtCard = () => {
               {/* 內容 */}
               <a
                 onClick={handleToCourtInfo}
-                className="flex h-2/5 w-full cursor-pointer flex-col gap-2 px-6 py-4"
+                className="flex h-2/5 w-full cursor-pointer flex-col justify-between gap-2 px-6 py-4"
               >
                 {/* 標題欄 */}
-                <div className="flex w-full flex-col flex-wrap items-start gap-2 border-b border-white/40 pb-2">
+                <div className="flex w-full flex-col flex-wrap items-start gap-2">
                   <div className="flex w-full flex-wrap justify-between">
                     <h3 className="text-left text-2xl tracking-wider text-[#FFCC66]">
                       {court.courtName}
@@ -113,7 +113,7 @@ const CourtCard = () => {
                   <p className="text-[#FFFFFF]/70">{court.courtType}</p>
                 </div>
                 {/* 下方資訊 */}
-                <div className="flex w-full flex-wrap justify-between gap-4 text-white">
+                <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-4 text-white">
                   {/* icon */}
                   <figure className="flex gap-x-2">
                     <span>{court.traffic}</span>
