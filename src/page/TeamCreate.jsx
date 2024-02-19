@@ -206,7 +206,7 @@ const TeamCreate = () => {
                             type="checkbox"
                             className="hidden"
                           ></input>
-                          <div className="flex h-48 w-32 flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 duration-700 hover:border-white/70 hover:bg-[#FCA311]/90 2xl:w-40">
+                          <div className="flex h-48 w-32 flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 duration-300 hover:border-white/70 hover:bg-[#FCA311]/90 2xl:w-40">
                             <img
                               className="h-20 w-20 shrink-0 rounded-full bg-white bg-clip-border"
                               src={radomUser.photoSelected}
@@ -216,14 +216,18 @@ const TeamCreate = () => {
                               <p className="h-5 w-full text-nowrap text-center text-lg font-bold tracking-widest">
                                 {radomUser.username}
                               </p>
-                              <p className="h-4 text-nowrap text-sm tracking-widest text-white/70">
+                              <p className="no-scrollbar flex h-4 w-full text-nowrap text-center text-sm tracking-widest text-white/70 gap-1 overflow-x-auto">
                                 {radomUser.goodAtPosition.map((position) => {
                                   return (
-                                    <span key={uuidv4()}>{position} </span>
+                                    <span
+                                      key={uuidv4()}
+                                    >
+                                      {position}{" "}
+                                    </span>
                                   );
                                 })}
                               </p>
-                              <p className="h-4 text-nowrap text-sm tracking-widest text-white/70">
+                              <p className="h-4 text-nowrap text-sm tracking-widest text-white/70 ">
                                 {radomUser.skillLevel}
                               </p>
                             </div>

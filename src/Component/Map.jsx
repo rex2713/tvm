@@ -210,7 +210,7 @@ const Map = () => {
         <div className="relative flex h-[4200px] w-[4200px]">
           <img
             className="h-full w-full"
-            src="../pic/map.jpg"
+            src="/pic/map.jpg"
             alt=""
           />
 
