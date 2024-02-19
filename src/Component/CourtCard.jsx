@@ -51,6 +51,7 @@ const CourtCard = () => {
     <div className="grid grid-cols-3 items-center justify-items-center gap-[2vw] gap-y-14">
       {courtData &&
         courtData.length != 0 &&
+        Array.isArray(courtData) &&
         courtData.map((court) => {
           return (
             <div
@@ -95,7 +96,7 @@ const CourtCard = () => {
                 {/* 標題欄 */}
                 <div className="flex w-full flex-col flex-wrap items-start gap-2">
                   <div className="flex w-full flex-wrap justify-between">
-                    <h3 className="text-left text-2xl tracking-wider text-[#FFCC66] text-wrap">
+                    <h3 className="text-wrap text-left text-2xl tracking-wider text-[#FFCC66]">
                       {court.courtName}
                     </h3>
                     <div className="flex items-center gap-x-2">
