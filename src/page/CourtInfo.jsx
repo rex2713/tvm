@@ -1,7 +1,7 @@
 import React from "react";
 import { Rating } from "@material-tailwind/react";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -21,6 +21,9 @@ import "../css/swiper.css";
 import "swiper/css/effect-coverflow";
 
 const CourtInfo = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <section className="flex flex-col items-center justify-between gap-2 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
       <figure className="flex h-[50vh] w-full flex-col gap-2">
@@ -57,16 +60,28 @@ const CourtInfo = () => {
           className="mySwiper flex h-full justify-center rounded-2xl"
         >
           <SwiperSlide className="h-full w-1/2 rounded-3xl ">
-            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA1.jpg" />
+            <img
+              className="rounded-3xl"
+              src="./pic/courtCard/outdoorA/outdoorA1.jpg"
+            />
           </SwiperSlide>
           <SwiperSlide className="h-full w-1/2 rounded-3xl ">
-            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA2.jpg" />
+            <img
+              className="rounded-3xl"
+              src="./pic/courtCard/outdoorA/outdoorA2.jpg"
+            />
           </SwiperSlide>
           <SwiperSlide className="h-full w-1/2 rounded-3xl ">
-            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA3.jpg" />
+            <img
+              className="rounded-3xl"
+              src="./pic/courtCard/outdoorA/outdoorA3.jpg"
+            />
           </SwiperSlide>
           <SwiperSlide className="h-full w-1/2 rounded-3xl ">
-            <img className="rounded-3xl" src="./pic/courtCard/outdoorA/outdoorA4.jpg" />
+            <img
+              className="rounded-3xl"
+              src="./pic/courtCard/outdoorA/outdoorA4.jpg"
+            />
           </SwiperSlide>
         </Swiper>
       </figure>
@@ -121,10 +136,13 @@ const CourtInfo = () => {
           </article>
           {/* Google地圖 */}
           <div className="mt-8  w-5/12 py-1">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4688.712712909191!2d121.50749111670898!3d25.017380504548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c0a858831b%3A0x4bc743b409278152!2z57ag5a-255-z5o6S55CD5aC0!5e0!3m2!1szh-TW!2stw!4v1708307906466!5m2!1szh-TW!2stw"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            className="w-full h-80 rounded-xl border border-transparent bg-clip-border">
-            </iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4688.712712909191!2d121.50749111670898!3d25.017380504548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c0a858831b%3A0x4bc743b409278152!2z57ag5a-255-z5o6S55CD5aC0!5e0!3m2!1szh-TW!2stw!4v1708307906466!5m2!1szh-TW!2stw"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-80 w-full rounded-xl border border-transparent bg-clip-border"
+            ></iframe>
           </div>
         </section>
         {/* 加入隊伍 */}
