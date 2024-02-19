@@ -28,13 +28,13 @@ const MemberIcon = ({ memberIconSrc, setMemberIconSrc }) => {
           <img
             src={user.user.photoSelected}
             alt=""
-            className="absolute h-11 w-11 [transform:translateZ(5px)] border border-transparent rounded-full bg-clip-border"
+            className="absolute h-11 w-11 [transform:translateZ(5px)] border border-transparent rounded-full bg-clip-border object-cover"
           />
         ) : (
           <img
             src="/pic/icon/member/no login.png"
             alt=""
-            className="absolute h-11 w-11 [transform:translateZ(5px)] border border-transparent rounded-full bg-clip-border"
+            className="absolute h-11 w-11 [transform:translateZ(5px)] border border-transparent rounded-full bg-clip-border object-cover"
           />
         )}
         <img

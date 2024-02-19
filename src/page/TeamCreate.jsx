@@ -239,7 +239,7 @@ const TeamCreate = () => {
                           ></input>
                           <div className="flex h-48 w-32 flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 duration-300 hover:border-white/70 hover:bg-[#FCA311]/90 2xl:w-40">
                             <img
-                              className="h-20 w-20 shrink-0 rounded-full bg-white bg-clip-border"
+                              className="h-20 w-20 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover"
                               src={radomUser.photoSelected}
                               alt=""
                             />
@@ -354,7 +354,7 @@ const TeamCreate = () => {
                 <img
                   loading="lazy"
                   src={user.user.photoSelected}
-                  className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
+                  className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66] object-cover"
                 />
                 <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                   {user.user.username}
@@ -409,7 +409,7 @@ const TeamCreate = () => {
                       <img
                         loading="lazy"
                         src={member.photoSelected}
-                        className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
+                        className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover"
                       />
                       <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                         {member.username}

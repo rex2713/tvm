@@ -51,11 +51,11 @@ const MemberSign = () => {
   };
 
   return (
-    <main className="relative flex h-[70vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
-      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-10 ">
+    <main className="relative flex h-[80vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
+      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
         <form
           action=""
-          className="flex h-3/5 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white"
+          className="flex h-2/3 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white"
         >
           {/* <!-- 資料輸入欄 --> */}
           <label htmlFor="account" className="flex w-full items-center gap-2">
@@ -107,9 +107,7 @@ const MemberSign = () => {
         </form>
         {/* 錯誤訊息 */}
         {message && (
-          <div className="flex items-center justify-center">
-            <p className="text-lg text-[#FFCC66]">{message}</p>
-          </div>
+            <p className="h-5 w-full text-center text-lg text-[#FFCC66]">{message}</p>
         )}
 
         {/* <!-- 註冊按鈕 --> */}
