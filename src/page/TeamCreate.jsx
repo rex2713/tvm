@@ -349,7 +349,7 @@ const TeamCreate = () => {
               <div className="flex w-full flex-col items-center justify-center gap-1">
                 <img
                   loading="lazy"
-                  src={user.user.photoSelected}
+                  src={user && user.user.photoSelected}
                   className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
                 />
                 <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">

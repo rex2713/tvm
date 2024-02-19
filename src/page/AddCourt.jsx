@@ -108,6 +108,7 @@ const AddCourt = () => {
   //設定input更新file
   const handleFileChange = (e) => {
     const filesArray = Array.from(e.target.files);
+    // console.log(filesArray);
     setFile(filesArray);
   };
   //設定上傳圖片預覽畫面
@@ -166,10 +167,10 @@ const AddCourt = () => {
             return (
               <div
                 key={court._id}
-                className="courtCard w-full h-[480px] overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
               >
                 {/* 輪播圖 */}
-                <figure className="w-full h-3/5">
+                <figure className="h-3/5 w-full">
                   <Swiper
                     style={{
                       "--swiper-navigation-color": "#fff",
@@ -199,7 +200,7 @@ const AddCourt = () => {
                   </Swiper>
                 </figure>
                 {/* 內容 */}
-                <div className="flex h-2/5 w-full flex-col gap-2 px-6 py-4 justify-between">
+                <div className="flex h-2/5 w-full flex-col justify-between gap-2 px-6 py-4">
                   {/* 標題欄 */}
                   <div className="flex w-full flex-col flex-wrap items-start gap-2">
                     <div className="flex w-full flex-wrap justify-between">
@@ -223,7 +224,7 @@ const AddCourt = () => {
                     </p>
                   </div>
                   {/* 下方資訊 */}
-                  <div className="flex w-full flex-wrap justify-between gap-4 text-white border-t border-white/40 pt-4">
+                  <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-4 text-white">
                     {/* icon */}
                     <figure className="flex gap-x-2">
                       <span>{court.traffic}</span>

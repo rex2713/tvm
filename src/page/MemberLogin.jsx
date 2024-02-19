@@ -69,15 +69,17 @@ const MemberLogin = () => {
           </label>
         </form>
         {/* 錯誤訊息 */}
-        {message && (
-          <div className="flex items-center justify-center ">
+        {message ? (
+          <div className="flex h-5 items-center justify-center ">
             <p className="text-lg text-[#FFCC66]">{message}</p>
           </div>
+        ) : (
+          <div className="h-5"></div>
         )}
         {/* <!-- 登入按鈕 --> */}
         <button
           onClick={handleLogin}
-          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg tracking-[.2rem] text-white hover:bg-[#05abff] font-bold duration-300"
+          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           登入
         </button>

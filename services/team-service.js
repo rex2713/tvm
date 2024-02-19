@@ -61,6 +61,19 @@ class TeamService {
       },
     });
   }
+  getUserTeams(_id) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.get(Default_URL + "/team/auth/ownTeam/" + _id, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
 }
 
 export default new TeamService();
