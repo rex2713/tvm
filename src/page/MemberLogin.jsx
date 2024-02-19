@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MemberLogin = () => {
   const navigate = useNavigate();
@@ -30,7 +31,14 @@ const MemberLogin = () => {
       // console.log(response);
       localStorage.setItem("user", JSON.stringify(response.data));
       setIsLogIn(true);
-      window.alert("登入成功，現在將為您導向個人資料頁面");
+      Swal.fire({
+        title: "登入成功",
+        // text: "現在將為您導向個人資料頁面",
+        icon: "success",
+        background: "#123659",
+        color: "#FFFFFF",
+        confirmButtonColor: "#0492D9",
+      });
       navigate("/member/Info");
     } catch (e) {
       // console.log(e);
@@ -41,7 +49,7 @@ const MemberLogin = () => {
   return (
     <main className="relative flex h-[60vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       {/* <!-- 登入表單 --> */}
-      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-10 ">
+      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
         <form
           action=""
           className="flex h-1/2 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white "

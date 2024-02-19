@@ -85,19 +85,19 @@ const Map = () => {
   //監聽滾動數值並console
   let scrollTimer = null;
   const handleScroll = () => {
-    //清除計時器
-    clearTimeout(scrollTimer);
-    //延遲兩秒顯示目前scroll位置
-    scrollTimer = setTimeout(() => {
-      //獲取容器寬高
-      const containerWidth = mapContainerRef.current.offsetWidth;
-      const containerHeight = mapContainerRef.current.offsetHeight;
-      //獲取座標值
-      const scrollTop = mapContainerRef.current.scrollTop;
-      const scrollLeft = mapContainerRef.current.scrollLeft;
-      console.log("scrollTop:", scrollTop + containerHeight / 2);
-      console.log("scrollLeft:", scrollLeft + containerWidth / 2);
-    }, 2000);
+    // //清除計時器
+    // clearTimeout(scrollTimer);
+    // //延遲兩秒顯示目前scroll位置
+    // scrollTimer = setTimeout(() => {
+    //   //獲取容器寬高
+    //   const containerWidth = mapContainerRef.current.offsetWidth;
+    //   const containerHeight = mapContainerRef.current.offsetHeight;
+    //   //獲取座標值
+    //   const scrollTop = mapContainerRef.current.scrollTop;
+    //   const scrollLeft = mapContainerRef.current.scrollLeft;
+    //   console.log("scrollTop:", scrollTop + containerHeight / 2);
+    //   console.log("scrollLeft:", scrollLeft + containerWidth / 2);
+    // }, 2000);
   };
 
   const navigate = useNavigate();
@@ -208,11 +208,7 @@ const Map = () => {
                 no-scrollbar h-full overflow-scroll rounded-3xl"
       >
         <div className="relative flex h-[4200px] w-[4200px]">
-          <img
-            className="h-full w-full"
-            src="../pic/map.jpg"
-            alt=""
-          />
+          <img className="h-full w-full" src="/pic/map.jpg" alt="" />
 
           {/* 臺北教育大學 */}
           <div className="absolute bottom-[1455px] left-[2243px] flex w-12 flex-col-reverse items-center gap-1">

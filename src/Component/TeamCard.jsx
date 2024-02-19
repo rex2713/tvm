@@ -84,7 +84,7 @@ const TeamCard = () => {
                     <img
                       loading="lazy"
                       src={team.teamLeader.photoSelected}
-                      className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
+                      className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
                     />
                     <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                       {team.teamLeader.username}
@@ -133,7 +133,7 @@ const TeamCard = () => {
                           <img
                             loading="lazy"
                             src={member.photoSelected}
-                            className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border"
+                            className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover"
                           />
                           <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                             {member.username}
@@ -179,10 +179,10 @@ const TeamCard = () => {
                     onClick={handleTeamJoin}
                     className="group relative flex h-[145px] w-full flex-col items-center gap-1 rounded-2xl border border-transparent bg-black/10 p-2 duration-500 hover:border-white/30 hover:bg-black/20"
                   >
-                    <div className="absolute top-4 whitespace-nowrap text-center text-base font-medium leading-6 tracking-wider text-white/70 duration-500 group-hover:text-white">
+                    <div className="absolute top-6 whitespace-nowrap text-center text-sm font-bold leading-6 tracking-wider text-white/70 duration-500 group-hover:text-white">
                       加入隊伍
                     </div>
-                    <p className="absolute top-8 text-6xl text-[#FFCC66]/50 duration-500 group-hover:text-[#FFCC66]">
+                    <p className="absolute top-12 text-6xl text-[#FFCC66]/50 duration-500 group-hover:text-[#FFCC66]">
                       +
                     </p>
                   </button>
