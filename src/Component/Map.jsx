@@ -208,7 +208,11 @@ const Map = () => {
                 no-scrollbar h-full overflow-scroll rounded-3xl"
       >
         <div className="relative flex h-[4200px] w-[4200px]">
-          <img className="h-full w-full" src="../pic/map.jpg" alt="" />
+          <img
+            className="h-full w-full"
+            src="../pic/map.jpg"
+            alt=""
+          />
 
           {/* 臺北教育大學 */}
           <div className="absolute bottom-[1455px] left-[2243px] flex w-12 flex-col-reverse items-center gap-1">

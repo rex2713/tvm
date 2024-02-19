@@ -9,13 +9,13 @@ const HeaderNavBar = ({
   setMemberIconSrc,
 }) => {
   return (
-    <header className="bg-parent fixed z-20 flex h-28 w-full items-center justify-between px-[5vw]">
+    <header className="bg-parent fixed z-20 flex h-28 w-full items-center justify-between px-[5vw] pointer-events-none">
       <div className="flex">
         <div className="h-15 mr-2 shrink-0 rounded-full ">
           <img src="../pic/logo.svg" alt="" />
         </div>
       </div>
-      <nav className="leading-15 0 ">
+      <nav className="leading-15 0 pointer-events-auto">
         <div className="flex items-center justify-between gap-x-2">
           <ul className="mx-2 flex h-11 items-center justify-center space-x-2 rounded-full  bg-gray-800/70 px-1 leading-10 text-white duration-500 hover:bg-gray-800">
             <li>

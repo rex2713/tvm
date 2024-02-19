@@ -123,7 +123,7 @@ const TeamCreate = () => {
 
   return (
     // padding有調整過
-    <main className="flex w-full justify-around bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
+    <main className="flex w-full justify-center gap-[3vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
       {/* 左側創建隊伍表單 */}
       <div className="flex w-3/5 flex-col gap-4">
         <h3 className="w-full text-2xl font-bold text-[#FFCC66]">隊伍資訊</h3>
@@ -171,14 +171,21 @@ const TeamCreate = () => {
           >
             <span className="w-24 shrink-0 tracking-widest">增加隊員</span>
             <div className="flex w-full flex-col gap-4 overflow-clip">
-              <input
-                onChange={handleEmail}
-                type="text"
-                id="teammate"
-                className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white/50 focus:bg-white/90 focus:text-black/90"
-                placeholder="請輸入隊員信箱"
-              />
-              <button onClick={handleFriend}>加入</button>
+              <div className="flex w-full justify-between gap-2">
+                <input
+                  onChange={handleEmail}
+                  type="text"
+                  id="teammate"
+                  className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white/50 focus:bg-white/90 focus:text-black/90"
+                  placeholder="請輸入隊員信箱"
+                />
+                <button
+                  onClick={handleFriend}
+                  className="shrink-0 rounded-md bg-black/10 px-4 py-1 font-bold text-white/70 duration-500 hover:bg-[#FCA311]/90 hover:text-white"
+                >
+                  加入
+                </button>
+              </div>
               <div className="flex w-full flex-col gap-2">
                 <p className="text-white/70">隨機加入隊友</p>
                 <div className="no-scrollbar flex w-full justify-start gap-[1vw] overflow-x-auto">
@@ -197,26 +204,26 @@ const TeamCreate = () => {
                               handleRadomUser(radomUser, e);
                             }}
                             type="checkbox"
-                            className="peer hidden"
+                            className="hidden"
                           ></input>
-                          <div className=" flex h-48 w-40 flex-col items-center justify-center gap-4 rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 peer-checked:bg-[#FCA311]">
+                          <div className="flex h-48 w-32 flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 duration-700 hover:border-white/70 hover:bg-[#FCA311]/90 2xl:w-40">
                             <img
-                              className="w-1/2 rounded-full bg-white bg-clip-border"
+                              className="h-20 w-20 shrink-0 rounded-full bg-white bg-clip-border"
                               src={radomUser.photoSelected}
                               alt=""
                             />
                             <div className="flex flex-col items-center justify-center gap-1">
-                              <p className="text-lg font-bold tracking-widest">
+                              <p className="h-5 w-full text-nowrap text-center text-lg font-bold tracking-widest">
                                 {radomUser.username}
                               </p>
-                              <p className="text-sm tracking-widest text-white/70">
+                              <p className="h-4 text-nowrap text-sm tracking-widest text-white/70">
                                 {radomUser.goodAtPosition.map((position) => {
                                   return (
                                     <span key={uuidv4()}>{position} </span>
                                   );
                                 })}
                               </p>
-                              <p className="text-sm tracking-widest text-white/70">
+                              <p className="h-4 text-nowrap text-sm tracking-widest text-white/70">
                                 {radomUser.skillLevel}
                               </p>
                             </div>
@@ -271,21 +278,21 @@ const TeamCreate = () => {
           {/* 按鈕 */}
           <button
             onClick={handleTeamCreate}
-            className="mt-4 w-1/5 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+            className="mt-4 shrink-0 rounded-xl border-2 border-white/50 bg-[#0492D9] px-10 py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
           >
             建立隊伍
           </button>
         </form>
       </div>
       {/* 右側即時預覽 */}
-      <div className="flex w-1/4 flex-col items-center gap-4">
+      <div className="flex w-1/4 flex-col gap-4">
         <h3 className="w-full text-2xl font-bold text-[#FFCC66]">即時預覽</h3>
         <div
           key={uuidv4()}
-          className="flex w-[380px] shrink-0 flex-col items-center justify-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30"
+          className="flex h-[480px] w-[320px] shrink-0 flex-col items-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 2xl:w-[360px]"
         >
           {/* 隊伍基本資訊 */}
-          <div>
+          <div className="flex flex-col gap-2">
             <h3 className="whitespace-nowrap text-center text-2xl font-bold leading-10 tracking-widest text-white">
               {court}
             </h3>
@@ -293,20 +300,20 @@ const TeamCreate = () => {
               {date}
             </h2>
           </div>
-          <div className="flex w-4/5 items-center justify-center whitespace-nowrap border-t border-white/30 px-4 py-2 text-2xl font-bold leading-8 tracking-wider text-white/70">
+          <div className="flex w-4/5 items-center justify-center whitespace-nowrap border-t border-white/30 px-4 pt-2 text-2xl font-bold leading-8 tracking-wider text-white/70">
             {teamName}
           </div>
           {/* 球員名單 */}
-          <div className="grid w-full grid-cols-3 items-center justify-between gap-x-2 gap-y-2">
+          <div className="grid h-[300px] w-full grid-cols-3 gap-x-2 gap-y-2">
             {/* 隊長資料 */}
-            <div className="flex w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2">
+            <div className="flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2">
               <div className="flex w-full flex-col items-center justify-center gap-1">
                 <img
                   loading="lazy"
                   src={user.user.photoSelected}
-                  className="h-14 w-14  rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
+                  className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-2 outline-[#FFCC66]"
                 />
-                <p className="w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                   {user.user.username}
                 </p>
               </div>
@@ -336,7 +343,7 @@ const TeamCreate = () => {
                       })}
                   </Swiper>
                 </div>
-                <p className="whitespace-nowrap">{user.user.skillLevel}</p>
+                <p className="h-4 whitespace-nowrap">{user.user.skillLevel}</p>
               </div>
             </div>
             {/* 隊員資料 */}
@@ -346,12 +353,12 @@ const TeamCreate = () => {
                 return (
                   <div
                     key={uuidv4()}
-                    className="relative flex w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2"
+                    className="group relative flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl border border-transparent bg-black/20 p-2 duration-500 hover:border-white/30 hover:bg-black/30"
                   >
                     <button
                       id={member._id}
                       onClick={handleDelete}
-                      className="absolute right-1 top-1 h-5 w-5 rounded-full bg-gray-500 text-white"
+                      className="leading-0 absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white/10 text-white/50 duration-500 group-hover:bg-white/50 group-hover:text-white"
                     >
                       -
                     </button>
@@ -359,14 +366,14 @@ const TeamCreate = () => {
                       <img
                         loading="lazy"
                         src={member.photoSelected}
-                        className="h-14 w-14  rounded-full bg-white bg-clip-border"
+                        className="h-14 w-14 shrink-0 rounded-full bg-white bg-clip-border"
                       />
-                      <p className="w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                      <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                         {member.username}
                       </p>
                     </div>
                     <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
-                      <div className="flex w-full items-center justify-center">
+                      <div className="flex h-4 w-full items-center justify-center">
                         <Swiper
                           loop={false}
                           speed={500}
@@ -391,7 +398,9 @@ const TeamCreate = () => {
                             })}
                         </Swiper>
                       </div>
-                      <p className="whitespace-nowrap">{member.skillLevel}</p>
+                      <p className="h-4 whitespace-nowrap">
+                        {member.skillLevel}
+                      </p>
                     </div>
                   </div>
                 );
@@ -401,14 +410,12 @@ const TeamCreate = () => {
               <button
                 // data-teamid={team._id}
                 // onClick={handleTeamJoin}
-                className="group relative flex h-full w-full flex-col items-center gap-1 rounded-2xl border border-transparent bg-black/10 p-2 duration-500 hover:border-white/30 hover:bg-black/20"
+                className="group relative flex h-[145px] w-full flex-col items-center gap-1 rounded-2xl bg-black/10"
               >
-                <div className="absolute top-4 whitespace-nowrap text-center text-base font-medium leading-6 tracking-wider text-white/70 duration-500 group-hover:text-white">
-                  加入隊伍
-                </div>
-                <p className="absolute top-8 text-6xl text-[#FFCC66]/50 duration-500 group-hover:text-[#FFCC66]">
-                  +
-                </p>
+                {/* <div className="absolute top-4 whitespace-nowrap text-center text-base font-medium leading-6 tracking-wider text-white/70 duration-500 group-hover:text-white">
+                  加入隊員
+                </div> */}
+                <p className="absolute top-8 text-6xl text-[#FFCC66]/50">+</p>
               </button>
             )}
           </div>

@@ -166,10 +166,10 @@ const AddCourt = () => {
             return (
               <div
                 key={court._id}
-                className="courtCard w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+                className="courtCard w-full h-[480px] overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
               >
                 {/* 輪播圖 */}
-                <figure className="w-full">
+                <figure className="w-full h-3/5">
                   <Swiper
                     style={{
                       "--swiper-navigation-color": "#fff",
@@ -199,9 +199,9 @@ const AddCourt = () => {
                   </Swiper>
                 </figure>
                 {/* 內容 */}
-                <div className="flex h-full w-full flex-col gap-2 px-6 py-4">
+                <div className="flex h-2/5 w-full flex-col gap-2 px-6 py-4 justify-between">
                   {/* 標題欄 */}
-                  <div className="flex w-full flex-col flex-wrap items-start gap-2 border-b border-white/40 pb-2">
+                  <div className="flex w-full flex-col flex-wrap items-start gap-2">
                     <div className="flex w-full flex-wrap justify-between">
                       <h3 className="text-left text-2xl tracking-wider text-[#FFCC66]">
                         {court.courtName}
@@ -223,7 +223,7 @@ const AddCourt = () => {
                     </p>
                   </div>
                   {/* 下方資訊 */}
-                  <div className="flex w-full flex-wrap justify-between gap-4 text-white">
+                  <div className="flex w-full flex-wrap justify-between gap-4 text-white border-t border-white/40 pt-4">
                     {/* icon */}
                     <figure className="flex gap-x-2">
                       <span>{court.traffic}</span>
