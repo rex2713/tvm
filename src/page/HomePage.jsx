@@ -1,6 +1,6 @@
 import React from "react";
 import TeamSearchBar from "../Component/TeamSearchBar";
-import HpTeamCard from "../Component/HpTeamCard";
+// import HpTeamCard from "../Component/HpTeamCard";
 import NewsLink from "../Component/NewsLink";
 import CupGame from "../Component/CupGame";
 import IndexTitle from "../Component/IndexTitle";
@@ -87,7 +87,7 @@ const HomePage = () => {
 
         {/* 首頁-隊伍 */}
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
-          <div className="flex w-full h-screen justify-center">
+          <div className="flex h-screen w-full justify-center">
             {/* 左半裝飾字-Teams */}
             <h2 className="h-screen w-[15vw] font-['Ubuntu'] text-bg font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               Teams
@@ -100,7 +100,7 @@ const HomePage = () => {
               </div>
               {/* 下半部TeamCard */}
 
-              <HpTeamCard />
+              {/* <HpTeamCard /> */}
             </div>
           </div>
         </section>
