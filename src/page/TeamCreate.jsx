@@ -94,7 +94,7 @@ const TeamCreate = () => {
   };
 
   //處理加入隨機隊友
-  const handleRadomUser = (radomUser) => {
+  const handleRadomUser = (radomUser, e) => {
     if (
       teamMember
         .map((member) => {
@@ -106,6 +106,7 @@ const TeamCreate = () => {
     } else if (teamMember.length >= 5) {
       window.alert("此隊伍已滿員");
     } else {
+      console.log(e.target.checked);
       setTeamMember([...teamMember, radomUser]);
       setRadomTenUsers((prevUsers) =>
         prevUsers.filter((user) => user._id !== radomUser._id),
@@ -192,8 +193,8 @@ const TeamCreate = () => {
                         >
                           <input
                             id={radomUser._id}
-                            onChange={() => {
-                              handleRadomUser(radomUser);
+                            onChange={(e) => {
+                              handleRadomUser(radomUser, e);
                             }}
                             type="checkbox"
                             className="peer hidden"
