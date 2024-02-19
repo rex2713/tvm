@@ -1,9 +1,11 @@
 import React from "react";
 import AuthService from "../../services/auth-service";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const MemberInfo = () => {
+  const outlet = useOutletContext();
+  const { memberIconSrc, setMemberIconSrc } = outlet;
   useEffect(() => {
     window.scrollTo(0, 0);
     //如果已經存在上傳頭像，處理預覽
@@ -52,12 +54,12 @@ const MemberInfo = () => {
   };
   const handleMiddleBlocker = (e) => {
     if (e.target.checked) {
-      if (!goodAtPosition.includes("欄中")) {
-        setGoodAtPosition([...goodAtPosition, "欄中"]);
+      if (!goodAtPosition.includes("攔中")) {
+        setGoodAtPosition([...goodAtPosition, "攔中"]);
       }
     } else {
-      if (goodAtPosition.includes("欄中")) {
-        setGoodAtPosition(goodAtPosition.filter((value) => value !== "欄中"));
+      if (goodAtPosition.includes("攔中")) {
+        setGoodAtPosition(goodAtPosition.filter((value) => value !== "攔中"));
       }
     }
   };
@@ -98,61 +100,61 @@ const MemberInfo = () => {
   //設定頭像選擇
   const handleMen1 = () => {
     setPhotoSelected("men1");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen2 = () => {
     setPhotoSelected("men2");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen3 = () => {
     setPhotoSelected("men3");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen4 = () => {
     setPhotoSelected("men4");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleMen5 = () => {
     setPhotoSelected("men5");
   };
   const handleMen6 = () => {
     setPhotoSelected("men6");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl1 = () => {
     setPhotoSelected("girl1");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl2 = () => {
     setPhotoSelected("girl2");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl3 = () => {
     setPhotoSelected("girl3");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl4 = () => {
     setPhotoSelected("girl4");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl5 = () => {
     setPhotoSelected("girl5");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
   const handleGirl6 = () => {
     setPhotoSelected("girl6");
-    setFile(null);
-    setPreview(null);
+    setFile("");
+    setPreview("");
   };
 
   //設定頭像上傳
@@ -160,24 +162,26 @@ const MemberInfo = () => {
     setFile(e.target.files[0]);
     const previewURL = URL.createObjectURL(e.target.files[0]);
     setPreview(previewURL);
+    setPhotoSelected("");
+    setMemberIconSrc("連動NavIcon");
+    e.target.value = null; //清空input值，使下次重複選擇相同檔案也可觸發
     // console.log(e.target.files[0]);
     // console.log(URL.createObjectURL(e.target.files[0]));
-    setPhotoSelected(null);
   };
   //設定清除上傳頭像
   const handleClear = () => {
+    setFile("");
+    setPreview("");
     setPhotoSelected("men1");
-    setFile(null);
-    setPreview(null);
   };
 
   //設定儲存按鈕
   const handleSave = () => {
-    console.log(photoSelected);
-    console.log(file);
-    console.log(username);
-    console.log(skillLevel);
-    console.log(goodAtPosition);
+    // console.log(photoSelected);
+    // console.log(file);
+    // console.log(username);
+    // console.log(skillLevel);
+    // console.log(goodAtPosition);
     const formData = new FormData();
     if (photoSelected) formData.append("photoSelected", photoSelected);
     if (file) formData.append("file", file);
@@ -189,11 +193,22 @@ const MemberInfo = () => {
 
     AuthService.updateUser(formData, _id)
       .then((res) => {
-        console.log(res.data.updateUser);
+        // console.log(res.data.updateUser);
         const user = JSON.parse(localStorage.getItem("user"));
         user.user = res.data.updateUser;
         localStorage.setItem("user", JSON.stringify(user));
+
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            console.log("成功複製RenderDisk資料");
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
+
         window.alert("儲存資料成功");
+        setMemberIconSrc(photoSelected);
       })
       .catch((e) => {
         console.log(e.response.data);
@@ -216,7 +231,7 @@ const MemberInfo = () => {
                 <label htmlFor="men1">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men1")}
+                    checked={photoSelected && photoSelected == "men1"}
                     onChange={handleMen1}
                     type="radio"
                     id="men1"
@@ -224,7 +239,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men1.png"
+                    src="/pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -234,7 +249,7 @@ const MemberInfo = () => {
                 <label htmlFor="men2">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men2")}
+                    checked={photoSelected && photoSelected == "men2"}
                     onChange={handleMen2}
                     type="radio"
                     id="men2"
@@ -242,7 +257,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men2.png"
+                    src="/pic/icon/member/men2.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -252,7 +267,7 @@ const MemberInfo = () => {
                 <label htmlFor="men3">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men3")}
+                    checked={photoSelected && photoSelected == "men3"}
                     onChange={handleMen3}
                     type="radio"
                     id="men3"
@@ -260,7 +275,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men3.png"
+                    src="/pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -270,7 +285,7 @@ const MemberInfo = () => {
                 <label htmlFor="men4">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men4")}
+                    checked={photoSelected && photoSelected == "men4"}
                     onChange={handleMen4}
                     type="radio"
                     id="men4"
@@ -278,7 +293,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men4.png"
+                    src="/pic/icon/member/men4.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -288,7 +303,7 @@ const MemberInfo = () => {
                 <label htmlFor="men5">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men5")}
+                    checked={photoSelected && photoSelected == "men5"}
                     onChange={handleMen5}
                     type="radio"
                     id="men5"
@@ -296,7 +311,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men5.png"
+                    src="/pic/icon/member/men5.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -306,7 +321,7 @@ const MemberInfo = () => {
                 <label htmlFor="men6">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("men6")}
+                    checked={photoSelected && photoSelected == "men6"}
                     onChange={handleMen6}
                     type="radio"
                     id="men6"
@@ -314,7 +329,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/men6.png"
+                    src="/pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -324,7 +339,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl1">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl1")}
+                    checked={photoSelected && photoSelected == "girl1"}
                     onChange={handleGirl1}
                     type="radio"
                     id="girl1"
@@ -332,7 +347,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl1.png"
+                    src="/pic/icon/member/girl1.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -342,7 +357,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl2">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl2")}
+                    checked={photoSelected && photoSelected == "girl2"}
                     onChange={handleGirl2}
                     type="radio"
                     id="girl2"
@@ -350,7 +365,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl2.png"
+                    src="/pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -360,7 +375,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl3">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl3")}
+                    checked={photoSelected && photoSelected == "girl3"}
                     onChange={handleGirl3}
                     type="radio"
                     id="girl3"
@@ -368,7 +383,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl3.png"
+                    src="/pic/icon/member/girl3.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -378,7 +393,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl4">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl4")}
+                    checked={photoSelected && photoSelected == "girl4"}
                     onChange={handleGirl4}
                     type="radio"
                     id="girl4"
@@ -386,7 +401,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl4.png"
+                    src="/pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -396,7 +411,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl5">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl5")}
+                    checked={photoSelected && photoSelected == "girl5"}
                     onChange={handleGirl5}
                     type="radio"
                     id="girl5"
@@ -404,7 +419,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl5.png"
+                    src="/pic/icon/member/girl5.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -414,7 +429,7 @@ const MemberInfo = () => {
                 <label htmlFor="girl6">
                   <input
                     name="photo"
-                    checked={photoSelected && photoSelected.includes("girl6")}
+                    checked={photoSelected && photoSelected == "girl6"}
                     onChange={handleGirl6}
                     type="radio"
                     id="girl6"
@@ -422,7 +437,7 @@ const MemberInfo = () => {
                   />
                   <img
                     className="w-[78px]"
-                    src="../../public/pic/icon/member/girl6.png"
+                    src="/pic/icon/member/girl6.png"
                     alt=""
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
@@ -500,26 +515,18 @@ const MemberInfo = () => {
               />
             </label> */}
             {/* 球技程度 */}
-            <label htmlFor="" className="flex w-full items-center gap-2">
+            <label htmlFor="skill" className="flex w-full items-center gap-2">
               <span className="w-24 shrink-0 tracking-widest">球技程度</span>
               <select
                 onChange={handleSkillLevel}
                 name=""
-                id=""
+                id="skill"
                 className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
               >
-                <option selected={user.user.skillLevel == "新手"} value="新手">
-                  新手
-                </option>
-                <option selected={user.user.skillLevel == "系隊"} value="系隊">
-                  系隊
-                </option>
-                <option selected={user.user.skillLevel == "校隊"} value="校隊">
-                  校隊
-                </option>
-                <option selected={user.user.skillLevel == "體保"} value="體保">
-                  體保
-                </option>
+                <option value="新手">新手</option>
+                <option value="系隊">系隊</option>
+                <option value="校隊">校隊</option>
+                <option value="體保">體保</option>
               </select>
             </label>
             {/* 擅長位置 */}
@@ -544,7 +551,7 @@ const MemberInfo = () => {
                     id="middleBlocker"
                     className="peer hidden"
                     onChange={handleMiddleBlocker}
-                    checked={goodAtPosition.includes("欄中")}
+                    checked={goodAtPosition.includes("攔中")}
                   />
                   <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                     攔中

@@ -15,12 +15,15 @@
     "@splinetool/runtime": "^1.0.42",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lottie": "^1.2.4",
     "react-router-dom": "^6.21.3",
+    "spline": "^0.0.0",
     "swiper": "^11.0.6",
     "tw-element": "^1.0.5",
+    "uuid": "^9.0.1",
     "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {

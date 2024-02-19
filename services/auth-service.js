@@ -1,12 +1,15 @@
 import axios from "axios";
-const AUTH_URL = "http://localhost:8080/tvm/user";
+const Default_URL = import.meta.env.VITE_Default_URL;
 
 class AuthService {
+  copyRenderDisk() {
+    return axios.get(Default_URL + "/user/");
+  }
   register(formData) {
-    return axios.post(AUTH_URL + "/register", formData);
+    return axios.post(Default_URL + "/user/register", formData);
   }
   login(email, password) {
-    return axios.post(AUTH_URL + "/login", {
+    return axios.post(Default_URL + "/user/login", {
       email,
       password,
     });
@@ -24,11 +27,14 @@ class AuthService {
     } else {
       token = "";
     }
-    return axios.patch(AUTH_URL + "/update/" + _id, formData, {
+    return axios.patch(Default_URL + "/user/update/" + _id, formData, {
       headers: {
         Authorization: token,
       },
     });
+  }
+  getUserById(_id) {
+    return axios.get(Default_URL + "/user/" + _id);
   }
 }
 

@@ -1,12 +1,11 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/tvm/court";
-const addCourt_URL = "http://localhost:8080/tvm/admin/addcourt";
-const deleteCourt_URL = "http://localhost:8080/tvm/admin/";
+
+const Default_URL = import.meta.env.VITE_Default_URL;
 
 class CourtService {
   //搜尋所有場地
   getAllCourts() {
-    return axios.get(API_URL);
+    return axios.get(Default_URL + "/court");
   }
   //新增球場
   postAddCourt(formData) {
@@ -16,7 +15,7 @@ class CourtService {
     } else {
       token = "";
     }
-    return axios.post(addCourt_URL, formData, {
+    return axios.post(Default_URL + "/admin/addcourt", formData, {
       headers: {
         Authorization: token,
       },
@@ -31,7 +30,7 @@ class CourtService {
     } else {
       token = "";
     }
-    return axios.delete(deleteCourt_URL + _id, {
+    return axios.delete(Default_URL + "/admin/" + _id, {
       headers: {
         Authorization: token,
       },

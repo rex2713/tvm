@@ -15,7 +15,7 @@ export default {
         160: "640px",
       },
       fontSize: {
-        bacd: "200px",
+        bg: "200px",
         title: "120px",
         subtitle: "32px",
       },

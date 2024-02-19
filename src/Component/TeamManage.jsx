@@ -1,4 +1,6 @@
 import React from "react";
+import TeamInformation from "../Component/TeamInforMation";
+import TeamInformationAdd from "../Component/TeamInformationAdd";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +22,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="/pic/edit.svg"
+              src="pic/edit.svg"
               alt=""
             />
           </figure>
@@ -65,7 +67,7 @@ const TeamManage = () => {
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men3.png"
+                    src="pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -88,7 +90,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men6.png"
+                    src="pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -112,7 +114,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl2.png"
+                    src="./pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -136,7 +138,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men1.png"
+                    src="pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -160,7 +162,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl4.png"
+                    src="pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -249,7 +251,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="/pic/edit.svg"
+              src="pic/edit.svg"
               alt=""
             />
           </figure>
@@ -294,7 +296,7 @@ const TeamManage = () => {
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men3.png"
+                    src="pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -317,7 +319,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men6.png"
+                    src="pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -341,7 +343,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl2.png"
+                    src="pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -365,7 +367,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men1.png"
+                    src="pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -389,7 +391,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl4.png"
+                    src="pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -442,7 +444,7 @@ const TeamManage = () => {
           <figure className="my-auto flex items-center">
             <img
               className="h-8 w-8 cursor-pointer opacity-20 duration-500 hover:opacity-60"
-              src="/pic/edit.svg"
+              src="pic/edit.svg"
               alt=""
             />
           </figure>
@@ -487,7 +489,7 @@ const TeamManage = () => {
                 <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men3.png"
+                    src="pic/icon/member/men3.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -510,7 +512,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men6.png"
+                    src="pic/icon/member/men6.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -534,7 +536,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl2.png"
+                    src="pic/icon/member/girl2.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -558,7 +560,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/men1.png"
+                    src="pic/icon/member/men1.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
@@ -582,7 +584,7 @@ const TeamManage = () => {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                   <img
                     className="w-1/2 rounded-full bg-white bg-clip-border"
-                    src="/pic/icon/member/girl4.png"
+                    src="pic/icon/member/girl4.png"
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">

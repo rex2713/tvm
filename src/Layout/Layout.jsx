@@ -7,10 +7,23 @@ import { useState } from "react";
 const Layout = () => {
   //偵測是否已經登入
   const [isLogIn, setIsLogIn] = useState(!!localStorage.getItem("user"));
+  const [memberIconSrc, setMemberIconSrc] = useState();
   return (
     <div>
-      <HeaderNavBar isLogIn={isLogIn} setIsLogIn={setIsLogIn} />
-      <Outlet context={{ isLogIn: isLogIn, setIsLogIn: setIsLogIn }} />
+      <HeaderNavBar
+        isLogIn={isLogIn}
+        setIsLogIn={setIsLogIn}
+        memberIconSrc={memberIconSrc}
+        setMemberIconSrc={setMemberIconSrc}
+      />
+      <Outlet
+        context={{
+          isLogIn: isLogIn,
+          setIsLogIn: setIsLogIn,
+          memberIconSrc: memberIconSrc,
+          setMemberIconSrc: setMemberIconSrc,
+        }}
+      />
       <Footer />
     </div>
   );

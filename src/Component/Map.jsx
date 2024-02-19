@@ -2314,7 +2314,7 @@ const Map = () => {
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
                 <div className="flex w-full justify-between text-white">
                   <h3 className="text-xl font-bold tracking-wider">
-                  美堤河濱公園
+                    美堤河濱公園
                   </h3>
                   <div className="flex items-center gap-1">
                     <img
@@ -2382,7 +2382,7 @@ const Map = () => {
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
                 <div className="flex w-full justify-between text-white">
                   <h3 className="text-xl font-bold tracking-wider">
-                  綠寶石排球場
+                    綠寶石排球場
                   </h3>
                   <div className="flex items-center gap-1">
                     <img
@@ -2449,9 +2449,7 @@ const Map = () => {
               </Swiper>
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
                 <div className="flex w-full justify-between text-white">
-                  <h3 className="text-xl font-bold tracking-wider">
-                  華江高中
-                  </h3>
+                  <h3 className="text-xl font-bold tracking-wider">華江高中</h3>
                   <div className="flex items-center gap-1">
                     <img
                       className="h-4 w-4"
@@ -2518,7 +2516,7 @@ const Map = () => {
               <div className="flex h-1/2 w-full flex-col justify-between p-4">
                 <div className="flex w-full justify-between text-white">
                   <h3 className="text-xl font-bold tracking-wider">
-                  台灣大學(戶外排球場)
+                    台灣大學(戶外排球場)
                   </h3>
                   <div className="flex items-center gap-1">
                     <img

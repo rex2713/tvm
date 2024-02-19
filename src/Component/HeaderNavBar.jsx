@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import MemberIcon from "./MemberIcon";
 
-const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
+const HeaderNavBar = ({
+  isLogIn,
+  setIsLogIn,
+  memberIconSrc,
+  setMemberIconSrc,
+}) => {
   return (
     <header className="bg-parent fixed z-20 flex h-28 w-full items-center justify-between px-[5vw]">
       <div className="flex">
@@ -53,7 +58,10 @@ const HeaderNavBar = ({ isLogIn, setIsLogIn }) => {
             className="rounded-full font-light leading-10 text-white"
           >
             <div className="">
-              <MemberIcon />
+              <MemberIcon
+                memberIconSrc={memberIconSrc}
+                setMemberIconSrc={setMemberIconSrc}
+              />
             </div>
           </Link>
         </div>

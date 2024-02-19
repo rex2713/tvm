@@ -8,6 +8,7 @@ import "../css/courtCard.css";
 import "swiper/css/free-mode";
 import { FreeMode, Navigation, Pagination, Keyboard } from "swiper/modules";
 import CourtService from "../../services/court-service";
+import AuthService from "../../services/auth-service";
 
 const AddCourt = () => {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const AddCourt = () => {
   const [preview, setPreview] = useState(null);
 
   //上半部球場卡片相關
+  //處理球場刪除
   const handleDelete = (e) => {
     if (window.confirm("確定要刪除嗎？")) {
       // console.log(e.target.id);
@@ -90,7 +92,7 @@ const AddCourt = () => {
     setCourtAddress(e.target.value);
   };
   const handleIsPark = (e) => {
-    console.log(e.target.checked);
+    // console.log(e.target.checked);
     setIsPark(e.target.checked);
   };
   const handleIsBus = (e) => {
@@ -139,9 +141,15 @@ const AddCourt = () => {
 
     CourtService.postAddCourt(formData)
       .then(() => {
-        window.alert("創建球場成功");
-        window.location.reload();
-        window.scroll(0, 0);
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            window.alert("創建球場成功");
+            window.location.reload();
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
       })
       .catch((error) => {
         setMessage(error.response.data);

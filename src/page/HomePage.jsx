@@ -8,9 +8,20 @@ import Loading from "../Component/Loading";
 import ScrollAnimate from "../Component/ScrollAnimate";
 import Map from "../Component/Map";
 import { useState, useEffect, useRef } from "react";
+import AuthService from "../../services/auth-service";
 import "../css/main.css";
 
 const HomePage = () => {
+  useEffect(() => {
+    //處理永久硬碟複製
+    AuthService.copyRenderDisk()
+      .then(() => {
+        console.log("成功複製RenderDisk資料");
+      })
+      .catch((e) => {
+        console.error("複製RenderDisk失敗:" + e);
+      });
+  }, []);
   // loading動畫延遲5秒
   const [delayLoading, setDelayLoading] = useState(true);
   setTimeout(() => {
@@ -69,16 +80,16 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pt-28 pb-10"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pb-10 pt-28"
         >
-          <Map/>
+          <Map />
         </section>
 
         {/* 首頁-隊伍 */}
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
           <div className="flex w-full">
             {/* 左半裝飾字-Teams */}
-            <h2 className="h-page w-[20vw] font-['Ubuntu'] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="text-bg h-page w-[20vw] font-['Ubuntu'] font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               Teams
             </h2>
             {/* 右半內容區 */}
@@ -90,31 +101,14 @@ const HomePage = () => {
               {/* 下半部TeamCard */}
               <div className="no-scrollbar flex w-full justify-start gap-[1.5vw] overflow-x-auto ">
                 <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
               </div>
             </div>
           </div>
         </section>
         {/* 首頁-最新消息*/}
-        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#011E37] via-[#01405E] to-[#030b17] px-[5vw]">
+        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#01405E] to-[#030b17] px-[5vw]">
           <div className="flex w-full flex-row-reverse items-center justify-center">
-            <h2 className="h-screen w-[20vw] overflow-hidden font-['Ubuntu'] text-bacd font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="text-bg h-screen w-[20vw] overflow-hidden font-['Ubuntu'] font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
               News
             </h2>
             <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-20">
