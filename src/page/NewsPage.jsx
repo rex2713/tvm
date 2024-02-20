@@ -18,7 +18,7 @@ const NewsPage = () => {
           盃賽資訊
         </h3>
         {/* 寬度問題待解決，需更改component內的class屬性 */}
-        <div className="grid w-full md:grid-cols-3 grid-cols-2 place-items-center justify-between gap-[2vw]">
+        <div className="grid w-full lg:grid-cols-3 grid-cols-2 place-items-center justify-between lg:gap-[2vw] gap-[5vw]">
           <CupGame cardWidth={"w-full shrink-0 "} />
           <CupGame cardWidth={"w-full shrink-0 "} />
           <CupGame cardWidth={"w-full shrink-0 "} />

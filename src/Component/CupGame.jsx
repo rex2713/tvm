@@ -13,16 +13,16 @@ const CupGame = ({ cardWidth }) => {
         <h3 className=" text-lg font-medium text-white lg:text-xl">
           互動式前端網頁盃
         </h3>
-        <div className="flex flex-col items-start gap-2 text-xs tracking-wider text-white/70 lg:text-sm lg:tracking-wide">
-          <div className="flex gap-4">
+        <div className="flex flex-col items-start gap-2 text-xs tracking-wider text-white/70 xl:text-sm lg:tracking-wide">
+          <div className="flex md:gap-4 gap-2">
             <p className="shrink-0">比賽時間</p>
             <p className="text-wrap text-start">2023.12.15 ~ 2023.12.18</p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex md:gap-4 gap-2">
             <p className="shrink-0">報名時間</p>
             <p className="text-wrap text-start">2023.10.01 ~ 2023.11.30</p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex md:gap-4 gap-2">
             <p className="shrink-0">比賽項目</p>
             <p className="text-wrap text-start"> 公開男子組、公開女子組</p>
           </div>

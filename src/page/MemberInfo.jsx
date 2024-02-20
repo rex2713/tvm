@@ -217,18 +217,17 @@ const MemberInfo = () => {
 
   return (
     <main className="flex h-full w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
-      <div className="my-20 flex h-full w-5/6 justify-center gap-[2vw]">
-        <div className="flex h-full w-4/5 flex-col items-center gap-10 ">
+      <div className="my-20 flex flex-col h-full w-5/6 lg:gap-10 gap-5 justify-center items-center px-[5vw]">
           <form
             action=""
-            className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] px-20 py-12 text-white"
+            className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] lg:px-20 px-10 py-12 text-white"
           >
             {/* <!-- 資料輸入欄 --> */}
             {/* 頭像選擇 */}
-            <div className="flex w-full items-start gap-2">
+            <div className="flex w-full items-start gap-1">
               <span className="w-24 shrink-0 tracking-widest">頭像選擇</span>
-              <div className="flex w-full items-start gap-4">
-                <div className="grid w-2/3 grid-cols-6 gap-4 shrink-0">
+              <div className="flex w-full xl:flex-row flex-col items-start gap-4">
+                <div className="grid xl:w-2/3 w-full grid-cols-6 gap-[1vw] shrink-0">
                   <label
                     htmlFor="men1"
                     className="flex flex-col items-center justify-center"
@@ -246,9 +245,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men1.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男一
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="men2"
@@ -267,9 +266,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men2.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男二
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="men3"
@@ -288,9 +287,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men3.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男三
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="men4"
@@ -309,9 +308,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men4.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男四
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="men5"
@@ -330,9 +329,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men5.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男五
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="men6"
@@ -351,9 +350,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/men6.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       男六
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl1"
@@ -372,9 +371,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl1.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女一
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl2"
@@ -393,9 +392,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl2.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女二
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl3"
@@ -414,9 +413,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl3.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女三
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl4"
@@ -435,9 +434,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl4.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女四
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl5"
@@ -456,9 +455,9 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl5.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女五
-                    </div>
+                    </p>
                   </label>
                   <label
                     htmlFor="girl6"
@@ -477,42 +476,42 @@ const MemberInfo = () => {
                       src="/pic/icon/member/girl6.png"
                       alt=""
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                    <p className="cursor-pointer rounded-full bg-white/10 2xl:px-5 xl:px-3 px-2 py-1 text-center 2xl:text-base lg:text-sm text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
                       女六
-                    </div>
+                    </p>
                   </label>
                 </div>
-                <div className="flex h-64 w-1/3 flex-col items-center justify-center gap-4 rounded-lg border border-white/20 py-2">
-                  <label htmlFor="uploadSelf" className="w-2/3">
+                <div className="flex xl:h-64 lg:text-base text-sm h-36 xl:w-1/3 w-full xl:flex-col flex-row items-center justify-center xl:gap-2 gap-[3vw] rounded-lg border border-white/20 p-4">
+                  <label htmlFor="uploadSelf" className="xl:w-2/3 w-1/4 xl:h-1/6 h-1/2 flex items-start justify-center">
                     <input
                       onChange={handleFileChange}
                       type="file"
                       id="uploadSelf"
                       className="peer hidden"
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      自行上傳
-                    </div>
+                    <p className="cursor-pointer flex items-center justify-center w-full h-full xl:rounded-full rounded-lg bg-white/10 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                      上傳圖片
+                    </p>
                   </label>
-                  <div className="flex w-full flex-col items-center justify-start gap-2">
+
                     {preview && (
                       <>
-                        {/* <p className="text-center">預覽</p> */}
-                        <img src={preview} className="h-36 w-36 object-cover border rounded-full bg-clip-border" />
-                        <button
+                      <button
                           onClick={handleClear}
-                          className="w-1/2 rounded-full bg-black/30 py-1 text-white/70 hover:bg-black/50 hover:text-white"
+                          className="xl:w-2/3 w-1/6 xl:rounded-full rounded-lg bg-black/20 xl:py-1 py-2 text-white/70 hover:bg-black/50 hover:text-white"
                         >
                           清除
                         </button>
+                        {/* <p className="text-center">預覽</p> */}
+                        <img src={preview} className="xl:h-36 lg:h-28 h-24 xl:w-36 lg:w-28 w-24 shrink-0 object-cover border rounded-full bg-clip-border" />
                       </>
                     )}
-                  </div>
+
                 </div>
               </div>
             </div>
             {/* 使用者名稱 */}
-            <label htmlFor="account" className="flex w-full items-center gap-2">
+            <label htmlFor="account" className="flex w-full items-center gap-1">
               <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
               <input
                 onChange={handleUsername}
@@ -523,7 +522,7 @@ const MemberInfo = () => {
               />
             </label>
             {/* Email */}
-            <label htmlFor="email" className="flex w-full items-center gap-2">
+            <label htmlFor="email" className="flex w-full items-center gap-1">
               <span className="w-24 shrink-0 tracking-widest">Email</span>
               <input
                 type="email"
@@ -560,7 +559,7 @@ const MemberInfo = () => {
               />
             </label> */}
             {/* 球技程度 */}
-            <label htmlFor="skill" className="flex w-full items-center gap-2">
+            <label htmlFor="skill" className="flex w-full items-center gap-1">
               <span className="w-24 shrink-0 tracking-widest">球技程度</span>
               <select
                 onChange={handleSkillLevel}
@@ -575,7 +574,7 @@ const MemberInfo = () => {
               </select>
             </label>
             {/* 擅長位置 */}
-            <div className="flex w-full items-start gap-2">
+            <div className="flex w-full items-start gap-1">
               <span className="w-24 shrink-0 tracking-widest">擅長位置</span>
               <div className="flex flex-wrap gap-4">
                 <label htmlFor="spiker">
@@ -645,11 +644,10 @@ const MemberInfo = () => {
           {/* <!-- 儲存變更按鈕 --> */}
           <button
             onClick={handleSave}
-            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+            className="md:w-1/6 w-1/4 rounded-xl border-2 border-white/50 bg-[#0492D9] lg:py-2 py-1 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
           >
             儲存
           </button>
-        </div>
       </div>
     </main>
   );

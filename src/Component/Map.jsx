@@ -25,6 +25,10 @@ const Map = () => {
     let scrollLeftPosition;
     let scrollTopPosition;
     switch (region) {
+      case "":
+        scrollLeftPosition = 1000;
+        scrollTopPosition = 1950;
+        break;
       case "中正區":
         scrollLeftPosition = 970;
         scrollTopPosition = 1950;
@@ -204,11 +208,12 @@ const Map = () => {
       <div
         ref={mapContainerRef}
         onScroll={handleScroll}
-        className="
-                no-scrollbar h-full overflow-scroll rounded-3xl"
+        className="no-scrollbar h-full overflow-scroll rounded-3xl"
+        onLoad={() => handleScrollToRegion("")}
       >
         <div className="relative flex h-[4200px] w-[4200px]">
-          <img className="h-full w-full" src="/pic/map.jpg" alt="" />
+          <img className="h-full w-full" src="/pic/map.jpg" alt=""
+           />
 
           {/* 臺北教育大學 */}
           <div className="absolute bottom-[1455px] left-[2243px] flex w-12 flex-col-reverse items-center gap-1">

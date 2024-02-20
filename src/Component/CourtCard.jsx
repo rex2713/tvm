@@ -49,6 +49,14 @@ const CourtCard = () => {
 
   return (
     <div className="grid grid-cols-2 items-center justify-items-center gap-[2vw] lg:gap-y-10 md:gap-y-8 gap-y-6 md:grid-cols-3">
+      {user && userRole == "admin" && (
+        <button
+          onClick={linkToAddCourt}
+          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
+        >
+          管理球場
+        </button>
+      )}
       {courtData &&
         courtData.length != 0 &&
         courtData.map((court) => {
@@ -142,14 +150,6 @@ const CourtCard = () => {
             </div>
           );
         })}
-      {user && userRole == "admin" && (
-        <button
-          onClick={linkToAddCourt}
-          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
-        >
-          管理球場
-        </button>
-      )}
     </div>
   );
 };
