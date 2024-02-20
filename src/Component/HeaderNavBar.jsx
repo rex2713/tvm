@@ -17,11 +17,11 @@ const HeaderNavBar = ({
         </div>
       </div>
       <nav className="leading-15 pointer-events-auto flex items-center justify-center gap-2">
-        <ul className="invisible mx-2 flex h-0 items-center justify-center space-x-2 rounded-full bg-gray-800/70 px-1  leading-10 text-white hover:bg-gray-800 lg:visible lg:h-11 lg:duration-500">
+        <ul className="invisible mx-2 flex h-0 items-center justify-center space-x-2 rounded-full bg-gray-800/70 px-1 leading-10 text-white hover:bg-gray-800 lg:visible lg:h-11 lg:duration-500">
           <li>
             <Link
               to="/"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
             >
               首頁
             </Link>
@@ -29,7 +29,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/map"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
             >
               球場地圖
             </Link>
@@ -37,7 +37,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/team/list"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
               href=""
             >
               揪團組隊
@@ -46,7 +46,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/news"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
               href=""
             >
               最新消息
