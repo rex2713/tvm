@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CourtService from "../../services/court-service";
 import Compressor from "compressorjs";
+import AuthService from "../../services/auth-service";
 
 const CourtEdit = () => {
   const [file, setFile] = useState();
