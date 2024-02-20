@@ -26,6 +26,23 @@ const AddCourt = () => {
       window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
       navigate("/");
     }
+
+    CourtService.postAddCourt(formData)
+      .then(() => {
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            window.alert("創建球場成功");
+            window.location.reload();
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
+      })
+      .catch((error) => {
+        setMessage(error.response.data);
+        // console.log(error.response.data);
+      });
   }, []);
 
   const [courtData, setCourtData] = useState(null);
