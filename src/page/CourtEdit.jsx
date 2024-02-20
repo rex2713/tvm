@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import CourtService from "../../services/court-service";
 import Compressor from "compressorjs";
 
@@ -9,6 +9,7 @@ const CourtEdit = () => {
   const [preview, setPreview] = useState(null);
   const params = useParams();
   // console.log(params.court_id);
+  const navigate = useNavigate();
 
   //設定input更新file
   const handleFileChange = async (e) => {
@@ -69,6 +70,7 @@ const CourtEdit = () => {
     CourtService.updateCourt(params.court_id, formData)
       .then(() => {
         window.alert("更新球場照片成功");
+        navigate("/AddCourt");
       })
       .catch((e) => {
         console.log(e);

@@ -202,107 +202,6 @@ const AddCourt = () => {
 
   return (
     <div className="flex flex-col items-center gap-10 bg-gradient-to-b from-[#082A4D] to-[#000000] pt-28">
-      <div className="grid grid-cols-4 gap-10 gap-y-14 px-20">
-        {courtData &&
-          courtData.length != 0 &&
-          courtData.map((court) => {
-            return (
-              <div
-                key={court._id}
-                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
-              >
-                {/* 輪播圖 */}
-                <figure className="h-3/5 w-full">
-                  <Swiper
-                    style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
-                    loop={true}
-                    speed={1000}
-                    navigation={true}
-                    pagination={true}
-                    mousewheel={true}
-                    keyboard={true}
-                    modules={[FreeMode, Navigation, Pagination, Keyboard]}
-                    className="mySwiper h-full w-full"
-                  >
-                    <SwiperSlide>
-                      <img src={court.imgPath[0]} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img src={court.imgPath[1]} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img src={court.imgPath[2]} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img src={court.imgPath[3]} alt="" />
-                    </SwiperSlide>
-                  </Swiper>
-                </figure>
-                {/* 內容 */}
-                <div className="flex h-2/5 w-full flex-col justify-between gap-2 px-6 py-4">
-                  {/* 標題欄 */}
-                  <div className="flex w-full flex-col flex-wrap items-start gap-2">
-                    <div className="flex w-full flex-wrap justify-between">
-                      <h3 className="text-left text-2xl tracking-wider text-[#FFCC66]">
-                        {court.courtName}
-                      </h3>
-                      <div className="flex items-center gap-x-2">
-                        <img
-                          className="h-6 w-6"
-                          src="../../pic/courtCard/star.svg"
-                          alt=""
-                        />
-                        <span className="text-2xl leading-[28px] text-white">
-                          {court.score}
-                        </span>
-                      </div>
-                    </div>
-                    {/* 球場類型 */}
-                    <p className="text-[#FFFFFF]/70">
-                      球場類型：{court.courtType}
-                    </p>
-                  </div>
-                  {/* 下方資訊 */}
-                  <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-4 text-white">
-                    {/* icon */}
-                    <figure className="flex gap-x-2">
-                      <span>{court.traffic}</span>
-                      {court.isPark ? (
-                        <img src={"./pic/courtCard/parking_true.svg"}></img>
-                      ) : (
-                        <img src="./pic/courtCard/parking_false.svg"></img>
-                      )}
-                      {court.isBus ? (
-                        <img src="./pic/courtCard/bus_true.svg"></img>
-                      ) : (
-                        <img src="./pic/courtCard/bus_false.svg"></img>
-                      )}
-                      {court.isMRT ? (
-                        <img src="./pic/courtCard/mrt_true.svg"></img>
-                      ) : (
-                        <img src="./pic/courtCard/mrt_false.svg"></img>
-                      )}
-                    </figure>
-                    {/* 按鈕 */}
-                    <div className="flex w-full justify-between">
-                      <Link to={"/" + court._id + "/CourtEdit"}>修改資料</Link>
-                      <button
-                        onClick={handleDelete}
-                        className="rounded-full border border-white/30 bg-[#AE2514] px-4 py-1 text-sm tracking-widest hover:bg-[#cc2b16]"
-                        id={court._id}
-                      >
-                        刪除球場
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      </div>
       {/* 新增球場 */}
       <div className="flex w-[90vw] flex-col items-center justify-center gap-10 rounded-t-3xl bg-[#082A4D] px-20 py-5 text-white">
         <h2 className="text-3xl">新增球場</h2>
@@ -499,7 +398,7 @@ const AddCourt = () => {
             return (
               <div
                 key={court._id}
-                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-white/10 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159]"
+                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
               >
                 {/* 輪播圖 */}
                 <figure className="h-3/5 w-full">
@@ -578,9 +477,7 @@ const AddCourt = () => {
                     </figure>
                     {/* 按鈕 */}
                     <div className="flex w-full justify-between">
-                      <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-sm tracking-widest hover:bg-[#0492D9]">
-                        修改資料
-                      </button>
+                      <Link to={"/" + court._id + "/CourtEdit"}>修改資料</Link>
                       <button
                         onClick={handleDelete}
                         className="rounded-full border border-white/30 bg-[#AE2514] px-4 py-1 text-sm tracking-widest hover:bg-[#cc2b16]"
