@@ -47,12 +47,12 @@ const MemberLogin = () => {
   };
 
   return (
-    <main className="relative flex h-[60vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
+    <main className="relative flex lg:h-[60vh] h-[100vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       {/* <!-- 登入表單 --> */}
       <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
         <form
           action=""
-          className="flex h-1/2 w-1/3 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] px-20 text-white "
+          className="flex lg:h-1/2 h-1/4 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white "
         >
           {/* <!-- 帳密輸入 --> */}
           <label htmlFor="account" className="flex w-full items-center gap-2">
@@ -78,7 +78,7 @@ const MemberLogin = () => {
         </form>
         {/* 錯誤訊息 */}
         {message ? (
-          <div className="flex h-5 items-center justify-center ">
+          <div className="flex h-5 items-center justify-center">
             <p className="text-lg text-[#FFCC66]">{message}</p>
           </div>
         ) : (
@@ -87,7 +87,7 @@ const MemberLogin = () => {
         {/* <!-- 登入按鈕 --> */}
         <button
           onClick={handleLogin}
-          className="w-1/12 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+          className="lg:w-1/12 w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           登入
         </button>

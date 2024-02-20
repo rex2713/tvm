@@ -81,22 +81,22 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] pb-10 pt-28"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] py-14"
         >
           <Map />
         </section>
 
         {/* 首頁-隊伍 */}
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
-          <div className="flex h-screen w-full justify-center">
+          <div className="flex h-screen w-full justify-center gap-2">
             {/* 左半裝飾字-Teams */}
-            <h2 className="h-screen w-[15vw] font-['Ubuntu'] text-bg font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="h-screen font-['Ubuntu'] text-9xl font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr] lg:w-[15vw] lg:text-[11rem] xl:w-[15vw] xl:text-bg">
               Teams
             </h2>
             {/* 右半內容區 */}
-            <div className="flex w-[70vw] flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center lg:w-[70vw] xl:w-[70vw]">
               {/* 上半部篩選器 */}
-              <div className="h-30 mb-16 w-full ">
+              <div className="h-30 mb-12 w-full">
                 <TeamSearchBar />
               </div>
               {/* 下半部TeamCard */}
@@ -108,26 +108,42 @@ const HomePage = () => {
         {/* 首頁-最新消息*/}
         <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#01405E] to-[#030b17] px-[5vw]">
           <div className="flex w-full flex-row-reverse items-center justify-center">
-            <h2 className="h-screen w-[12vw] overflow-hidden font-['Ubuntu'] text-bg font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr]">
+            <h2 className="h-screen w-[12vw] overflow-hidden font-['Ubuntu'] text-9xl font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr] lg:text-[11rem] xl:text-bg">
               News
             </h2>
-            <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-20">
-              <h3 className="w-full text-2xl font-bold text-[#FFCC66]">
+            <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-10">
+              <h3 className="w-full text-lg font-bold text-[#FFCC66] lg:text-xl xl:text-2xl">
                 熱門新聞
               </h3>
               <NewsLink />
-              <h3 className="mt-4 w-full text-2xl font-bold text-[#FFCC66]">
+              <h3 className="mt-4 w-full text-lg font-bold text-[#FFCC66] lg:text-xl xl:text-2xl">
                 盃賽資訊
               </h3>
-              <div className="no-scrollbar flex w-full justify-start gap-10 overflow-x-auto">
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
-                <CupGame cardWidth={"w-1/3 shrink-0 "} />
+              <div className="no-scrollbar flex w-full justify-start gap-4 overflow-x-auto lg:gap-6 xl:gap-10">
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
+                <CupGame
+                  cardWidth={"xl:w-[340px] lg:w-[320px] w-[260px] shrink-0 "}
+                />
               </div>
             </div>
           </div>

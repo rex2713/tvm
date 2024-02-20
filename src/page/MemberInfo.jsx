@@ -218,327 +218,328 @@ const MemberInfo = () => {
 
   return (
     <main className="flex h-full w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
-      <div className="my-20 flex h-full w-5/6 justify-center gap-[2vw]">
-        <div className="flex h-full w-4/5 flex-col items-center gap-10 ">
-          <form
-            action=""
-            className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] px-20 py-12 text-white"
-          >
-            {/* <!-- 資料輸入欄 --> */}
-            {/* 頭像選擇 */}
-            <div className="flex w-full items-start gap-2">
-              <span className="w-24 shrink-0 tracking-widest">頭像選擇</span>
-              <div className="flex w-full items-start gap-4">
-                <div className="grid w-2/3 shrink-0 grid-cols-6 gap-4">
-                  <label
-                    htmlFor="men1"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men1"}
-                      onChange={handleMen1}
-                      type="radio"
-                      id="men1"
-                      className="peer hidden"
-                    />
+      <div className="my-20 flex h-full w-5/6 flex-col items-center justify-center gap-5 px-[5vw] lg:gap-10">
+        <form
+          action=""
+          className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] px-10 py-12 text-white lg:px-20"
+        >
+          {/* <!-- 資料輸入欄 --> */}
+          {/* 頭像選擇 */}
+          <div className="flex w-full items-start gap-1">
+            <span className="w-24 shrink-0 tracking-widest">頭像選擇</span>
+            <div className="flex w-full flex-col items-start gap-4 xl:flex-row">
+              <div className="grid w-full shrink-0 grid-cols-6 gap-[1vw] xl:w-2/3">
+                <label
+                  htmlFor="men1"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men1"}
+                    onChange={handleMen1}
+                    type="radio"
+                    id="men1"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men1.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男一
+                  </p>
+                </label>
+                <label
+                  htmlFor="men2"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men2"}
+                    onChange={handleMen2}
+                    type="radio"
+                    id="men2"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men2.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男二
+                  </p>
+                </label>
+                <label
+                  htmlFor="men3"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men3"}
+                    onChange={handleMen3}
+                    type="radio"
+                    id="men3"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men3.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男三
+                  </p>
+                </label>
+                <label
+                  htmlFor="men4"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men4"}
+                    onChange={handleMen4}
+                    type="radio"
+                    id="men4"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men4.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男四
+                  </p>
+                </label>
+                <label
+                  htmlFor="men5"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men5"}
+                    onChange={handleMen5}
+                    type="radio"
+                    id="men5"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men5.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男五
+                  </p>
+                </label>
+                <label
+                  htmlFor="men6"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "men6"}
+                    onChange={handleMen6}
+                    type="radio"
+                    id="men6"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/men6.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    男六
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl1"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl1"}
+                    onChange={handleGirl1}
+                    type="radio"
+                    id="girl1"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl1.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女一
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl2"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl2"}
+                    onChange={handleGirl2}
+                    type="radio"
+                    id="girl2"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl2.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女二
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl3"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl3"}
+                    onChange={handleGirl3}
+                    type="radio"
+                    id="girl3"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl3.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女三
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl4"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl4"}
+                    onChange={handleGirl4}
+                    type="radio"
+                    id="girl4"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl4.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女四
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl5"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl5"}
+                    onChange={handleGirl5}
+                    type="radio"
+                    id="girl5"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl5.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女五
+                  </p>
+                </label>
+                <label
+                  htmlFor="girl6"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <input
+                    name="photo"
+                    checked={photoSelected && photoSelected == "girl6"}
+                    onChange={handleGirl6}
+                    type="radio"
+                    id="girl6"
+                    className="peer hidden"
+                  />
+                  <img
+                    className="w-[78px] shrink-0"
+                    src="/pic/icon/member/girl6.png"
+                    alt=""
+                  />
+                  <p className="cursor-pointer rounded-full bg-white/10 px-2 py-1 text-center text-xs tracking-wider duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] lg:text-sm xl:px-3 2xl:px-5 2xl:text-base">
+                    女六
+                  </p>
+                </label>
+              </div>
+              <div className="flex h-36 w-full flex-row items-center justify-center gap-[3vw] rounded-lg border border-white/20 p-4 text-sm lg:text-base xl:h-64 xl:w-1/3 xl:flex-col xl:gap-2">
+                <label
+                  htmlFor="uploadSelf"
+                  className="flex h-1/2 w-1/4 items-start justify-center xl:h-1/6 xl:w-2/3"
+                >
+                  <input
+                    onChange={handleFileChange}
+                    type="file"
+                    id="uploadSelf"
+                    className="peer hidden"
+                  />
+                  <p className="flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white/10 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414] xl:rounded-full">
+                    上傳圖片
+                  </p>
+                </label>
+
+                {preview && (
+                  <>
+                    <button
+                      onClick={handleClear}
+                      className="w-1/6 rounded-lg bg-black/20 py-2 text-white/70 hover:bg-black/50 hover:text-white xl:w-2/3 xl:rounded-full xl:py-1"
+                    >
+                      清除
+                    </button>
+                    {/* <p className="text-center">預覽</p> */}
                     <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men1.png"
-                      alt=""
+                      src={preview}
+                      className="h-24 w-24 shrink-0 rounded-full border bg-clip-border object-cover lg:h-28 lg:w-28 xl:h-36 xl:w-36"
                     />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男一
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="men2"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men2"}
-                      onChange={handleMen2}
-                      type="radio"
-                      id="men2"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men2.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男二
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="men3"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men3"}
-                      onChange={handleMen3}
-                      type="radio"
-                      id="men3"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men3.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男三
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="men4"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men4"}
-                      onChange={handleMen4}
-                      type="radio"
-                      id="men4"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men4.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男四
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="men5"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men5"}
-                      onChange={handleMen5}
-                      type="radio"
-                      id="men5"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men5.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男五
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="men6"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "men6"}
-                      onChange={handleMen6}
-                      type="radio"
-                      id="men6"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/men6.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      男六
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl1"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl1"}
-                      onChange={handleGirl1}
-                      type="radio"
-                      id="girl1"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl1.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女一
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl2"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl2"}
-                      onChange={handleGirl2}
-                      type="radio"
-                      id="girl2"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl2.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女二
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl3"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl3"}
-                      onChange={handleGirl3}
-                      type="radio"
-                      id="girl3"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl3.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女三
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl4"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl4"}
-                      onChange={handleGirl4}
-                      type="radio"
-                      id="girl4"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl4.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女四
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl5"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl5"}
-                      onChange={handleGirl5}
-                      type="radio"
-                      id="girl5"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl5.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女五
-                    </div>
-                  </label>
-                  <label
-                    htmlFor="girl6"
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <input
-                      name="photo"
-                      checked={photoSelected && photoSelected == "girl6"}
-                      onChange={handleGirl6}
-                      type="radio"
-                      id="girl6"
-                      className="peer hidden"
-                    />
-                    <img
-                      className="w-[78px] shrink-0"
-                      src="/pic/icon/member/girl6.png"
-                      alt=""
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      女六
-                    </div>
-                  </label>
-                </div>
-                <div className="flex h-64 w-1/3 flex-col items-center justify-center gap-4 rounded-lg border border-white/20 py-2">
-                  <label htmlFor="uploadSelf" className="w-2/3">
-                    <input
-                      onChange={handleFileChange}
-                      type="file"
-                      id="uploadSelf"
-                      className="peer hidden"
-                    />
-                    <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 text-center duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                      自行上傳
-                    </div>
-                  </label>
-                  <div className="flex w-full flex-col items-center justify-start gap-2">
-                    {preview && (
-                      <>
-                        {/* <p className="text-center">預覽</p> */}
-                        <img
-                          src={preview}
-                          className="h-36 w-36 rounded-full border bg-clip-border object-cover"
-                        />
-                        <button
-                          onClick={handleClear}
-                          className="w-1/2 rounded-full bg-black/30 py-1 text-white/70 hover:bg-black/50 hover:text-white"
-                        >
-                          清除
-                        </button>
-                      </>
-                    )}
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
             </div>
-            {/* 使用者名稱 */}
-            <label htmlFor="account" className="flex w-full items-center gap-2">
-              <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
-              <input
-                onChange={handleUsername}
-                type="text"
-                id="account"
-                className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white focus:bg-white/90 focus:text-black/90"
-                placeholder={user.user.username}
-              />
-            </label>
-            {/* Email */}
-            <label htmlFor="email" className="flex w-full items-center gap-2">
-              <span className="w-24 shrink-0 tracking-widest">Email</span>
-              <input
-                type="email"
-                id="email"
-                disabled
-                className=" h-8 w-full shrink rounded-md border border-white/10 bg-white/10 px-4 text-white placeholder:text-white"
-                placeholder={user.user.email}
-              />
-            </label>
-            {/* 修改密碼 */}
-            {/* <label
+          </div>
+          {/* 使用者名稱 */}
+          <label htmlFor="account" className="flex w-full items-center gap-1">
+            <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
+            <input
+              onChange={handleUsername}
+              type="text"
+              id="account"
+              className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white focus:bg-white/90 focus:text-black/90"
+              placeholder={user.user.username}
+            />
+          </label>
+          {/* Email */}
+          <label htmlFor="email" className="flex w-full items-center gap-1">
+            <span className="w-24 shrink-0 tracking-widest">Email</span>
+            <input
+              type="email"
+              id="email"
+              disabled
+              className=" h-8 w-full shrink rounded-md border border-white/10 bg-white/10 px-4 text-white placeholder:text-white"
+              placeholder={user.user.email}
+            />
+          </label>
+          {/* 修改密碼 */}
+          {/* <label
               htmlFor="setPassword"
               className="flex w-full items-center gap-2"
             >
@@ -550,8 +551,8 @@ const MemberInfo = () => {
                 className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white focus:bg-white/90 focus:text-black/90"
               />
             </label> */}
-            {/* 確認密碼 */}
-            {/* <label
+          {/* 確認密碼 */}
+          {/* <label
               htmlFor="confirmPassword"
               className="flex w-full items-center gap-2"
             >
@@ -563,97 +564,96 @@ const MemberInfo = () => {
                 className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white placeholder:text-white focus:bg-white/90 focus:text-black/90"
               />
             </label> */}
-            {/* 球技程度 */}
-            <label htmlFor="skill" className="flex w-full items-center gap-2">
-              <span className="w-24 shrink-0 tracking-widest">球技程度</span>
-              <select
-                onChange={handleSkillLevel}
-                name=""
-                id="skill"
-                className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
-              >
-                <option value="新手">新手</option>
-                <option value="系隊">系隊</option>
-                <option value="校隊">校隊</option>
-                <option value="體保">體保</option>
-              </select>
-            </label>
-            {/* 擅長位置 */}
-            <div className="flex w-full items-start gap-2">
-              <span className="w-24 shrink-0 tracking-widest">擅長位置</span>
-              <div className="flex flex-wrap gap-4">
-                <label htmlFor="spiker">
-                  <input
-                    onChange={handleSpiker}
-                    type="checkbox"
-                    id="spiker"
-                    className="peer hidden"
-                    checked={goodAtPosition.includes("主攻")}
-                  />
-                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                    主攻
-                  </div>
-                </label>
-                <label htmlFor="middleBlocker">
-                  <input
-                    type="checkbox"
-                    id="middleBlocker"
-                    className="peer hidden"
-                    onChange={handleMiddleBlocker}
-                    checked={goodAtPosition.includes("攔中")}
-                  />
-                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                    攔中
-                  </div>
-                </label>
-                <label htmlFor="opposite">
-                  <input
-                    type="checkbox"
-                    id="opposite"
-                    className="peer hidden"
-                    onChange={handleOpposite}
-                    checked={goodAtPosition.includes("副攻")}
-                  />
-                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                    副攻
-                  </div>
-                </label>
-                <label htmlFor="setter">
-                  <input
-                    onChange={handleSetter}
-                    type="checkbox"
-                    id="setter"
-                    className="peer hidden"
-                    checked={goodAtPosition.includes("舉球")}
-                  />
-                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                    舉球
-                  </div>
-                </label>
-                <label htmlFor="libero">
-                  <input
-                    onChange={handleLibero}
-                    type="checkbox"
-                    id="libero"
-                    className="peer hidden"
-                    checked={goodAtPosition.includes("自由")}
-                  />
-                  <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
-                    自由
-                  </div>
-                </label>
-              </div>
+          {/* 球技程度 */}
+          <label htmlFor="skill" className="flex w-full items-center gap-1">
+            <span className="w-24 shrink-0 tracking-widest">球技程度</span>
+            <select
+              onChange={handleSkillLevel}
+              name=""
+              id="skill"
+              className="h-8 w-full shrink rounded-md border border-white/30 bg-white/20 px-4 text-white focus:bg-white/90 focus:text-black/90"
+            >
+              <option value="新手">新手</option>
+              <option value="系隊">系隊</option>
+              <option value="校隊">校隊</option>
+              <option value="體保">體保</option>
+            </select>
+          </label>
+          {/* 擅長位置 */}
+          <div className="flex w-full items-start gap-1">
+            <span className="w-24 shrink-0 tracking-widest">擅長位置</span>
+            <div className="flex flex-wrap gap-4">
+              <label htmlFor="spiker">
+                <input
+                  onChange={handleSpiker}
+                  type="checkbox"
+                  id="spiker"
+                  className="peer hidden"
+                  checked={goodAtPosition.includes("主攻")}
+                />
+                <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                  主攻
+                </div>
+              </label>
+              <label htmlFor="middleBlocker">
+                <input
+                  type="checkbox"
+                  id="middleBlocker"
+                  className="peer hidden"
+                  onChange={handleMiddleBlocker}
+                  checked={goodAtPosition.includes("攔中")}
+                />
+                <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                  攔中
+                </div>
+              </label>
+              <label htmlFor="opposite">
+                <input
+                  type="checkbox"
+                  id="opposite"
+                  className="peer hidden"
+                  onChange={handleOpposite}
+                  checked={goodAtPosition.includes("副攻")}
+                />
+                <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                  副攻
+                </div>
+              </label>
+              <label htmlFor="setter">
+                <input
+                  onChange={handleSetter}
+                  type="checkbox"
+                  id="setter"
+                  className="peer hidden"
+                  checked={goodAtPosition.includes("舉球")}
+                />
+                <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                  舉球
+                </div>
+              </label>
+              <label htmlFor="libero">
+                <input
+                  onChange={handleLibero}
+                  type="checkbox"
+                  id="libero"
+                  className="peer hidden"
+                  checked={goodAtPosition.includes("自由")}
+                />
+                <div className="cursor-pointer rounded-full bg-white/10 px-5 py-1 duration-500 hover:bg-white/30 peer-checked:bg-[#98C414]">
+                  自由
+                </div>
+              </label>
             </div>
-          </form>
+          </div>
+        </form>
 
-          {/* <!-- 儲存變更按鈕 --> */}
-          <button
-            onClick={handleSave}
-            className="w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
-          >
-            儲存
-          </button>
-        </div>
+        {/* <!-- 儲存變更按鈕 --> */}
+        <button
+          onClick={handleSave}
+          className="w-1/4 rounded-xl border-2 border-white/50 bg-[#0492D9] py-1 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff] md:w-1/6 lg:py-2"
+        >
+          儲存
+        </button>
       </div>
     </main>
   );

@@ -48,8 +48,15 @@ const CourtCard = () => {
   //
 
   return (
-    <div className="grid grid-cols-3 items-center justify-items-center gap-[2vw] gap-y-14">
-      {console.log(Array.isArray(courtData))}
+    <div className="grid grid-cols-2 items-center justify-items-center gap-[2vw] gap-y-6 md:grid-cols-3 md:gap-y-8 lg:gap-y-10">
+      {user && userRole == "admin" && (
+        <button
+          onClick={linkToAddCourt}
+          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
+        >
+          管理球場
+        </button>
+      )}
       {courtData &&
         courtData.length != 0 &&
         Array.isArray(courtData) &&
@@ -57,7 +64,7 @@ const CourtCard = () => {
           return (
             <div
               key={court._id}
-              className="courtCard flex h-[480px] w-full flex-col overflow-hidden rounded-2xl border-2 border-white/20 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159]"
+              className="courtCard flex h-[360px] w-full flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159] md:h-[420px] lg:h-[450px] xl:h-[480px]"
             >
               {/* 輪播圖 */}
               <figure className="h-3/5 w-full">
@@ -92,21 +99,21 @@ const CourtCard = () => {
               {/* 內容 */}
               <a
                 onClick={handleToCourtInfo}
-                className="group flex h-2/5 w-full cursor-pointer flex-col justify-between gap-2 px-6 py-4"
+                className="group flex h-2/5 w-full cursor-pointer flex-col justify-between gap-2 px-6 py-2 md:py-4"
               >
                 {/* 標題欄 */}
                 <div className="flex w-full flex-col flex-wrap items-start gap-2">
-                  <div className="flex w-full flex-wrap justify-between">
-                    <h3 className="text-wrap text-left text-2xl tracking-wider text-[#FFCC66]">
+                  <div className="flex w-full items-start justify-between gap-2">
+                    <h3 className="text-wrap text-left text-base tracking-wider text-[#FFCC66] md:text-lg lg:text-xl xl:text-2xl">
                       {court.courtName}
                     </h3>
-                    <div className="flex items-center gap-x-2">
+                    <div className="flex w-1/6 shrink-0 items-center justify-end gap-1 lg:gap-2">
                       <img
-                        className="h-6 w-6"
+                        className="h-4 lg:h-5 xl:h-6"
                         src="../../pic/courtCard/star.svg"
                         alt=""
                       />
-                      <span className="text-2xl leading-[28px] text-white">
+                      <span className="text-base leading-[0px] text-white md:text-lg lg:text-xl xl:text-2xl">
                         {court.score}
                       </span>
                     </div>
@@ -115,28 +122,46 @@ const CourtCard = () => {
                   <p className="text-[#FFFFFF]/70">{court.courtType}</p>
                 </div>
                 {/* 下方資訊 */}
-                <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-4 text-white">
+                <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-2 text-white lg:pt-4">
                   {/* icon */}
                   <figure className="flex gap-x-2">
                     <span>{court.traffic}</span>
                     {court.isPark ? (
-                      <img src="./pic/courtCard/parking_true.svg"></img>
+                      <img
+                        src="./pic/courtCard/parking_true.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     ) : (
-                      <img src="./pic/courtCard/parking_false.svg"></img>
+                      <img
+                        src="./pic/courtCard/parking_false.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     )}
                     {court.isBus ? (
-                      <img src="./pic/courtCard/bus_true.svg"></img>
+                      <img
+                        src="./pic/courtCard/bus_true.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     ) : (
-                      <img src="./pic/courtCard/bus_false.svg"></img>
+                      <img
+                        src="./pic/courtCard/bus_false.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     )}
                     {court.isMRT ? (
-                      <img src="./pic/courtCard/mrt_true.svg"></img>
+                      <img
+                        src="./pic/courtCard/mrt_true.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     ) : (
-                      <img src="./pic/courtCard/mrt_false.svg"></img>
+                      <img
+                        src="./pic/courtCard/mrt_false.svg"
+                        className="w-4 lg:w-5 xl:w-6"
+                      ></img>
                     )}
                   </figure>
                   {/* 按鈕 */}
-                  <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-[14px] duration-500 group-hover:bg-[#0492D9]">
+                  <button className="rounded-full border border-white/30 bg-white/10 px-2 py-1 text-xs tracking-wider duration-500 group-hover:bg-[#0492D9] lg:px-4 lg:text-sm">
                     詳細資訊
                   </button>
                 </div>
@@ -144,14 +169,6 @@ const CourtCard = () => {
             </div>
           );
         })}
-      {user && userRole == "admin" && (
-        <button
-          onClick={linkToAddCourt}
-          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
-        >
-          管理球場
-        </button>
-      )}
     </div>
   );
 };
