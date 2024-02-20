@@ -51,14 +51,14 @@ const MemberSign = () => {
   };
 
   return (
-    <main className="relative flex lg:h-[80vh] h-[100vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
+    <main className="relative flex lg:h-[75vh] md:h-[90vh] h-[100vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
         <form
           action=""
-          className="flex lg:h-2/3 h-1/2 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white"
+          className="flex py-10 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center sm:gap-12 gap-6 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white"
         >
           {/* <!-- 資料輸入欄 --> */}
-          <label htmlFor="account" className="flex w-full items-center gap-2">
+          <label htmlFor="account" className="flex w-full sm:items-center gap-2 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
             <input
               onChange={handleUsername}
@@ -68,7 +68,7 @@ const MemberSign = () => {
               placeholder="請輸入使用者名稱 ( 暱稱 )"
             />
           </label>
-          <label htmlFor="email" className="flex w-full items-center gap-2">
+          <label htmlFor="email" className="flex w-full sm:items-center gap-2 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">Email</span>
             <input
               onChange={handleEmail}
@@ -80,7 +80,7 @@ const MemberSign = () => {
           </label>
           <label
             htmlFor="setPassword"
-            className="flex w-full items-center gap-2"
+            className="flex w-full sm:items-center gap-2 sm:flex-row flex-col"
           >
             <span className="w-24 shrink-0 tracking-widest">密碼</span>
             <input
@@ -93,7 +93,7 @@ const MemberSign = () => {
           </label>
           <label
             htmlFor="confirmPassword"
-            className="flex w-full items-center gap-2"
+            className="flex w-full sm:items-center gap-2 sm:flex-row flex-col"
           >
             <span className="w-24 shrink-0 tracking-widest">確認密碼</span>
             <input
@@ -113,7 +113,7 @@ const MemberSign = () => {
         {/* <!-- 註冊按鈕 --> */}
         <button
           onClick={handleRegister}
-          className="xl:w-1/12 md:w-1/6 w-1/5 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+          className="xl:w-1/12 md:w-1/6 sm:w-1/5 w-1/3 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           註冊會員
         </button>

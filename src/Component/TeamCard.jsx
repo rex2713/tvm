@@ -98,7 +98,7 @@ const TeamCard = () => {
                         speed={500}
                         centeredSlides={true}
                         autoplay={{
-                          delay: 3000,
+                          delay: 2000,
                           disableOnInteraction: false,
                         }}
                         modules={[Autoplay]}
