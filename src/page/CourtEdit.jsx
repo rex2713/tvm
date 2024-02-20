@@ -69,8 +69,15 @@ const CourtEdit = () => {
 
     CourtService.updateCourt(params.court_id, formData)
       .then(() => {
-        window.alert("更新球場照片成功");
-        navigate("/AddCourt");
+        //處理永久硬碟複製
+        AuthService.copyRenderDisk()
+          .then(() => {
+            window.alert("更新球場照片成功");
+            navigate("/AddCourt");
+          })
+          .catch((e) => {
+            console.error("複製RenderDisk失敗:" + e);
+          });
       })
       .catch((e) => {
         console.log(e);
