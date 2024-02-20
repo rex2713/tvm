@@ -10,18 +10,16 @@ const HeaderNavBar = ({
   setMemberIconSrc,
 }) => {
   return (
-    <header className="bg-parent pointer-events-none fixed z-20 flex h-28 w-full items-center justify-between px-[5vw]">
-      <div className="flex">
-        <div className="h-15 mr-2 shrink-0 rounded-full ">
-          <img src="../pic/logo.svg" alt="" />
-        </div>
+    <header className="pointer-events-none fixed z-20 flex h-24 w-screen items-center justify-between px-[5vw] md:h-28">
+      <div className="flex w-32 shrink-0 items-center justify-start lg:w-1/4">
+        <img src="/pic/logo.svg" alt="" />
       </div>
-      <nav className="leading-15 pointer-events-auto flex items-center justify-center gap-2">
-        <ul className="invisible mx-2 flex h-0 items-center justify-center space-x-2 rounded-full bg-gray-800/70 px-1 leading-10 text-white hover:bg-gray-800 lg:visible lg:h-11 lg:duration-500">
+      <nav className="leading-15 pointer-events-auto flex items-center justify-center">
+        <ul className="invisible lg:w-full w-0 mx-2 flex h-0 items-center justify-end space-x-2 rounded-full bg-gray-800/70 mr-2 px-1 leading-10 text-white hover:bg-gray-800 lg:visible lg:h-11 lg:duration-500">
           <li>
             <Link
               to="/"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] hover:bg-white/10 lg:duration-500"
             >
               首頁
             </Link>
@@ -29,7 +27,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/map"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] hover:bg-white/10 lg:duration-500"
             >
               球場地圖
             </Link>
@@ -37,7 +35,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/team/list"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] hover:bg-white/10 lg:duration-500"
               href=""
             >
               揪團組隊
@@ -46,7 +44,7 @@ const HeaderNavBar = ({
           <li>
             <Link
               to="/news"
-              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] lg:duration-500 hover:bg-white/10"
+              className="text-m rounded-full px-7 py-2 font-light tracking-[.18rem] hover:bg-white/10 lg:duration-500"
               href=""
             >
               最新消息
@@ -75,7 +73,7 @@ const HeaderNavBar = ({
             <span></span>
             <ul
               id="menu"
-              className="invisible flex h-0 w-0 flex-col items-center justify-center bg-[#082A4D] opacity-0 gap-[5vh]"
+              className="invisible flex h-0 w-0 flex-col items-center justify-center gap-[5vh] bg-[#082A4D] opacity-0"
             >
               <Link
                 to={isLogIn ? "/member/Info" : "/member/login"}
@@ -91,7 +89,7 @@ const HeaderNavBar = ({
               <li>
                 <Link
                   to="/"
-                  className="rounded-full flex w-32 items-center justify-center py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
+                  className="flex w-32 items-center justify-center rounded-full py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
                 >
                   首頁
                 </Link>
@@ -99,7 +97,7 @@ const HeaderNavBar = ({
               <li>
                 <Link
                   to="/map"
-                  className="rounded-full flex w-32 items-center justify-center py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
+                  className="flex w-32 items-center justify-center rounded-full py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
                 >
                   球場地圖
                 </Link>
@@ -107,7 +105,7 @@ const HeaderNavBar = ({
               <li>
                 <Link
                   to="/team/list"
-                  className="rounded-full flex w-32 items-center justify-center py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
+                  className="flex w-32 items-center justify-center rounded-full py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
                   href=""
                 >
                   揪團組隊
@@ -116,7 +114,7 @@ const HeaderNavBar = ({
               <li>
                 <Link
                   to="/news"
-                  className="rounded-full flex w-32 items-center justify-center py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
+                  className="flex w-32 items-center justify-center rounded-full py-2 text-lg font-light tracking-[.18rem] text-white duration-500 hover:bg-white/10"
                   href=""
                 >
                   最新消息

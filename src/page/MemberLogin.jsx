@@ -47,15 +47,15 @@ const MemberLogin = () => {
   };
 
   return (
-    <main className="relative flex lg:h-[60vh] h-[100vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
+    <main className="relative flex xl:h-[70vh] lg:h-[75vh] h-[100vh] w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
       {/* <!-- 登入表單 --> */}
       <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
         <form
           action=""
-          className="flex lg:h-1/2 h-1/4 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center gap-12 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white "
+          className="flex py-10 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center sm:gap-12 gap-6 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white "
         >
           {/* <!-- 帳密輸入 --> */}
-          <label htmlFor="account" className="flex w-full items-center gap-2">
+          <label htmlFor="account" className="flex w-full sm:items-center gap-2 sm:flex-row flex-col">
             <span className="w-20 shrink-0 tracking-widest">Email</span>
             <input
               onChange={handleEmail}
@@ -65,7 +65,7 @@ const MemberLogin = () => {
               placeholder="請輸入信箱"
             />
           </label>
-          <label htmlFor="password" className="flex w-full items-center gap-2">
+          <label htmlFor="password" className="flex w-full sm:items-center gap-2 sm:flex-row flex-col">
             <span className="w-20 shrink-0 tracking-widest">密碼</span>
             <input
               onChange={handlePassword}
@@ -87,7 +87,7 @@ const MemberLogin = () => {
         {/* <!-- 登入按鈕 --> */}
         <button
           onClick={handleLogin}
-          className="lg:w-1/12 w-1/6 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+          className="xl:w-1/12 md:w-1/6 sm:w-1/5 w-1/3 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           登入
         </button>
