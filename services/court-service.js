@@ -21,6 +21,20 @@ class CourtService {
       },
     });
   }
+  //更改球場資料
+  updateCourt(_id, formData) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.patch(Default_URL + "/admin/updateCourt/" + _id, formData, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
   //刪除球場
   deleteCourt(_id) {
     let token;

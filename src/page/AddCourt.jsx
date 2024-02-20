@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +9,7 @@ import "swiper/css/free-mode";
 import { FreeMode, Navigation, Pagination, Keyboard } from "swiper/modules";
 import CourtService from "../../services/court-service";
 import AuthService from "../../services/auth-service";
+import Compressor from "compressorjs";
 
 const AddCourt = () => {
   const navigate = useNavigate();
@@ -48,6 +49,8 @@ const AddCourt = () => {
   const [message, setMessage] = useState("");
   const [file, setFile] = useState();
   const [preview, setPreview] = useState(null);
+  const [compressedImage, setCompressedImage] = useState(null);
+  const [originalImage, setOriginalImage] = useState(null);
 
   //上半部球場卡片相關
   //處理球場刪除
@@ -106,22 +109,61 @@ const AddCourt = () => {
   };
 
   //設定input更新file
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const filesArray = Array.from(e.target.files);
-    // console.log(filesArray);
-    setFile(filesArray);
-  };
-  //設定上傳圖片預覽畫面
-  const handleCoverPreview = (e) => {
-    if (!e.target.files[0] || e.target.files[0].length == 0) return;
-    const previewImg = [];
-    for (let i = 0; i < e.target.files.length; i++) {
-      const file = e.target.files[i];
-      const name = file.name;
-      const previewURL = URL.createObjectURL(file);
-      previewImg.push({ name, previewURL });
+    // // console.log(filesArray);
+    // setFile(filesArray);
+
+    // const photoImg = [];
+    // for (let i = 0; i < e.target.files.length; i++) {
+    //   const file = e.target.files[i];
+    //   const name = file.name;
+    //   const photoURL = URL.createObjectURL(file);
+    //   photoImg.push({ name, photoURL });
+    // }
+    console.log(filesArray);
+
+    try {
+      const compressedBlob = await Promise.all(
+        filesArray.map((file) => {
+          return new Promise((resolve, reject) => {
+            new Compressor(file, {
+              scaleRatio: 0.5, // 将图像缩放为原始大小的一半
+              quality: 1, //設定質量
+              maxWidth: 200, // 最大寬度
+              maxHeight: 80, // 最大高度
+              resize: true,
+              mimeType: "image/jpeg", // Specify the output image format
+              success(result) {
+                resolve(result);
+              },
+              error(error) {
+                console.log(error);
+                reject(error);
+              },
+            });
+          });
+        }),
+      );
+      console.log(compressedBlob);
+      setFile(compressedBlob);
+
+      //處理上傳圖片預覽畫面
+      if (!compressedBlob || compressedBlob.length == 0) {
+        return console.log("沒找到預覽網址");
+      } else {
+        const previewImg = [];
+        for (let i = 0; i < compressedBlob.length; i++) {
+          const file = compressedBlob[i];
+          const name = file.name;
+          const previewURL = URL.createObjectURL(file);
+          previewImg.push({ name, previewURL });
+        }
+        setPreview(previewImg);
+      }
+    } catch (error) {
+      console.error(error);
     }
-    setPreview(previewImg);
   };
 
   //處理提交球場資料函式
@@ -246,9 +288,7 @@ const AddCourt = () => {
                     </figure>
                     {/* 按鈕 */}
                     <div className="flex w-full justify-between">
-                      <button className="rounded-full border border-white/30 bg-white/10 px-4 py-1 text-sm tracking-widest hover:bg-[#0492D9]">
-                        修改資料
-                      </button>
+                      <Link to={"/" + court._id + "/CourtEdit"}>修改資料</Link>
                       <button
                         onClick={handleDelete}
                         className="rounded-full border border-white/30 bg-[#AE2514] px-4 py-1 text-sm tracking-widest hover:bg-[#cc2b16]"
@@ -424,7 +464,7 @@ const AddCourt = () => {
               type="file"
               multiple
               onChange={(e) => {
-                handleFileChange(e), handleCoverPreview(e);
+                handleFileChange(e);
               }}
             />
             <div className="grid grid-cols-2 gap-x-2">

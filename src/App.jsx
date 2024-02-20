@@ -15,6 +15,7 @@ import MemberLogin from "./page/MemberLogin";
 import MemberInfo from "./page/MemberInfo";
 import CourtInfo from "./page/CourtInfo";
 import AddCourt from "./page/AddCourt";
+import CourtEdit from "./page/CourtEdit";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="map" element={<MapPage />} />
             <Route path="AddCourt" element={<AddCourt />} />
+            <Route path="/:court_id/CourtEdit" element={<CourtEdit />} />
             <Route path="court" element={<CourtInfo />} />
             <Route path="team" element={<TeamLayout />}>
               <Route path="list" element={<TeamList />} />
