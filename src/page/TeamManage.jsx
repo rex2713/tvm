@@ -10,15 +10,12 @@ const TeamManage = () => {
     navigate("/team/teamInfo");
   };
   const user = AuthService.getCurrentUser();
-
+  const id = user.user._id;
   const [userTeamsData, setUserTeamsData] = useState([]);
 
   useEffect(() => {
-    let id = user.user._id;
-
-    const getTeams = async (id) => {
+    const getTeams = async () => {
       try {
-        const id = user.user._id;
         const userTeams = await TeamService.getUserTeams(id);
         setUserTeamsData(userTeams.data);
       } catch (error) {
@@ -40,7 +37,7 @@ const TeamManage = () => {
               {/* title */}
               <div className="flex items-center gap-4 px-6">
                 <h3 className="text-4xl font-black tracking-wider text-[#FFCC66]">
-                  Coconut Team
+                  {team.teamName}
                 </h3>
               </div>
 
@@ -56,13 +53,15 @@ const TeamManage = () => {
                         <p className="shrink-0 text-base tracking-widest text-white/70">
                           球場
                         </p>
-                        <p className="w-4/5 flex-wrap">師大附中</p>
+                        <p className="w-4/5 flex-wrap">
+                          {team.court.courtName}
+                        </p>
                       </div>
                       <div className="flex w-full items-center gap-2">
                         <p className="shrink-0 text-base tracking-widest text-white/70">
                           日期
                         </p>
-                        <p className="w-full flex-wrap">12/12(二)</p>
+                        <p className="w-full flex-wrap">{team.date}</p>
                       </div>
                     </div>
                     <input
