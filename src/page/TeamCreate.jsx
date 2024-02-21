@@ -72,11 +72,16 @@ const TeamCreate = () => {
           setMessage("此隊伍已滿員");
         } else if (email == "") {
           setMessage("信箱不能為空");
+        } else if (teamMember.includes(data._id)) {
+          setMessage("此用戶已在隊伍中");
+        } else if (teamLeader._id == data._id) {
+          setMessage("此用戶已是隊伍的隊長");
         } else {
           if (data.data == "") {
             setMessage("找不到此用戶");
           } else {
             setTeamMember([...teamMember, data.data]);
+            setMessage("");
           }
         }
       })
@@ -106,12 +111,15 @@ const TeamCreate = () => {
       setMessage("此隊友已在隊伍中");
     } else if (teamMember.length >= 5) {
       setMessage("此隊伍已滿員");
+    } else if (teamLeader == radomUser._id) {
+      setMessage("此用戶已是隊伍的隊長");
     } else {
       console.log(e.target.checked);
       setTeamMember([...teamMember, radomUser]);
       setRadomTenUsers((prevUsers) =>
         prevUsers.filter((user) => user._id !== radomUser._id),
       );
+      setMessage("");
     }
   };
 
@@ -349,7 +357,7 @@ const TeamCreate = () => {
               <div className="flex w-full flex-col items-center justify-center gap-1">
                 <img
                   loading="lazy"
-                  src={user && user.user.photoSelected}
+                  src={user.user.photoSelected}
                   className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover outline outline-2 outline-offset-2 outline-[#FFCC66]"
                 />
                 <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
