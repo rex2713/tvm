@@ -171,7 +171,9 @@ const CourtInfo = () => {
                 </div>
                 <div className="my-2 flex text-base tracking-wider text-white/70 md:text-lg xl:text-xl">
                   <p className="w-[6.5rem] font-bold">停車場</p>
-                  <p>{courtData.data.isPark ? <p>有</p> : <p>無</p>}</p>
+                  <p>
+                    {courtData.data.isPark ? <span>有</span> : <span>無</span>}
+                  </p>
                 </div>
                 <div className="my-2 flex text-base tracking-wider text-white/70 md:text-lg xl:text-xl">
                   <p className="w-[6.5rem] font-bold">費用</p>

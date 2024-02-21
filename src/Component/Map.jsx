@@ -132,73 +132,73 @@ const Map = () => {
         <div className="no-scrollbar flex w-[95%] items-start gap-4 overflow-scroll pl-[6vw]">
           <button
             onClick={() => handleScrollToRegion("中正區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             中正區
           </button>
           <button
             onClick={() => handleScrollToRegion("中山區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             中山區
           </button>
           <button
             onClick={() => handleScrollToRegion("大同區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             大同區
           </button>
           <button
             onClick={() => handleScrollToRegion("大安區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             大安區
           </button>
           <button
             onClick={() => handleScrollToRegion("松山區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             松山區
           </button>
           <button
             onClick={() => handleScrollToRegion("信義區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             信義區
           </button>
           <button
             onClick={() => handleScrollToRegion("北投區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             北投區
           </button>
           <button
             onClick={() => handleScrollToRegion("士林區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             士林區
           </button>
           <button
             onClick={() => handleScrollToRegion("內湖區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             內湖區
           </button>
           <button
             onClick={() => handleScrollToRegion("南港區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             南港區
           </button>
           <button
             onClick={() => handleScrollToRegion("萬華區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             萬華區
           </button>
           <button
             onClick={() => handleScrollToRegion("文山區")}
-            className="shrink-0 rounded-full border border-transparent bg-black/50 md:px-5 px-3 lg:py-2 py-1 md:text-sm text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white"
+            className="shrink-0 rounded-full border border-transparent bg-black/50 px-3 py-1 text-xs tracking-[0.2rem] text-white/70 duration-500 hover:border-white/50 hover:bg-[#062340] hover:text-white md:px-5 md:text-sm lg:py-2"
           >
             文山區
           </button>
@@ -212,8 +212,7 @@ const Map = () => {
         onLoad={() => handleScrollToRegion("")}
       >
         <div className="relative flex h-[4200px] w-[4200px]">
-          <img className="h-full w-full" src="/pic/map.jpg" alt=""
-           />
+          <img className="h-full w-full" src="/pic/map.jpg" alt="" />
 
           {/* 臺北教育大學 */}
           <div className="absolute bottom-[1455px] left-[2243px] flex w-12 flex-col-reverse items-center gap-1">
