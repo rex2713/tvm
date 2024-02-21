@@ -10,6 +10,7 @@ import { FreeMode, Navigation, Pagination, Keyboard } from "swiper/modules";
 import CourtService from "../../services/court-service";
 import AuthService from "../../services/auth-service";
 import Compressor from "compressorjs";
+import Swal from "sweetalert2";
 
 const AddCourt = () => {
   const navigate = useNavigate();
@@ -19,12 +20,28 @@ const AddCourt = () => {
     // console.log(user.user.role);
     if (user) {
       if (user.user.role !== "admin") {
-        window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
+        // window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
+        Swal.fire({
+          title: "您不是管理員，沒有此頁面權限，即將為您跳轉首頁",
+          // text: "現在將為您導向個人資料頁面",
+          icon: "error",
+          background: "#123659",
+          color: "#FFFFFF",
+          confirmButtonColor: "#0492D9",
+        });
         navigate("/");
       }
     } else if (!user) {
-      window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
+      // window.alert("您不是管理員，沒有此頁面權限，即將為您跳轉首頁");
       navigate("/");
+      Swal.fire({
+        title: "您不是管理員，沒有此頁面權限，即將為您跳轉首頁",
+        // text: "現在將為您導向個人資料頁面",
+        icon: "error",
+        background: "#123659",
+        color: "#FFFFFF",
+        confirmButtonColor: "#0492D9",
+      });
     }
   }, []);
 
@@ -60,7 +77,15 @@ const AddCourt = () => {
       const _id = e.target.id;
       CourtService.deleteCourt(_id)
         .then(() => {
-          window.alert("刪除球場成功");
+          // window.alert("刪除球場成功");
+          Swal.fire({
+            title: "刪除球場成功",
+            // text: "現在將為您導向個人資料頁面",
+            icon: "success",
+            background: "#123659",
+            color: "#FFFFFF",
+            confirmButtonColor: "#0492D9",
+          });
           window.location.reload();
           window.scroll(0, 0);
         })
@@ -187,7 +212,15 @@ const AddCourt = () => {
         //處理永久硬碟複製
         AuthService.copyRenderDisk()
           .then(() => {
-            window.alert("創建球場成功");
+            // window.alert("創建球場成功");
+            Swal.fire({
+              title: "創建球場成功",
+              // text: "現在將為您導向個人資料頁面",
+              icon: "success",
+              background: "#123659",
+              color: "#FFFFFF",
+              confirmButtonColor: "#0492D9",
+            });
             window.location.reload();
           })
           .catch((e) => {

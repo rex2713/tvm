@@ -9,6 +9,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
 import { v4 as uuidv4 } from "uuid";
+import Swal from "sweetalert2";
 
 const TeamInfo = () => {
   const [teamData, setTeamData] = useState();
@@ -53,8 +54,13 @@ const TeamInfo = () => {
     //設定聊天室定時更新訊息
     let intervalId = setInterval(async () => {
       let message = await TeamService.teamGetMessage(_id);
-      // console.log(_id);
-      setTeamMessage(message.data.teamMessage);
+      let setting = ["請開始輸入訊息"];
+      console.log(message.data.teamMessage);
+      if (message.data.teamMessage.length == 0) {
+        setTeamMessage(setting);
+      } else {
+        setTeamMessage(message.data.teamMessage);
+      }
     }, 5000);
     //卸載時清除定時更新訊息
     return () => {
@@ -84,7 +90,16 @@ const TeamInfo = () => {
     // console.log(isLeader);
     const userEmail = window.prompt("請輸入好友信箱：");
     // console.log(userInput);
-    if (userEmail === "") return window.alert("信箱不能為空");
+    if (userEmail === "") return;
+    // window.alert("信箱不能為空");
+    Swal.fire({
+      title: "信箱不能為空",
+      // text: "",
+      icon: "warning",
+      background: "#123659",
+      color: "#FFFFFF",
+      confirmButtonColor: "#0492D9",
+    });
     try {
       let userFound = await TeamService.getUserByEmail(userEmail)
         .then((data) => {
@@ -95,16 +110,56 @@ const TeamInfo = () => {
               })
               .includes(data.data._id)
           ) {
-            window.alert("此隊友已在隊伍中");
+            // window.alert("此隊友已在隊伍中");
+            Swal.fire({
+              title: "此隊友已在隊伍中",
+              icon: "warning",
+              background: "#123659",
+              color: "#FFFFFF",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           } else if (teamData.teamMember.length >= 5) {
-            window.alert("此隊伍已滿員");
+            // window.alert("此隊伍已滿員");
+            Swal.fire({
+              title: "此隊伍已滿員",
+              icon: "warning",
+              background: "#123659",
+              color: "#FFFFFF",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           } else if (userEmail == "") {
-            window.alert("信箱不能為空");
+            // window.alert("信箱不能為空");
+            Swal.fire({
+              title: "信箱不能為空",
+              icon: "warning",
+              background: "#123659",
+              color: "#FFFFFF",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           } else if (teamData.teamLeader._id == data.data._id) {
-            window.alert("此用戶已是隊伍的隊長");
+            // window.alert("此用戶已是隊伍的隊長");
+            Swal.fire({
+              title: "此用戶已是隊伍的隊長",
+              icon: "warning",
+              background: "#123659",
+              color: "#FFFFFF",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           } else {
             if (data.data == "") {
-              window.alert("找不到此用戶");
+              // window.alert("找不到此用戶");
+              Swal.fire({
+                title: "找不到此用戶",
+                icon: "warning",
+                background: "#123659",
+                color: "#FFFFFF",
+                showConfirmButton: false,
+                timer: 1500,
+              });
             } else {
               setMemberData([...memberData, data.data]);
               TeamService.teamAdd(data.data._id, teamData._id);
@@ -618,7 +673,7 @@ const TeamInfo = () => {
                 </div> */}
               </div>
               <div ref={containerRef} className="h-40 overflow-auto">
-                {teamMessage ? (
+                {teamMessage && teamMessage.length == 0 ? (
                   <p className="text-center text-xl text-white">Loading...</p>
                 ) : (
                   <></>

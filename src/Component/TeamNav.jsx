@@ -1,12 +1,21 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const TeamNav = () => {
   const location = useLocation();
   const isLogin = localStorage.getItem("user") !== null;
 
   const handleToTeamCreate = () => {
-    if (!isLogin) window.alert("請先登入");
+    if (!isLogin) 
+    // window.alert("請先登入");
+    Swal.fire({
+      title: "請先登入",
+      icon: "warning",
+      background: "#123659",
+      color: "#FFFFFF",
+      confirmButtonColor: "#0492D9",
+    });
   };
   return (
     <section className="flex h-[200px] w-full flex-col items-center justify-end gap-2 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[5vw] pb-5 md:flex-row md:items-end md:justify-between lg:h-[240px]">
