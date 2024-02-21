@@ -391,14 +391,14 @@ const AddCourt = () => {
       </div>
       {/* 球場列表 */}
       <h2 className="w-full text-center text-3xl text-white">球場列表</h2>
-      <div className="grid grid-cols-4 gap-10 gap-y-14 px-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 gap-y-14 px-20">
         {courtData &&
           courtData.length != 0 &&
           courtData.map((court) => {
             return (
               <div
                 key={court._id}
-                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-transparent bg-[#062340] duration-500 hover:border-white/30 hover:bg-[#083159]"
+                className="courtCard h-[480px] w-full overflow-hidden rounded-2xl border-2 border-white/10 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159]"
               >
                 {/* 輪播圖 */}
                 <figure className="h-3/5 w-full">

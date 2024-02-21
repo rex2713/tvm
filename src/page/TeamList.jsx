@@ -6,7 +6,7 @@ import "../css/main.css";
 const TeamList = () => {
   window.scrollTo(0, 0);
   return (
-    <main className="flex w-full flex-col justify-center gap-10 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[5vw] py-10">
+    <main className="flex w-full min-h-screen flex-col justify-center gap-10 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[5vw] py-10">
       <section className="w-full gap-6 rounded-3xl border-2 border-[#FFE8A3]/50 px-6 py-2">
         <h4 className="text-center text-xl font-bold text-[#FFCC66]">
           系統公告
