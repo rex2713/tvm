@@ -122,10 +122,10 @@ const TeamInfo = () => {
     <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[8vw] py-10">
       {/* 球場內容 */}
       {teamData && (
-        <div className="flex w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8">
-          <section className="flex h-full w-full gap-[5vw] px-10">
+        <div className="flex w-[80vw] flex-col h-full items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8">
+          <section className="flex lg:flex-row flex-col w-full gap-[5vw] px-[2vw] md:px-[5vw] items-center">
             {/* 資訊 */}
-            <article className="flex w-1/2 flex-col justify-between gap-8">
+            <article className="flex w-full lg:w-1/2 flex-col justify-between gap-4 sm:gap-6">
               {/* 球場標題 */}
               <div className="flex items-center gap-4">
                 {editTeamName ? (
@@ -133,6 +133,7 @@ const TeamInfo = () => {
                     onChange={handleNewTeamName}
                     autoFocus
                     placeholder={teamData.teamName}
+                    value={teamData.teamName}
                     className="bg-transparent text-4xl font-black  tracking-wider text-[#FFCC66] placeholder:text-[#FFCC66]"
                   ></input>
                 ) : (
@@ -158,7 +159,7 @@ const TeamInfo = () => {
                 )}
               </div>
               {/* 詳細資訊 */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2 sm:gap-4">
                 <div className="flex text-xl tracking-widest text-white/70">
                   <p className="w-[3rem] text-base">球場</p>
                   <p className="font-bold">{teamData.court.courtName}</p>
@@ -169,19 +170,19 @@ const TeamInfo = () => {
                 </div>
               </div>
               {/* 公告欄 */}
-              <div className="flex h-full w-full flex-col rounded-2xl border border-white/10 bg-white/5 px-4 py-2 font-bold text-white/70 duration-500 hover:border-white/20">
+              <div className="flex h-full w-full flex-col rounded-2xl border gap-2 border-white/10 bg-white/5 px-4 py-2 font-bold text-white/70 duration-500 hover:border-white/20">
                 <p className="my-2 w-full text-center text-xl tracking-widest">
                   公告
                 </p>
                 <div className="no-scrollbar flex h-full w-full flex-col gap-1 overflow-scroll">
-                  <div className="flex items-start gap-4">
-                    <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                  <div className="flex items-start gap-0 sm:gap-4 sm:flex-row flex-col">
+                    <p className="whitespace-nowrap text-xs sm:text-sm tracking-wider text-white/50">
                       2023.12.4 15:23
                     </p>
                     <p className="text-base tracking-widest">大家自己帶裝備</p>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                  <div className="flex items-start gap-0 sm:gap-4 sm:flex-row flex-col">
+                    <p className="whitespace-nowrap text-xs sm:text-sm tracking-wider text-white/50">
                       2023.12.6 18:00
                     </p>
                     <p className="text-base tracking-widest">六點半門口見!</p>
@@ -195,24 +196,24 @@ const TeamInfo = () => {
                   />
                   <input
                     type="submit"
-                    className="h-6 w-1/6 rounded-lg bg-white/10 text-white/50 duration-500 hover:bg-white/20"
+                    className="h-6 w-1/6 rounded-lg text-xs md:text-sm bg-white/10 text-white/50 duration-500 hover:bg-white/20"
                     value={"送出公告"}
                   />
                 </div>
               </div>
             </article>
 
-            <div className="grid h-full w-1/2 grid-cols-3 items-center justify-items-center gap-x-4 gap-y-4 text-white">
+            <div className="grid w-full lg:w-1/2 h-full grid-cols-3 sm:grid-cols-6 lg:grid-cols-3 justify-items-center gap-x-2 lg:gap-x-4 gap-y-4 text-white">
               {/* 隊長 */}
-              <button className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                <div className="flex h-full w-full flex-col items-center justify-center gap-3">
+              <button className="group w-full h-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 px-2 py-2">
+                <div className="flex h-full w-full flex-col items-center justify-center gap-2">
                   <img
-                    className="w-1/3 rounded-full bg-white bg-clip-border outline outline-2 outline-offset-4 outline-[#FFCC66]"
+                    className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full bg-white bg-clip-border outline lg:outline-2 outline-1 outline-offset-4 outline-[#FFCC66]"
                     src={teamData.teamLeader.photoSelected}
                     alt=""
                   />
                   <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-base font-bold tracking-wide">
+                    <p className="text-base sm:text-sm md:text-base font-bold tracking-wide">
                       {teamData.teamLeader.username}
                     </p>
                     <p className="text-sm tracking-widest text-white/70">
@@ -232,7 +233,7 @@ const TeamInfo = () => {
                             return (
                               <SwiperSlide
                                 key={uuidv4()}
-                                className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                                className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide"
                               >
                                 {position}
                               </SwiperSlide>
@@ -240,7 +241,7 @@ const TeamInfo = () => {
                           })}
                       </Swiper>
                     </p>
-                    <p className="text-sm tracking-widest text-white/70">
+                    <p className="text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide">
                       {teamData.teamLeader.skillLevel &&
                         teamData.teamLeader.skillLevel}
                     </p>
@@ -255,26 +256,26 @@ const TeamInfo = () => {
                   return (
                     <button
                       key={member._id}
-                      className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50"
+                      className="group w-full relative h-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 px-2 py-2"
                     >
                       {isLeader && (
                         <div
                           onClick={() => {
                             handleDelete(member._id, teamData._id);
                           }}
-                          className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50"
+                          className="absolute right-1 top-1 lg:right-2 lg:top-2 flex h-3 w-3 lg:h-4 lg:w-4 xl:h-5 xl:w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50"
                         >
                           -
                         </div>
                       )}
-                      <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
+                      <div className=" flex h-full w-full flex-col items-center justify-center gap-2">
                         <img
-                          className="w-1/3 rounded-full bg-white bg-clip-border "
+                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full bg-white bg-clip-border "
                           src={member.photoSelected}
                           alt=""
                         />
                         <div className="flex flex-col items-center justify-center gap-1">
-                          <p className="text-base font-bold tracking-wide">
+                          <p className="text-base sm:text-sm md:text-base font-bold tracking-wide">
                             {member.username}
                           </p>
                           <Swiper
@@ -293,14 +294,14 @@ const TeamInfo = () => {
                                 return (
                                   <SwiperSlide
                                     key={uuidv4()}
-                                    className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                                    className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide"
                                   >
                                     {position}
                                   </SwiperSlide>
                                 );
                               })}
                           </Swiper>
-                          <p className="text-sm tracking-widest text-white/70">
+                          <p className="text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide">
                             {member.skillLevel && member.skillLevel}
                           </p>
                         </div>
@@ -332,9 +333,6 @@ const TeamInfo = () => {
                   </div>
                 </div>
               </button>
-
-
-
               <button className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
                 <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
                   -
@@ -358,7 +356,6 @@ const TeamInfo = () => {
                   </div>
                 </div>
               </button>
-
               <button className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
                 <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
                   -
@@ -382,11 +379,12 @@ const TeamInfo = () => {
                   </div>
                 </div>
               </button> */}
+
               {isLeader && memberData && memberData.length < 5 && (
                 <label
                   onClick={handleJoinTeam}
                   htmlFor="seek"
-                  className="group flex h-52 w-full flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 pb-6 duration-500 hover:border-white/50"
+                  className="group flex w-full lg:h-full flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 pb-6 duration-500 hover:border-white/50"
                 >
                   <p className="text-6xl text-[#FFCC66]/50 duration-500 group-hover:text-[#FFCC66]">
                     +
@@ -416,7 +414,7 @@ const TeamInfo = () => {
             <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
             <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
               <div className="no-scrollbar flex flex-col gap-1 overflow-scroll text-base">
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:23
                   </p>
@@ -427,7 +425,7 @@ const TeamInfo = () => {
                     幾點在球場集合?
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:36
                   </p>
@@ -438,7 +436,7 @@ const TeamInfo = () => {
                     看大家意見
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:37
                   </p>
@@ -449,7 +447,7 @@ const TeamInfo = () => {
                     我六點半才會到
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:38
                   </p>
@@ -460,7 +458,7 @@ const TeamInfo = () => {
                     那我們就約六點半門口見嗎?
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:40
                   </p>
@@ -471,7 +469,7 @@ const TeamInfo = () => {
                     沒問題
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:41
                   </p>
@@ -482,7 +480,7 @@ const TeamInfo = () => {
                     好喔~
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:41
                   </p>
@@ -491,7 +489,7 @@ const TeamInfo = () => {
                   </p>
                   <p className="text-base tracking-widest text-white/70">收</p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:42
                   </p>
@@ -502,7 +500,7 @@ const TeamInfo = () => {
                     球具各自帶喔
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:45
                   </p>
@@ -513,7 +511,7 @@ const TeamInfo = () => {
                     收到
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.9 21:30
                   </p>
@@ -524,7 +522,7 @@ const TeamInfo = () => {
                     明天有人要我幫買晚餐嗎
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.9 21:30
                   </p>
@@ -535,7 +533,7 @@ const TeamInfo = () => {
                     我要
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.9 21:31
                   </p>
@@ -546,7 +544,7 @@ const TeamInfo = () => {
                     隨意買個飯糰，感謝
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex sm:gap-4 flex-col sm:flex-row">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.9 21:32
                   </p>
@@ -570,8 +568,9 @@ const TeamInfo = () => {
               </div>
             </div>
           </section>
+
           {isLeader && (
-            <button onClick={handleDeleteTeam} className="text-3xl text-white">
+            <button onClick={handleDeleteTeam} className="xl:w-1/5 md:w-1/6 sm:w-1/5 w-1/2 rounded-xl border-2 border-white/50 bg-red-800/50 py-1 sm:py-2 text-base sm:text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-red-600/50">
               刪除隊伍
             </button>
           )}
