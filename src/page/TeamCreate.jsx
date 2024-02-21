@@ -149,12 +149,17 @@ const TeamCreate = () => {
   };
 
   return (
-    <main className="flex w-full flex-col-reverse lg:flex-row justify-center gap-[3vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[2vw] md:px-[4vw] xl:px-[10vw] py-10">
+    <main className="flex w-full flex-col-reverse justify-center lg:pb-28 gap-[5vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[4vw] py-5 lg:flex-row lg:py-10 xl:px-[10vw]">
       {/* 左側創建隊伍表單 */}
-      <div className="flex w-full lg:w-3/5 flex-col gap-4">
-        <h3 className="w-full text-center lg:text-start text-2xl font-bold text-[#FFCC66]">隊伍資訊</h3>
-        <form className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-[#114273] p-10 text-white">
-          <label htmlFor="teamName" className="flex w-full items-center gap-2">
+      <div className="flex w-full lg:w-3/5 flex-col gap-4 xl:w-3/5">
+        <h3 className="w-full text-center text-lg md:text-2xl font-bold text-[#FFCC66] lg:text-start">
+          隊伍資訊
+        </h3>
+        <form className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-[#114273] p-10 text-white xl:w-full">
+          <label
+            htmlFor="teamName"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
+          >
             <span className="w-24 shrink-0 tracking-widest">隊伍名稱</span>
             <input
               onChange={handleTeamName}
@@ -166,7 +171,7 @@ const TeamCreate = () => {
           </label>
           <label
             htmlFor="selectCourt"
-            className="flex w-full items-center gap-2"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
           >
             <span className="w-24 shrink-0 tracking-widest">選擇球場</span>
             <select
@@ -186,7 +191,10 @@ const TeamCreate = () => {
               <option value="百齡高中">百齡高中</option>
             </select>
           </label>
-          <label htmlFor="date" className="flex w-full items-center gap-2">
+          <label
+            htmlFor="date"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
+          >
             <span className="w-24 shrink-0 tracking-widest">選擇日期</span>
             <input
               onChange={handleDate}
@@ -198,10 +206,10 @@ const TeamCreate = () => {
 
           <label
             htmlFor="teammate"
-            className="flex w-full justify-between gap-2"
+            className="flex w-full flex-col justify-start gap-2 xl:flex-row xl:justify-between "
           >
             <span className="w-24 shrink-0 tracking-widest">增加隊員</span>
-            <div className="flex w-full flex-col gap-4 overflow-clip">
+            <div className="flex w-full flex-col gap-2 overflow-clip">
               <div className="flex w-full justify-between gap-2">
                 <input
                   onChange={handleEmail}
@@ -217,7 +225,7 @@ const TeamCreate = () => {
                   加入
                 </button>
               </div>
-              <div className="flex w-full flex-col gap-2">
+              <div className="flex w-full flex-col gap-1">
                 <p className="text-white/70">隨機加入隊友</p>
                 <div className="no-scrollbar flex w-full justify-start gap-[1vw] overflow-x-auto">
                   {/* 隨機十位使用者資料 */}
@@ -309,9 +317,11 @@ const TeamCreate = () => {
 
           {/* 報錯訊息 */}
           {message ? (
-            <div className="h-5 text-red-500">{message}</div>
+            <div className="h-3 text-sm text-[#FFCC66] sm:text-lg">
+              {message}
+            </div>
           ) : (
-            <div className="h-5"></div>
+            <div className="h-3"></div>
           )}
 
           {/* 按鈕 */}
@@ -324,18 +334,20 @@ const TeamCreate = () => {
         </form>
       </div>
       {/* 右側即時預覽 */}
-      <div className="flex w-1/4 flex-col gap-4">
-        <h3 className="w-full text-center lg:text-start text-2xl font-bold text-[#FFCC66]">即時預覽</h3>
+      <div className="flex w-full flex-col items-center gap-4 xl:w-1/4">
+        <h3 className="w-full text-center text-lg md:text-2xl font-bold text-[#FFCC66] lg:text-start">
+          即時預覽
+        </h3>
         <div
           key={uuidv4()}
-          className="flex h-[480px] w-[320px] shrink-0 flex-col items-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 2xl:w-[360px]"
+          className="flex h-[340px] w-[260px] shrink-0 flex-col items-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 md:h-[400px] md:w-[340px] lg:h-[480px] 2xl:w-[360px]"
         >
           {/* 隊伍基本資訊 */}
-          <div className="flex flex-col gap-2">
-            <h3 className="whitespace-nowrap text-center text-2xl font-bold leading-10 tracking-widest text-white">
+          <div className="flex flex-col gap-0 sm:gap-2">
+            <h3 className="whitespace-nowrap text-center text-base md:text-xl lg:text-2xl font-bold tracking-widest text-white">
               {court}
             </h3>
-            <h2 className="whitespace-nowrap text-center text-xl font-bold leading-8 tracking-wider text-[#FFE8A3]">
+            <h2 className="whitespace-nowrap text-center text-base md:text-lg lg:text-2xl font-bold  tracking-wider text-[#FFE8A3]">
               {date}
             </h2>
           </div>
