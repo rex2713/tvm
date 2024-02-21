@@ -157,7 +157,7 @@ const TeamCreate = () => {
   };
 
   return (
-    <main className="flex w-full flex-col-reverse justify-center gap-[5vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[4vw] py-5 lg:flex-row lg:py-10 lg:pb-28 xl:px-[10vw]">
+    <main className="flex w-full min-h-screen flex-col-reverse justify-center gap-[5vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[4vw] py-5 lg:flex-row lg:py-10 lg:pb-28 xl:px-[10vw]">
       {/* 左側創建隊伍表單 */}
       <div className="flex w-full flex-col gap-4 lg:w-3/5 xl:w-3/5">
         <h3 className="w-full text-center text-lg font-bold text-[#FFCC66] md:text-2xl lg:text-start">

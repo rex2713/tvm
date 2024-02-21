@@ -63,14 +63,14 @@ const HomePage = () => {
           {/* <div className="relative flex h-160 justify-around"> */}
           {/* <div className="absolute left-0 z-10 h-full"> */}
           {/* <div className="h-[100px]"></div> */}
-          {/* <div className="">
+          <div className="">
             <div className="absolute left-0 top-0 z-20 w-full ">
               {showLoading && (delayLoading ? <Loading /> : <></>)}
             </div>
             <div className="absolute left-0 top-0 h-full w-full">
               {indexDelayLoading ? <></> : <IndexTitle />}
             </div>
-          </div> */}
+          </div>
           <button
             onClick={handleClick}
             className="h-30 absolute bottom-6 right-[5vw] flex w-20 items-center justify-center overflow-visible rounded-full bg-transparent duration-500 hover:bg-white/5"
@@ -81,7 +81,7 @@ const HomePage = () => {
         {/* 首頁-地圖 */}
         <section
           ref={ref}
-          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[5vw] py-14"
+          className="flex h-screen items-center justify-center bg-gradient-to-b from-[#082A4D] to-[#000000] px-[10vw] sm:px-[5vw] py-14"
         >
           <Map />
         </section>

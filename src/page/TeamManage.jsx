@@ -36,7 +36,7 @@ const TeamManage = () => {
   }, [fakeReload]);
 
   return (
-    <main className="flex w-full flex-col gap-6 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[10vw] py-10 sm:gap-10 xl:gap-14">
+    <main className="flex w-full min-h-screen flex-col gap-6 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[10vw] py-10 sm:gap-10 xl:gap-14">
       {/* 隊伍資訊-已展開 */}
       {userTeamsData &&
         userTeamsData.length > 0 &&
