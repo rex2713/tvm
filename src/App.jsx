@@ -26,13 +26,13 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="map" element={<MapPage />} />
             <Route path="AddCourt" element={<AddCourt />} />
-            <Route path="/:court_id/CourtEdit" element={<CourtEdit />} />
+            <Route path=":court_id/CourtEdit" element={<CourtEdit />} />
             <Route path="court" element={<CourtInfo />} />
             <Route path="team" element={<TeamLayout />}>
               <Route path="list" element={<TeamList />} />
               <Route path="create" element={<TeamCreate />} />
               <Route path="manage" element={<TeamManage />} />
-              <Route path="teamInfo" element={<TeamInfo />} />
+              <Route path="teamInfo/:_id" element={<TeamInfo />} />
             </Route>
             <Route path="news" element={<NewsPage />} />
             <Route path="member" element={<MemberLayout />}>
