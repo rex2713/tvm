@@ -52,7 +52,7 @@ const CourtCard = () => {
       {user && userRole == "admin" && (
         <button
           onClick={linkToAddCourt}
-          className="h-72 w-64 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
+          className="h-3/5 w-4/5 rounded-2xl border-2 border-white/10 bg-white/5 text-xl tracking-widest text-white/50 duration-500 hover:border-white/20 hover:bg-white/10 "
         >
           管理球場
         </button>
@@ -64,10 +64,10 @@ const CourtCard = () => {
           return (
             <div
               key={court._id}
-              className="courtCard flex h-[360px] w-full flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159] md:h-[420px] lg:h-[450px] xl:h-[480px]"
+              className="courtCard flex h-[360px] w-full flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-[#062340] duration-500 hover:border-white/50 hover:bg-[#083159] md:h-[400px] lg:h-[450px] xl:h-[480px]"
             >
               {/* 輪播圖 */}
-              <figure className="h-3/5 w-full">
+              <figure className="h-1/2 w-full lg:h-3/5">
                 <Swiper
                   style={{
                     "--swiper-navigation-color": "#fff",
@@ -99,30 +99,30 @@ const CourtCard = () => {
               {/* 內容 */}
               <a
                 onClick={handleToCourtInfo}
-                className="group flex h-2/5 w-full cursor-pointer flex-col justify-between gap-2 px-6 py-2 md:py-4"
+                className="h-1/2 group flex w-full cursor-pointer flex-col justify-between gap-2 px-6 py-2 md:py-4 lg:h-2/5"
               >
                 {/* 標題欄 */}
                 <div className="flex w-full flex-col flex-wrap items-start gap-2">
-                  <div className="flex w-full items-start justify-between gap-2">
-                    <h3 className="text-wrap text-left text-base tracking-wider text-[#FFCC66] md:text-lg lg:text-xl xl:text-2xl">
+                  <div className="flex w-full items-start justify-between gap-2 sm:flex-row flex-col">
+                    <h3 className="text-wrap text-left text-sm sm:text-base tracking-wider text-[#FFCC66] md:text-lg lg:text-xl xl:text-2xl">
                       {court.courtName}
                     </h3>
-                    <div className="flex w-1/6 shrink-0 items-center justify-end gap-1 lg:gap-2">
+                    <div className="flex w-full sm:w-1/6 shrink-0 items-center justify-start sm:justify-end gap-1 lg:gap-2">
                       <img
                         className="h-4 lg:h-5 xl:h-6"
                         src="../../pic/courtCard/star.svg"
                         alt=""
                       />
-                      <span className="text-base leading-[0px] text-white md:text-lg lg:text-xl xl:text-2xl">
+                      <span className="text-sm sm:text-base leading-[0px] text-white md:text-lg lg:text-xl xl:text-2xl">
                         {court.score}
                       </span>
                     </div>
                   </div>
                   {/* 球場類型 */}
-                  <p className="text-[#FFFFFF]/70">{court.courtType}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/70">{court.courtType}</p>
                 </div>
                 {/* 下方資訊 */}
-                <div className="flex w-full flex-wrap justify-between gap-4 border-t border-white/40 pt-2 text-white lg:pt-4">
+                <div className="flex w-full flex-wrap justify-between sm:gap-4 gap-2 border-t border-white/40 pt-2 text-white lg:pt-4">
                   {/* icon */}
                   <figure className="flex gap-x-2">
                     <span>{court.traffic}</span>

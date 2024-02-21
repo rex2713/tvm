@@ -52,7 +52,7 @@ const MemberSign = () => {
 
   return (
     <main className="relative flex lg:h-[75vh] md:h-[90vh] h-[100vh] w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
-      <div className="absolute top-20 flex h-full w-full flex-col items-center gap-4 ">
+      <div className="absolute sm:top-20 top-5 flex h-full w-full flex-col items-center sm:gap-4 gap-2 ">
         <form
           action=""
           className="flex py-10 xl:w-2/5 md:w-1/2 w-3/4 flex-col items-center justify-center sm:gap-12 gap-6 rounded-3xl bg-[#123659] xl:px-20 px-10 text-white"
@@ -107,13 +107,13 @@ const MemberSign = () => {
         </form>
         {/* 錯誤訊息 */}
         {message && (
-            <p className="h-5 w-full text-center text-lg text-[#FFCC66]">{message}</p>
+            <p className="h-5 w-full text-center sm:text-lg text-sm text-[#FFCC66]">{message}</p>
         )}
 
         {/* <!-- 註冊按鈕 --> */}
         <button
           onClick={handleRegister}
-          className="xl:w-1/12 md:w-1/6 sm:w-1/5 w-1/3 rounded-xl border-2 border-white/50 bg-[#0492D9] py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+          className="xl:w-1/12 md:w-1/6 sm:w-1/5 w-1/3 rounded-xl border-2 border-white/50 bg-[#0492D9] sm:py-2 py-1 sm:text-lg text-base font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
         >
           註冊會員
         </button>
