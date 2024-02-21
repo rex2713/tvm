@@ -84,16 +84,16 @@ const HpTeamCard = () => {
                     <img
                       loading="lazy"
                       src={team.teamLeader.photoSelected}
-                      className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white bg-clip-border outline outline-1 md:outline-2 outline-offset-2 outline-[#FFCC66]"
+                      className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border outline outline-1 md:outline-2 outline-offset-2 outline-[#FFCC66]"
                     />
-                    <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                    <p className="h-5 overflow-clip w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
                       {team.teamLeader.username}
                     </p>
                   </div>
                   <div className="flex w-3/5 flex-col items-center justify-center gap-1 font-medium tracking-wide text-white/70">
                     <div className="flex h-2 md:h-4 w-full items-center justify-center">
                       <Swiper
-                        loop={false}
+                        loop={true}
                         speed={500}
                         centeredSlides={true}
                         autoplay={{
@@ -135,14 +135,14 @@ const HpTeamCard = () => {
                             src={member.photoSelected}
                             className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border"
                           />
-                          <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                          <p className="h-5 w-full overflow-clip whitespace-nowrap text-center text-sm tracking-wide text-white">
                             {member.username}
                           </p>
                         </div>
                         <div className="flex w-3/5 flex-col items-center justify-center gap-1 font-medium tracking-wide text-white/70">
                           <div className="flex h-2 md:h-4 w-full items-center justify-center">
                             <Swiper
-                              loop={false}
+                              loop={true}
                               speed={500}
                               centeredSlides={true}
                               autoplay={{

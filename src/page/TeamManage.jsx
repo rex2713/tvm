@@ -5,6 +5,11 @@ import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+import "../css/SweepLight.css";
 
 const TeamManage = () => {
   const navigate = useNavigate();
@@ -31,30 +36,30 @@ const TeamManage = () => {
   }, [fakeReload]);
 
   return (
-    <main className="flex w-full flex-col gap-14 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-52 py-10">
+    <main className="flex w-full flex-col gap-6 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[10vw] py-10 sm:gap-10 xl:gap-14">
       {/* 隊伍資訊-已展開 */}
       {userTeamsData &&
         userTeamsData.length > 0 &&
         userTeamsData.map((team) => {
           return (
-            <div key={team._id} className="flex flex-col gap-2">
+            <div key={team._id} className="flex flex-col gap-1 sm:gap-2">
               {/* title */}
               <div className="flex items-center gap-4 px-6">
-                <h3 className="text-4xl font-black tracking-wider text-[#FFCC66]">
+                <h3 className="text-2xl font-black tracking-wider text-[#FFCC66] sm:text-4xl">
                   {team.teamName}
                 </h3>
               </div>
 
               <label
-                htmlFor="Coconut Team"
+                htmlFor={team._id}
                 className="flex h-full w-full cursor-pointer items-center justify-center"
               >
-                <section className="flex w-full rounded-3xl border border-transparent bg-[#123659] px-10 py-6 text-white duration-500 hover:border-white/20">
+                <section className="flex w-full flex-col gap-4 rounded-xl border border-transparent bg-[#123659] px-[3vw] py-2 text-white duration-500 hover:border-white/20 sm:rounded-3xl sm:py-6 xl:flex-row">
                   {/* 內容 */}
-                  <div className="flex w-2/5 flex-col justify-between py-2">
-                    <div className="flex h-full flex-col gap-4 py-2 text-xl font-black tracking-wider">
+                  <div className="flex w-full flex-row items-start justify-between gap-2 py-2 xl:w-2/6 xl:flex-col">
+                    <div className="flex h-full flex-col gap-1 text-base font-black tracking-wider sm:gap-4 sm:text-xl">
                       <div className="flex w-full items-center gap-2">
-                        <p className="shrink-0 text-base tracking-widest text-white/70">
+                        <p className="shrink-0 text-xs tracking-widest text-white/70 sm:text-base">
                           球場
                         </p>
                         <p className="w-4/5 flex-wrap">
@@ -62,7 +67,7 @@ const TeamManage = () => {
                         </p>
                       </div>
                       <div className="flex w-full items-center gap-2">
-                        <p className="shrink-0 text-base tracking-widest text-white/70">
+                        <p className="shrink-0 text-xs tracking-widest text-white/70 sm:text-base">
                           日期
                         </p>
                         <p className="w-full flex-wrap">{team.date}</p>
@@ -71,99 +76,126 @@ const TeamManage = () => {
                     <Link
                       to={"/team/teamInfo/" + team._id}
                       // type="button"
-                      id="Coconut Team"
+                      id={team._id}
                       // value={"詳細內容"}
-                      className="w-2/5 cursor-pointer rounded-full border border-white/50 bg-white/10 py-1 text-base font-medium tracking-[.2rem] text-white duration-500 hover:bg-[#0492D9]"
+                      className="w-1/4 cursor-pointer rounded-lg border border-white/50 bg-white/10 px-2 py-1 text-center text-xs font-medium tracking-[.2rem] text-white duration-500 hover:bg-[#0492D9] sm:rounded-full sm:px-0 sm:text-base md:w-1/5 xl:w-2/5"
                     >
                       詳細資訊
                     </Link>
                   </div>
 
-                  {/* 隊長卡片 */}
-                  <div className="flex w-full gap-2">
-                    <button className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50">
-                      <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
-                        <img
-                          className="w-1/2 rounded-full bg-white bg-clip-border"
-                          src={team.teamLeader.photoSelected}
-                          alt=""
-                        />
-                        <div className="flex flex-col items-center justify-center gap-1">
-                          <p className="text-base font-bold tracking-wide">
-                            {team.teamLeader.username}
-                          </p>
-                          {team.teamLeader.goodAtPosition &&
-                            team.teamLeader.goodAtPosition.length !== 0 &&
-                            team.teamLeader.goodAtPosition.map((position) => {
-                              return (
-                                <p
-                                  key={uuidv4()}
-                                  className="text-sm tracking-widest text-white/70"
-                                >
-                                  {position}
-                                </p>
-                              );
-                            })}
-                          <p className="text-sm tracking-widest text-white/70">
-                            {team.teamLeader.skillLevel}
-                          </p>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+                  <div className="grid w-full grid-cols-3 gap-2 sm:grid-cols-6 xl:w-4/6">
+                    {/* 隊長卡片 */}
+                    <div className="flex w-full gap-2">
+                      <button className="group relative h-36 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 md:h-[152px] lg:h-44 2xl:h-48">
+                        <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
+                          <img
+                            className="h-10 w-10 rounded-full bg-white/10 bg-clip-border object-cover outline outline-1 outline-offset-2 outline-[#FFCC66] md:h-12 md:w-12 md:outline-2 lg:h-16 lg:w-16 2xl:h-20 2xl:w-20"
+                            src={team.teamLeader.photoSelected}
+                            alt=""
+                          />
+                          <div className="flex flex-col items-center justify-center gap-1">
+                            <p className="text-base font-bold tracking-wide">
+                              {team.teamLeader.username}
+                            </p>
 
-                  {/* 隊員卡片 */}
-                  {team.teamMember &&
-                    team.teamMember.length !== 0 &&
-                    team.teamMember.map((member) => {
-                      return (
-                        <div key={member._id} className="flex w-full gap-2">
-                          <button
-                            onClick={() => {
-                              handleDelete(member._id, team._id);
-                            }}
-                            className="group relative h-52 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50"
-                          >
-                            {/* 刪除按鈕 */}
-                            {/* {team.teamLeader._id === user.user._id && (
+                            <Swiper
+                              loop={true}
+                              speed={500}
+                              centeredSlides={true}
+                              autoplay={{
+                                delay: 2000,
+                                disableOnInteraction: false,
+                              }}
+                              modules={[Autoplay]}
+                              className="mySwiper sweepLight flex h-full w-20 justify-center "
+                            >
+                              {team.teamLeader &&
+                                team.teamLeader.goodAtPosition.map(
+                                  (position) => {
+                                    return (
+                                      <SwiperSlide
+                                        key={uuidv4()}
+                                        className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                                      >
+                                        {position}
+                                      </SwiperSlide>
+                                    );
+                                  },
+                                )}
+                            </Swiper>
+
+                            <p className="text-[.8rem] tracking-widest text-white/70 md:text-xs lg:text-base ">
+                              {team.teamLeader.skillLevel}
+                            </p>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+
+                    {/* 隊員卡片 */}
+                    {team.teamMember &&
+                      team.teamMember.length !== 0 &&
+                      team.teamMember.map((member) => {
+                        return (
+                          <div key={member._id} className="flex w-full gap-2">
+                            <button
+                              onClick={() => {
+                                handleDelete(member._id, team._id);
+                              }}
+                              className="group relative h-36 w-full rounded-lg border border-transparent bg-black/30 duration-500 hover:border-white/50 md:h-[152px] lg:h-44 2xl:h-48"
+                            >
+                              {/* 刪除按鈕 */}
+                              {/* {team.teamLeader._id === user.user._id && (
                               <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 bg-clip-border text-xl duration-500 group-hover:bg-white/50">
                                 -
                               </div>
                             )} */}
-                            <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
-                              <img
-                                className="w-1/2 rounded-full bg-white bg-clip-border"
-                                src={member.photoSelected}
-                                alt=""
-                              />
-                              <div className="flex flex-col items-center justify-center gap-1">
-                                <p className="text-base font-bold tracking-wide">
-                                  {member.username}
-                                </p>
-                                {member.goodAtPosition &&
-                                  member.goodAtPosition.length !== 0 &&
-                                  member.goodAtPosition.map((position) => {
-                                    return (
-                                      <p
-                                        key={uuidv4()}
-                                        className="text-sm tracking-widest text-white/70"
-                                      >
-                                        {position}
-                                      </p>
-                                    );
-                                  })}
+                              <div className=" flex h-full w-full flex-col items-center justify-center gap-3">
+                                <img
+                                  className="h-10 w-10 rounded-full bg-white/10 bg-clip-border object-cover md:h-12 md:w-12 lg:h-16 lg:w-16 2xl:h-20 2xl:w-20"
+                                  src={member.photoSelected}
+                                  alt=""
+                                />
+                                <div className="flex flex-col items-center justify-center gap-1">
+                                  <p className="text-base font-bold tracking-wide">
+                                    {member.username}
+                                  </p>
+                                  <Swiper
+                                    loop={true}
+                                    speed={500}
+                                    centeredSlides={true}
+                                    autoplay={{
+                                      delay: 3050,
+                                      disableOnInteraction: false,
+                                    }}
+                                    modules={[Autoplay]}
+                                    className="mySwiper flex h-4 w-20 justify-center "
+                                  >
+                                    {member.goodAtPosition &&
+                                      member.goodAtPosition.map((position) => {
+                                        return (
+                                          <SwiperSlide
+                                            key={uuidv4()}
+                                            className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                                          >
+                                            {position}
+                                          </SwiperSlide>
+                                        );
+                                      })}
+                                  </Swiper>
 
-                                <p className="text-sm tracking-widest text-white/70">
-                                  {member.skillLevel}
-                                </p>
+                                  <p className="text-[.8rem] md:text-xs lg:text-base tracking-widest text-white/70">
+                                    {member.skillLevel}
+                                  </p>
+                                </div>
                               </div>
-                            </div>
-                          </button>
-                        </div>
-                      );
-                    })}
-                  {/* 加入隊友 */}
-                  {/* {team.teamMember.length < 5 && (
+                            </button>
+                          </div>
+                        );
+                      })}
+                    {/* 加入隊友 */}
+                    {/* {team.teamMember.length < 5 && (
                     <label
                       htmlFor="seek"
                       className="group flex h-52 w-full flex-col items-center justify-center gap-2 rounded-lg border border-transparent bg-black/30 pb-6 duration-500 hover:border-white/50"
@@ -173,6 +205,7 @@ const TeamManage = () => {
                       </p>
                     </label>
                   )} */}
+                  </div>
                 </section>
               </label>
             </div>

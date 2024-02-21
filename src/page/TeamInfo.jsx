@@ -1,21 +1,9 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import required modules
-import {
-  FreeMode,
-  Pagination,
-  Navigation,
-  Keyboard,
-  EffectCoverflow,
-} from "swiper/modules";
-import "../css/swiper.css";
-import "swiper/css/effect-coverflow";
+import { Autoplay } from "swiper/modules";
+import "../css/SweepLight.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TeamService from "../../services/team-service";
@@ -130,7 +118,7 @@ const TeamInfo = () => {
   };
 
   return (
-    <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
+    <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[8vw] py-10">
       {/* 球場內容 */}
       {teamData && (
         <div className="flex w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8">
@@ -381,7 +369,7 @@ const TeamInfo = () => {
             </div>
           </section>
 
-          {/* 場地評論 */}
+          {/* 留言板 */}
           <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
             <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
             <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
