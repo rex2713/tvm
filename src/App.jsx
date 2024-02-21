@@ -27,7 +27,7 @@ function App() {
             <Route path="map" element={<MapPage />} />
             <Route path="AddCourt" element={<AddCourt />} />
             <Route path=":court_id/CourtEdit" element={<CourtEdit />} />
-            <Route path="court" element={<CourtInfo />} />
+            <Route path="court/:_id" element={<CourtInfo />} />
             <Route path="team" element={<TeamLayout />}>
               <Route path="list" element={<TeamList />} />
               <Route path="create" element={<TeamCreate />} />

@@ -157,10 +157,12 @@ const TeamCreate = () => {
   };
 
   return (
-    <main className="flex w-full flex-col-reverse lg:flex-row justify-center gap-[3vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[2vw] md:px-[4vw] xl:px-[10vw] py-10">
+    <main className="flex w-full flex-col-reverse justify-center gap-[3vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[2vw] py-10 md:px-[4vw] lg:flex-row xl:px-[10vw]">
       {/* 左側創建隊伍表單 */}
-      <div className="flex w-full lg:w-3/5 flex-col gap-4">
-        <h3 className="w-full text-center lg:text-start text-2xl font-bold text-[#FFCC66]">隊伍資訊</h3>
+      <div className="flex w-full flex-col gap-4 lg:w-3/5">
+        <h3 className="w-full text-center text-2xl font-bold text-[#FFCC66] lg:text-start">
+          隊伍資訊
+        </h3>
         <form className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-[#114273] p-10 text-white">
           <label htmlFor="teamName" className="flex w-full items-center gap-2">
             <span className="w-24 shrink-0 tracking-widest">隊伍名稱</span>
@@ -333,7 +335,9 @@ const TeamCreate = () => {
       </div>
       {/* 右側即時預覽 */}
       <div className="flex w-1/4 flex-col gap-4">
-        <h3 className="w-full text-center lg:text-start text-2xl font-bold text-[#FFCC66]">即時預覽</h3>
+        <h3 className="w-full text-center text-2xl font-bold text-[#FFCC66] lg:text-start">
+          即時預覽
+        </h3>
         <div
           key={uuidv4()}
           className="flex h-[480px] w-[320px] shrink-0 flex-col items-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 2xl:w-[360px]"

@@ -35,6 +35,10 @@ class CourtService {
       },
     });
   }
+  //由id獲得完整球場資料（含隊伍）
+  getCourtInfo(_id) {
+    return axios.get(Default_URL + "/court/getCourt/" + _id);
+  }
   //刪除球場
   deleteCourt(_id) {
     let token;
