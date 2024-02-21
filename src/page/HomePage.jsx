@@ -63,14 +63,14 @@ const HomePage = () => {
           {/* <div className="relative flex h-160 justify-around"> */}
           {/* <div className="absolute left-0 z-10 h-full"> */}
           {/* <div className="h-[100px]"></div> */}
-          <div className="">
+          {/* <div className="">
             <div className="absolute left-0 top-0 z-20 w-full ">
               {showLoading && (delayLoading ? <Loading /> : <></>)}
             </div>
             <div className="absolute left-0 top-0 h-full w-full">
               {indexDelayLoading ? <></> : <IndexTitle />}
             </div>
-          </div>
+          </div> */}
           <button
             onClick={handleClick}
             className="h-30 absolute bottom-6 right-[5vw] flex w-20 items-center justify-center overflow-visible rounded-full bg-transparent duration-500 hover:bg-white/5"
@@ -88,15 +88,15 @@ const HomePage = () => {
 
         {/* 首頁-隊伍 */}
         <section className="flex h-screen w-full overflow-hidden bg-[url('../pic/team_bg.svg')] bg-cover px-[5vw]">
-          <div className="flex h-screen w-full justify-center gap-2">
+          <div className="flex h-screen w-full flex-col justify-center items-center gap-6 md:gap-2 xl:flex-row">
             {/* 左半裝飾字-Teams */}
-            <h2 className="h-screen font-['Ubuntu'] text-9xl font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr] lg:w-[15vw] lg:text-[11rem] xl:w-[15vw] xl:text-bg">
+            <h2 className="w-full text-center xl:text-start font-['Ubuntu'] text-7xl font-bold leading-none text-white [text-shadow:5px_5px_#74D3E5] sm:text-9xl xl:h-screen xl:[text-orientation:sideways] xl:[text-shadow:5px_-5px_#74D3E5] xl:[writing-mode:vertical-lr] xl:w-[15vw] lg:text-[10rem] xl:text-bg">
               Teams
             </h2>
             {/* 右半內容區 */}
-            <div className="flex flex-col items-center justify-center lg:w-[70vw] xl:w-[70vw]">
+            <div className="flex w-[90vw] flex-col items-center justify-center lg:w-[80vw] xl:w-[70vw]">
               {/* 上半部篩選器 */}
-              <div className="h-30 mb-12 w-full">
+              <div className="h-30 xl:mb-12 lg:mb-6 mb-2 w-full">
                 <TeamSearchBar />
               </div>
               {/* 下半部TeamCard */}
@@ -106,12 +106,12 @@ const HomePage = () => {
           </div>
         </section>
         {/* 首頁-最新消息*/}
-        <section className="flex h-screen w-full  bg-gradient-to-b from-[#026D8A] via-[#01405E] to-[#030b17] px-[5vw]">
-          <div className="flex w-full flex-row-reverse items-center justify-center">
-            <h2 className="h-screen w-[12vw] overflow-hidden font-['Ubuntu'] text-9xl font-bold leading-none text-white [text-orientation:sideways] [text-shadow:5px_-5px_#74D3E5] [writing-mode:vertical-lr] lg:text-[11rem] xl:text-bg">
+        <section className="flex w-full bg-gradient-to-b  from-[#026D8A] via-[#01405E] to-[#030b17] px-[5vw] md:h-screen">
+          <div className="flex w-full flex-col items-center justify-center gap-6 xl:flex-row-reverse">
+            <h2 className="font-['Ubuntu'] text-7xl font-bold leading-none text-white [text-shadow:5px_5px_#74D3E5] sm:text-9xl xl:h-screen xl:w-[12vw] xl:overflow-hidden xl:[text-orientation:sideways] xl:[text-shadow:5px_-5px_#74D3E5] xl:[writing-mode:vertical-lr] lg:text-[11rem] xl:text-bg">
               News
             </h2>
-            <div className="flex w-[70vw] flex-col  items-center justify-center gap-y-4 px-10">
+            <div className="flex w-[90vw] flex-col items-center justify-center xl:gap-4 gap-2 px-10 md:w-[70vw]">
               <h3 className="w-full text-lg font-bold text-[#FFCC66] lg:text-xl xl:text-2xl">
                 熱門新聞
               </h3>

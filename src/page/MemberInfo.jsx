@@ -218,17 +218,17 @@ const MemberInfo = () => {
 
   return (
     <main className="flex h-full w-full justify-center bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000]">
-      <div className="my-20 flex h-full w-5/6 flex-col items-center justify-center gap-5 px-[5vw] lg:gap-10">
+      <div className="my-20 flex h-full w-5/6 flex-col items-center justify-center gap-5 sm:px-[5vw] px-[2vw] lg:gap-10">
         <form
           action=""
-          className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] px-10 py-12 text-white lg:px-20"
+          className="flex h-3/5 w-full flex-col items-center justify-center gap-10 rounded-3xl bg-[#123659] sm:px-10 px-5 py-12 text-white lg:px-20"
         >
           {/* <!-- 資料輸入欄 --> */}
           {/* 頭像選擇 */}
-          <div className="flex w-full items-start gap-1">
+          <div className="flex md:flex-row flex-col w-full items-start md:gap-1 gap-4">
             <span className="w-24 shrink-0 tracking-widest">頭像選擇</span>
             <div className="flex w-full flex-col items-start gap-4 xl:flex-row">
-              <div className="grid w-full shrink-0 grid-cols-6 gap-[1vw] xl:w-2/3">
+              <div className="grid w-full shrink-0 sm:grid-cols-6 grid-cols-4 gap-[1vw] xl:w-2/3">
                 <label
                   htmlFor="men1"
                   className="flex flex-col items-center justify-center"
@@ -482,7 +482,7 @@ const MemberInfo = () => {
                   </p>
                 </label>
               </div>
-              <div className="flex h-36 w-full flex-row items-center justify-center gap-[3vw] rounded-lg border border-white/20 p-4 text-sm lg:text-base xl:h-64 xl:w-1/3 xl:flex-col xl:gap-2">
+              <div className="flex h-36 w-full flex-row items-center justify-center gap-[3vw] rounded-lg border border-white/20 sm:p-4 p-0 text-sm lg:text-base xl:h-64 xl:w-1/3 xl:flex-col xl:gap-2">
                 <label
                   htmlFor="uploadSelf"
                   className="flex h-1/2 w-1/4 items-start justify-center xl:h-1/6 xl:w-2/3"
@@ -502,14 +502,14 @@ const MemberInfo = () => {
                   <>
                     <button
                       onClick={handleClear}
-                      className="w-1/6 rounded-lg bg-black/20 py-2 text-white/70 hover:bg-black/50 hover:text-white xl:w-2/3 xl:rounded-full xl:py-1"
+                      className="w-1/6 rounded-lg bg-black/20 py-2 text-white/70 hover:bg-red-800/50 duration-500 hover:text-white xl:w-2/3 xl:rounded-full xl:py-1"
                     >
                       清除
                     </button>
                     {/* <p className="text-center">預覽</p> */}
                     <img
                       src={preview}
-                      className="h-24 w-24 shrink-0 rounded-full border bg-clip-border object-cover lg:h-28 lg:w-28 xl:h-36 xl:w-36"
+                      className="sm:h-24 h-20 w-20 sm:w-24 shrink-0 rounded-full border bg-clip-border object-cover lg:h-28 lg:w-28 xl:h-36 xl:w-36"
                     />
                   </>
                 )}
@@ -517,7 +517,7 @@ const MemberInfo = () => {
             </div>
           </div>
           {/* 使用者名稱 */}
-          <label htmlFor="account" className="flex w-full items-center gap-1">
+          <label htmlFor="account" className="flex w-full sm:items-center gap-1 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">使用者名稱</span>
             <input
               onChange={handleUsername}
@@ -528,7 +528,7 @@ const MemberInfo = () => {
             />
           </label>
           {/* Email */}
-          <label htmlFor="email" className="flex w-full items-center gap-1">
+          <label htmlFor="email" className="flex w-full sm:items-center gap-1 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">Email</span>
             <input
               type="email"
@@ -565,7 +565,7 @@ const MemberInfo = () => {
               />
             </label> */}
           {/* 球技程度 */}
-          <label htmlFor="skill" className="flex w-full items-center gap-1">
+          <label htmlFor="skill" className="flex w-full sm:items-center gap-1 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">球技程度</span>
             <select
               onChange={handleSkillLevel}
@@ -580,7 +580,7 @@ const MemberInfo = () => {
             </select>
           </label>
           {/* 擅長位置 */}
-          <div className="flex w-full items-start gap-1">
+          <div className="flex w-fullsm: items-start gap-1 sm:flex-row flex-col">
             <span className="w-24 shrink-0 tracking-widest">擅長位置</span>
             <div className="flex flex-wrap gap-4">
               <label htmlFor="spiker">
@@ -650,7 +650,7 @@ const MemberInfo = () => {
         {/* <!-- 儲存變更按鈕 --> */}
         <button
           onClick={handleSave}
-          className="w-1/4 rounded-xl border-2 border-white/50 bg-[#0492D9] py-1 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff] md:w-1/6 lg:py-2"
+          className="sm:w-1/4 w-28 rounded-xl border-2 border-white/50 bg-[#0492D9] py-1 sm:text-lg text-base font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff] md:w-1/6 lg:py-2"
         >
           儲存
         </button>
