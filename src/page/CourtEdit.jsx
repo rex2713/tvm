@@ -73,14 +73,20 @@ const CourtEdit = () => {
         //處理永久硬碟複製
         AuthService.copyRenderDisk()
           .then(() => {
+            console.log(1);
+
             window.alert("更新球場照片成功");
             navigate("/AddCourt");
           })
           .catch((e) => {
+            console.log(1);
+
             console.error("複製RenderDisk失敗:" + e);
           });
       })
       .catch((e) => {
+        console.log(1);
+
         console.log(e);
       });
   };

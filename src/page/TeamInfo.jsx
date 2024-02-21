@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import "../css/SweepLight.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
@@ -19,10 +19,50 @@ const TeamInfo = () => {
   const params = useParams();
   const user = AuthService.getCurrentUser();
   const [isLeader, setIsLeader] = useState(false);
+  const [teamMessage, setTeamMessage] = useState([]);
+  const [messageInput, setMessageInput] = useState("");
+  const [oldTeamMessage, setOldTeamMessage] = useState([]);
+  const [initialLoad, setInitialLoad] = useState(true);
 
   let { _id } = params;
   // console.log(_id);
   const navigate = useNavigate();
+
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    // 比较新的消息数组和旧的消息数组
+    const hasDifference =
+      JSON.stringify(teamMessage) !== JSON.stringify(oldTeamMessage);
+
+    // 如果有差异且不是初始加载，则滚动到底部
+    if (containerRef.current && !initialLoad && hasDifference) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+
+    // 更新旧的消息数组
+    setOldTeamMessage(teamMessage);
+
+    // 设置初始加载状态为 false
+    if (initialLoad) {
+      setInitialLoad(false);
+    }
+  }, [teamMessage, initialLoad, oldTeamMessage]);
+
+  useEffect(() => {
+    //設定聊天室定時更新訊息
+    let intervalId = setInterval(async () => {
+      let message = await TeamService.teamGetMessage(_id);
+      // console.log(_id);
+      setTeamMessage(message.data.teamMessage);
+    }, 5000);
+    //卸載時清除定時更新訊息
+    return () => {
+      console.log("Cleaning up interval...");
+      clearInterval(intervalId);
+    };
+  });
+
   useEffect(() => {
     const fetchTeamInfo = async () => {
       try {
@@ -120,6 +160,27 @@ const TeamInfo = () => {
     }
   };
 
+  const handleMessage = (e) => {
+    setMessageInput(e.target.value);
+  };
+  const handleMessageBtn = async (e) => {
+    let currentTime = new Date().toLocaleString();
+    let name = user.user.username;
+    let sendMessage = currentTime + "  " + name + "  " + messageInput;
+
+    try {
+      // 在此处调用 messageSend 函数以发送消息
+      await TeamService.teamSendMessage(_id, sendMessage);
+
+      // 如果消息发送成功，则更新消息数组
+      setTeamMessage((prevMessages) => [...prevMessages, sendMessage]);
+
+      // 清空消息输入框
+      setMessageInput("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
   return (
     <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[8vw] py-10">
       {/* 球場內容 */}
@@ -220,7 +281,7 @@ const TeamInfo = () => {
                     </p>
                     <p className="text-sm tracking-widest text-white/70">
                       <Swiper
-                        loop={true}
+                        loop={false}
                         speed={500}
                         centeredSlides={true}
                         autoplay={{
@@ -281,7 +342,7 @@ const TeamInfo = () => {
                             {member.username}
                           </p>
                           <Swiper
-                            loop={true}
+                            loop={false}
                             speed={500}
                             centeredSlides={true}
                             autoplay={{
@@ -416,7 +477,7 @@ const TeamInfo = () => {
             <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
             <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
               <div className="no-scrollbar flex flex-col gap-1 overflow-scroll text-base">
-                <div className="flex flex-col sm:flex-row sm:gap-4">
+                {/* <div className="flex flex-col sm:flex-row sm:gap-4">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
                     2023.12.4 15:23
                   </p>
@@ -554,15 +615,46 @@ const TeamInfo = () => {
                     北商學生2
                   </p>
                   <p className="text-base tracking-widest text-white/70">收</p>
-                </div>
+                </div> */}
+              </div>
+              <div ref={containerRef} className="h-40 overflow-auto">
+                {teamMessage ? (
+                  <p className="text-center text-xl text-white">Loading...</p>
+                ) : (
+                  <></>
+                )}
+                {teamMessage &&
+                  teamMessage.map((message) => {
+                    return (
+                      <div className="flex gap-4">
+                        <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                          {message.split(" ")[0]}
+                        </span>
+                        <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                          {message.split(" ")[1]}
+                        </span>
+                        <span className="text-base tracking-widest text-blue-300/70">
+                          {message.split(" ")[3]}
+                        </span>
+                        <span className="text-base tracking-widest text-white/70">
+                          {message.split(" ")[5]}
+                        </span>
+                      </div>
+                    );
+                  })}
               </div>
 
               <div className="flex gap-2">
                 <input
+                  value={messageInput}
+                  onChange={handleMessage}
                   type="text"
                   className="h-6 w-11/12 rounded-lg bg-white/10 px-2 focus:bg-white/80 focus:text-black"
                 />
                 <input
+                  onClick={(e) => {
+                    handleMessageBtn();
+                  }}
                   type="submit"
                   className="h-6 w-1/12 rounded-lg bg-white/10 text-white/50 duration-500 hover:bg-white/20"
                   value={"送出訊息"}

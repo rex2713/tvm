@@ -143,6 +143,36 @@ class TeamService {
       },
     );
   }
+  teamGetMessage(_id) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.get(Default_URL + "/team/auth/teamMessageGet/" + _id, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+  teamSendMessage(_id, message) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.patch(
+      Default_URL + "/team/auth/teamMessageSend/" + _id,
+      { message: message },
+      {
+        headers: {
+          Authorization: token,
+        },
+      },
+    );
+  }
 }
 
 export default new TeamService();
