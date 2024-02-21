@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import { useState } from "react";
+import Swal from "sweetalert2";
+
 
 const MemberSign = () => {
   const data = useOutletContext();
@@ -40,7 +42,16 @@ const MemberSign = () => {
     } else {
       AuthService.register(formData)
         .then(() => {
-          window.alert("註冊成功，即將為您跳轉到登入頁面");
+          // window.alert("註冊成功，即將為您跳轉到登入頁面");
+          Swal.fire({
+            title: "註冊成功",
+            text: "即將為您跳轉至登入頁面",
+            icon: "success",
+            background: "#123659",
+            color: "#FFFFFF",
+            showConfirmButton: false,
+            timer: 1500
+          });
           navigate("/member/login");
         })
         .catch((e) => {

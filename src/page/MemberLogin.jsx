@@ -37,7 +37,8 @@ const MemberLogin = () => {
         icon: "success",
         background: "#123659",
         color: "#FFFFFF",
-        confirmButtonColor: "#0492D9",
+        showConfirmButton: false,
+        timer: 1500
       });
       navigate("/member/Info");
     } catch (e) {

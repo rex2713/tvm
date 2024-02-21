@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import CourtService from "../../services/court-service";
 import Compressor from "compressorjs";
 import AuthService from "../../services/auth-service";
+import Swal from "sweetalert2";
 
 const CourtEdit = () => {
   const [file, setFile] = useState();
@@ -62,7 +63,16 @@ const CourtEdit = () => {
 
   const updateCourt = () => {
     const formData = new FormData();
-    if (!file || file.length == 0) window.alert("你還未選擇照片");
+    if (!file || file.length == 0) 
+    // window.alert("你還未選擇照片")
+    Swal.fire({
+      title: "尚未選擇照片",
+      // text: "現在將為您導向個人資料頁面",
+      icon: "warning",
+      background: "#123659",
+      color: "#FFFFFF",
+      confirmButtonColor: "#0492D9",
+    });
     for (let i = 0; i < file.length; i++) {
       formData.append("file", file[i]);
     }
@@ -73,7 +83,15 @@ const CourtEdit = () => {
         //處理永久硬碟複製
         AuthService.copyRenderDisk()
           .then(() => {
-            window.alert("更新球場照片成功");
+            // window.alert("更新球場照片成功");
+            Swal.fire({
+              title: "更新球場照片成功",
+              // text: "現在將為您導向個人資料頁面",
+              icon: "success",
+              background: "#123659",
+              color: "#FFFFFF",
+              confirmButtonColor: "#0492D9",
+            });
             navigate("/AddCourt");
           })
           .catch((e) => {

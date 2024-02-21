@@ -9,6 +9,7 @@ import "../css/SweepLight.css";
 import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
 import { v4 as uuidv4 } from "uuid";
+import Swal from "sweetalert2";
 
 const HpTeamCard = () => {
   //取出所有隊伍資料
@@ -34,7 +35,15 @@ const HpTeamCard = () => {
 
     TeamService.teamJoin(e.currentTarget.dataset.teamid, user.user._id)
       .then(() => {
-        window.alert("加入隊伍成功");
+        // window.alert("加入隊伍成功");
+        Swal.fire({
+          title: "加入隊伍成功",
+          icon: "success",
+          background: "#123659",
+          color: "#FFFFFF",
+          showConfirmButton: false,
+          timer: 1500
+        });
         TeamService.getAllTeam()
           .then((data) => {
             setTeamData(data.data);
@@ -46,7 +55,15 @@ const HpTeamCard = () => {
       })
       .catch((e) => {
         console.error(e);
-        window.alert(e.response.data);
+        // window.alert(e.response.data);
+        Swal.fire({
+          title: (e.response.data),
+          icon: "warning",
+          background: "#123659",
+          color: "#FFFFFF",
+          showConfirmButton: false,
+          timer: 1500
+        });
       });
   };
 

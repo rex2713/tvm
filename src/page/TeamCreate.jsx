@@ -11,6 +11,8 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import "../css/SweepLight.css";
 import { v4 as uuidv4 } from "uuid";
+import Swal from "sweetalert2";
+
 
 const TeamCreate = () => {
   const navigate = useNavigate();
@@ -148,7 +150,16 @@ const TeamCreate = () => {
 
     TeamService.teamCreate(formData)
       .then(() => {
-        window.alert("創建隊伍成功");
+        // window.alert("創建隊伍成功");
+        Swal.fire({
+          title: "創建隊伍成功",
+          // text: "現在將為您導向個人資料頁面",
+          icon: "success",
+          background: "#123659",
+          color: "#FFFFFF",
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate("/team/list");
       })
       .catch((e) => {

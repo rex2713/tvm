@@ -1,13 +1,22 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import AuthService from "../../services/auth-service";
+import Swal from "sweetalert2";
 
 const MemberNav = ({ isLogIn, setIsLogIn }) => {
   const navigate = useNavigate();
   const handleLogout = () => {
     AuthService.logout();
     setIsLogIn(false);
-    window.alert("登出成功，即將為您跳轉首頁");
+    // window.alert("登出成功，即將為您跳轉首頁");
+    Swal.fire({
+      title: "登出成功",
+      icon: "success",
+      background: "#123659",
+      color: "#FFFFFF",
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate("/member/login");
   };
   const location = useLocation();
