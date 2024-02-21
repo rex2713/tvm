@@ -1,25 +1,14 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import required modules
-import {
-  FreeMode,
-  Pagination,
-  Navigation,
-  Keyboard,
-  EffectCoverflow,
-} from "swiper/modules";
-import "../css/swiper.css";
-import "swiper/css/effect-coverflow";
+import { Autoplay } from "swiper/modules";
+import "../css/SweepLight.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TeamService from "../../services/team-service";
 import AuthService from "../../services/auth-service";
+import { v4 as uuidv4 } from "uuid";
 
 const TeamInfo = () => {
   const [teamData, setTeamData] = useState();
@@ -130,7 +119,7 @@ const TeamInfo = () => {
   };
 
   return (
-    <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-40 py-10">
+    <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[8vw] py-10">
       {/* 球場內容 */}
       {teamData && (
         <div className="flex w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8">
@@ -227,8 +216,29 @@ const TeamInfo = () => {
                       {teamData.teamLeader.username}
                     </p>
                     <p className="text-sm tracking-widest text-white/70">
-                      {teamData.teamLeader.goodAtPosition &&
-                        teamData.teamLeader.goodAtPosition}
+                      <Swiper
+                        loop={true}
+                        speed={500}
+                        centeredSlides={true}
+                        autoplay={{
+                          delay: 2000,
+                          disableOnInteraction: false,
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper sweepLight flex h-full w-20 justify-center "
+                      >
+                        {teamData.teamLeader.goodAtPosition &&
+                          teamData.teamLeader.goodAtPosition.map((position) => {
+                            return (
+                              <SwiperSlide
+                                key={uuidv4()}
+                                className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                              >
+                                {position}
+                              </SwiperSlide>
+                            );
+                          })}
+                      </Swiper>
                     </p>
                     <p className="text-sm tracking-widest text-white/70">
                       {teamData.teamLeader.skillLevel &&
@@ -267,9 +277,29 @@ const TeamInfo = () => {
                           <p className="text-base font-bold tracking-wide">
                             {member.username}
                           </p>
-                          <div className="text-sm tracking-widest text-white/70">
-                            {member.goodAtPosition && member.goodAtPosition}
-                          </div>
+                          <Swiper
+                            loop={true}
+                            speed={500}
+                            centeredSlides={true}
+                            autoplay={{
+                              delay: 2000,
+                              disableOnInteraction: false,
+                            }}
+                            modules={[Autoplay]}
+                            className="mySwiper sweepLight flex h-full w-20 justify-center "
+                          >
+                            {member.goodAtPosition &&
+                              member.goodAtPosition.map((position) => {
+                                return (
+                                  <SwiperSlide
+                                    key={uuidv4()}
+                                    className="sweepLight h-4 w-20 whitespace-nowrap bg-transparent text-[.8rem] font-medium tracking-widest text-white/70 md:text-xs md:tracking-wide lg:text-base"
+                                  >
+                                    {position}
+                                  </SwiperSlide>
+                                );
+                              })}
+                          </Swiper>
                           <p className="text-sm tracking-widest text-white/70">
                             {member.skillLevel && member.skillLevel}
                           </p>
@@ -381,7 +411,7 @@ const TeamInfo = () => {
             </div>
           </section>
 
-          {/* 場地評論 */}
+          {/* 留言板 */}
           <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
             <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
             <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">

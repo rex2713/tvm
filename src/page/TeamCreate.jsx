@@ -157,14 +157,17 @@ const TeamCreate = () => {
   };
 
   return (
-    <main className="flex w-full flex-col-reverse justify-center gap-[3vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[2vw] py-10 md:px-[4vw] lg:flex-row xl:px-[10vw]">
+    <main className="flex w-full flex-col-reverse justify-center gap-[5vw] bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[4vw] py-5 lg:flex-row lg:py-10 lg:pb-28 xl:px-[10vw]">
       {/* 左側創建隊伍表單 */}
-      <div className="flex w-full flex-col gap-4 lg:w-3/5">
-        <h3 className="w-full text-center text-2xl font-bold text-[#FFCC66] lg:text-start">
+      <div className="flex w-full flex-col gap-4 lg:w-3/5 xl:w-3/5">
+        <h3 className="w-full text-center text-lg font-bold text-[#FFCC66] md:text-2xl lg:text-start">
           隊伍資訊
         </h3>
-        <form className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-[#114273] p-10 text-white">
-          <label htmlFor="teamName" className="flex w-full items-center gap-2">
+        <form className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-[#114273] p-10 text-white xl:w-full">
+          <label
+            htmlFor="teamName"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
+          >
             <span className="w-24 shrink-0 tracking-widest">隊伍名稱</span>
             <input
               onChange={handleTeamName}
@@ -176,7 +179,7 @@ const TeamCreate = () => {
           </label>
           <label
             htmlFor="selectCourt"
-            className="flex w-full items-center gap-2"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
           >
             <span className="w-24 shrink-0 tracking-widest">選擇球場</span>
             <select
@@ -196,7 +199,10 @@ const TeamCreate = () => {
               <option value="百齡高中">百齡高中</option>
             </select>
           </label>
-          <label htmlFor="date" className="flex w-full items-center gap-2">
+          <label
+            htmlFor="date"
+            className="itemsstart flex w-full flex-col gap-2 xl:flex-row xl:items-center "
+          >
             <span className="w-24 shrink-0 tracking-widest">選擇日期</span>
             <input
               onChange={handleDate}
@@ -208,10 +214,10 @@ const TeamCreate = () => {
 
           <label
             htmlFor="teammate"
-            className="flex w-full justify-between gap-2"
+            className="flex w-full flex-col justify-start gap-2 xl:flex-row xl:justify-between "
           >
             <span className="w-24 shrink-0 tracking-widest">增加隊員</span>
-            <div className="flex w-full flex-col gap-4 overflow-clip">
+            <div className="flex w-full flex-col gap-2 overflow-clip">
               <div className="flex w-full justify-between gap-2">
                 <input
                   onChange={handleEmail}
@@ -227,7 +233,7 @@ const TeamCreate = () => {
                   加入
                 </button>
               </div>
-              <div className="flex w-full flex-col gap-2">
+              <div className="flex w-full flex-col gap-1">
                 <p className="text-white/70">隨機加入隊友</p>
                 <div className="no-scrollbar flex w-full justify-start gap-[1vw] overflow-x-auto">
                   {/* 隨機十位使用者資料 */}
@@ -319,9 +325,11 @@ const TeamCreate = () => {
 
           {/* 報錯訊息 */}
           {message ? (
-            <div className="h-5 text-red-500">{message}</div>
+            <div className="h-3 text-sm text-[#FFCC66] sm:text-lg">
+              {message}
+            </div>
           ) : (
-            <div className="h-5"></div>
+            <div className="h-3"></div>
           )}
 
           {/* 按鈕 */}
@@ -334,44 +342,44 @@ const TeamCreate = () => {
         </form>
       </div>
       {/* 右側即時預覽 */}
-      <div className="flex w-1/4 flex-col gap-4">
-        <h3 className="w-full text-center text-2xl font-bold text-[#FFCC66] lg:text-start">
+      <div className="flex w-full flex-col items-center gap-4 xl:w-1/4">
+        <h3 className="w-full text-center text-lg font-bold text-[#FFCC66] md:text-2xl lg:text-start">
           即時預覽
         </h3>
         <div
           key={uuidv4()}
-          className="flex h-[480px] w-[320px] shrink-0 flex-col items-center gap-4 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 2xl:w-[360px]"
+          className="flex h-[340px] w-[260px] shrink-0 flex-col items-center gap-2 rounded-3xl border border-transparent bg-[#123659] p-4 shadow-sm duration-500 hover:border-white/30 md:h-[400px] md:w-[340px] lg:h-[480px] lg:gap-4 2xl:w-[360px]"
         >
           {/* 隊伍基本資訊 */}
-          <div className="flex flex-col gap-2">
-            <h3 className="whitespace-nowrap text-center text-2xl font-bold leading-10 tracking-widest text-white">
+          <div className="flex flex-col gap-0 sm:gap-2">
+            <h3 className="whitespace-nowrap text-center text-base font-bold tracking-widest text-white md:text-xl lg:text-2xl">
               {court}
             </h3>
-            <h2 className="whitespace-nowrap text-center text-xl font-bold leading-8 tracking-wider text-[#FFE8A3]">
+            <h2 className="whitespace-nowrap text-center text-base font-bold tracking-wider text-[#FFE8A3]  md:text-lg lg:text-2xl">
               {date}
             </h2>
           </div>
-          <div className="flex w-4/5 items-center justify-center whitespace-nowrap border-t border-white/30 px-4 pt-2 text-2xl font-bold leading-8 tracking-wider text-white/70">
+          <div className="flex w-4/5 items-center justify-center whitespace-nowrap border-t border-white/30 px-2 pt-1 text-base font-bold tracking-wider text-white/70 md:text-xl lg:px-4 lg:pt-2 lg:text-2xl">
             {teamName}
           </div>
           {/* 球員名單 */}
-          <div className="grid h-[300px] w-full grid-cols-3 gap-x-2 gap-y-2">
+          <div className="grid h-[220px] w-full grid-cols-3 gap-x-2 gap-y-2 md:h-[250px] lg:h-[300px]">
             {/* 隊長資料 */}
-            <div className="flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl bg-black/20 p-2">
+            <div className="flex h-[105px] w-full flex-col items-center justify-center gap-1 rounded-lg bg-black/20 p-2 md:h-[120px] md:rounded-2xl lg:h-[145px]">
               <div className="flex w-full flex-col items-center justify-center gap-1">
                 <img
                   loading="lazy"
                   src={user.user.photoSelected}
-                  className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover outline outline-2 outline-offset-2 outline-[#FFCC66]"
+                  className="h-6 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover outline outline-1 outline-offset-2 outline-[#FFCC66] md:h-9 md:w-9 md:outline-2 lg:h-14 lg:w-14"
                 />
-                <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                <p className="h-4 w-full overflow-clip whitespace-nowrap text-center text-sm tracking-wide text-white">
                   {user.user.username}
                 </p>
               </div>
-              <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+              <div className="flex w-3/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
                 <div className="flex w-full items-center justify-center">
                   <Swiper
-                    loop={false}
+                    loop={true}
                     speed={500}
                     centeredSlides={true}
                     autoplay={{
@@ -386,7 +394,7 @@ const TeamCreate = () => {
                         return (
                           <SwiperSlide
                             key={uuidv4()}
-                            className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide "
+                            className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-[.6rem] font-medium tracking-widest md:text-xs md:tracking-wide "
                           >
                             {position}
                           </SwiperSlide>
@@ -394,7 +402,9 @@ const TeamCreate = () => {
                       })}
                   </Swiper>
                 </div>
-                <p className="h-4 whitespace-nowrap">{user.user.skillLevel}</p>
+                <p className="h-4 whitespace-nowrap text-[.6rem] font-medium tracking-widest md:text-xs md:tracking-wide">
+                  {user.user.skillLevel}
+                </p>
               </div>
             </div>
             {/* 隊員資料 */}
@@ -404,12 +414,12 @@ const TeamCreate = () => {
                 return (
                   <div
                     key={uuidv4()}
-                    className="group relative flex h-[145px] w-full flex-col items-center justify-center gap-1 rounded-2xl border border-transparent bg-black/20 p-2 duration-500 hover:border-white/30 hover:bg-black/30"
+                    className="group relative flex h-[105px] w-full flex-col items-center justify-center gap-1 rounded-lg border border-transparent bg-black/20 p-2 duration-500 hover:border-white/30 hover:bg-black/30 md:h-[120px] md:rounded-2xl lg:h-[145px]"
                   >
                     <button
                       id={member._id}
                       onClick={handleDelete}
-                      className="leading-0 absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white/10 text-white/50 duration-500 group-hover:bg-white/50 group-hover:text-white"
+                      className="leading-0 absolute right-1 top-1 flex h-3 w-3 items-center justify-center rounded-full bg-white/10 text-white/50 duration-500 group-hover:bg-white/50 group-hover:text-white md:right-2 md:top-2 md:h-4 md:w-4"
                     >
                       -
                     </button>
@@ -417,16 +427,16 @@ const TeamCreate = () => {
                       <img
                         loading="lazy"
                         src={member.photoSelected}
-                        className="h-14 w-14 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover"
+                        className="h-6 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover md:h-9 md:w-9 lg:h-14 lg:w-14"
                       />
-                      <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                      <p className="h-5 w-full overflow-clip whitespace-nowrap text-center text-sm tracking-wide text-white">
                         {member.username}
                       </p>
                     </div>
-                    <div className="flex w-2/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
+                    <div className="flex w-3/5 flex-col items-center justify-center gap-1 text-xs font-medium tracking-wide text-white/70">
                       <div className="flex h-4 w-full items-center justify-center">
                         <Swiper
-                          loop={false}
+                          loop={true}
                           speed={500}
                           centeredSlides={true}
                           autoplay={{
@@ -441,7 +451,7 @@ const TeamCreate = () => {
                               return (
                                 <SwiperSlide
                                   key={uuidv4()}
-                                  className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-xs font-medium tracking-wide "
+                                  className="sweepLight h-full w-full whitespace-nowrap bg-transparent text-[.6rem] font-medium tracking-widest md:text-xs md:tracking-wide"
                                 >
                                   {position}
                                 </SwiperSlide>
@@ -449,7 +459,7 @@ const TeamCreate = () => {
                             })}
                         </Swiper>
                       </div>
-                      <p className="h-4 whitespace-nowrap">
+                      <p className="h-4 whitespace-nowrap text-[.6rem] font-medium tracking-widest md:text-xs md:tracking-wide">
                         {member.skillLevel}
                       </p>
                     </div>
@@ -461,12 +471,11 @@ const TeamCreate = () => {
               <button
                 // data-teamid={team._id}
                 // onClick={handleTeamJoin}
-                className="group relative flex h-[145px] w-full flex-col items-center gap-1 rounded-2xl bg-black/10"
+                className="group relative flex h-[105px] w-full flex-col items-center gap-1 rounded-lg bg-black/10 md:h-[120px] md:rounded-2xl lg:h-[145px]"
               >
-                {/* <div className="absolute top-4 whitespace-nowrap text-center text-base font-medium leading-6 tracking-wider text-white/70 duration-500 group-hover:text-white">
-                  加入隊員
-                </div> */}
-                <p className="absolute top-8 text-6xl text-[#FFCC66]/50">+</p>
+                <p className="absolute top-4 text-6xl text-[#FFCC66]/50 md:top-6 lg:top-8">
+                  +
+                </p>
               </button>
             )}
           </div>

@@ -52,7 +52,7 @@ const TeamCard = () => {
 
   return (
     // <div className="no-scrollbar flex w-full items-start justify-start gap-10 overflow-x-auto">
-    <div className="grid w-full grid-cols-3 items-start justify-items-center gap-y-10 2xl:grid-cols-4">
+    <div className="grid w-full grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 items-start justify-items-center gap-y-10 2xl:grid-cols-4">
       {teamData &&
         teamData.length !== 0 &&
         Array.isArray(teamData) &&
@@ -63,7 +63,7 @@ const TeamCard = () => {
           return (
             <div
               key={uuidv4()}
-              className="flex h-[340px] md:h-[440px] xl:h-[480px] w-[220px] md:w-[340px] xl:w-[380px] 2xl:w-[340px] shrink-0 flex-col items-center justify-between gap-1 sm:gap-4 rounded-3xl border border-transparent bg-[#123659] p-2 sm:p-4 shadow-sm duration-500 hover:border-white/30"
+              className="flex h-[340px] md:h-[440px] xl:h-[480px] w-4/5 md:w-[330px] xl:w-[380px] 2xl:w-[330px] shrink-0 flex-col items-center justify-between gap-1 sm:gap-4 rounded-3xl border border-transparent bg-[#123659] p-2 sm:p-4 shadow-sm duration-500 hover:border-white/30"
             >
               {/* 隊伍基本資訊 */}
               <div className="flex flex-col md:gap-2 gap-0">
@@ -85,16 +85,16 @@ const TeamCard = () => {
                     <img
                       loading="lazy"
                       src={team.teamLeader.photoSelected}
-                      className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white bg-clip-border outline outline-1 md:outline-2 outline-offset-2 outline-[#FFCC66]"
+                      className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border object-cover outline outline-1 md:outline-2 outline-offset-2 outline-[#FFCC66]"
                     />
-                    <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                    <p className="h-5 w-full overflow-clip whitespace-nowrap text-center text-sm tracking-wide text-white">
                       {team.teamLeader.username}
                     </p>
                   </div>
                   <div className="flex w-3/5 flex-col items-center justify-center gap-1 font-medium tracking-wide text-white/70">
                     <div className="flex h-2 md:h-4 w-full items-center justify-center">
                       <Swiper
-                        loop={false}
+                        loop={true}
                         speed={500}
                         centeredSlides={true}
                         autoplay={{
@@ -134,16 +134,16 @@ const TeamCard = () => {
                           <img
                             loading="lazy"
                             src={member.photoSelected}
-                            className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full bg-white/10 bg-clip-border"
+                            className="xl:h-14 md:h-10 h-6 xl:w-14 md:w-10 w-6 shrink-0 rounded-full object-cover bg-white/10 bg-clip-border"
                           />
-                          <p className="h-5 w-full whitespace-nowrap text-center text-sm tracking-wide text-white">
+                          <p className="h-5 w-full overflow-clip whitespace-nowrap text-center text-sm tracking-wide text-white">
                             {member.username}
                           </p>
                         </div>
                         <div className="flex w-3/5 flex-col items-center justify-center gap-1 font-medium tracking-wide text-white/70">
                           <div className="flex h-2 md:h-4 w-full items-center justify-center">
                             <Swiper
-                              loop={false}
+                              loop={true}
                               speed={500}
                               centeredSlides={true}
                               autoplay={{
