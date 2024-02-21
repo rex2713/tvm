@@ -63,16 +63,16 @@ const CourtEdit = () => {
 
   const updateCourt = () => {
     const formData = new FormData();
-    if (!file || file.length == 0) 
-    // window.alert("你還未選擇照片")
-    Swal.fire({
-      title: "尚未選擇照片",
-      // text: "現在將為您導向個人資料頁面",
-      icon: "warning",
-      background: "#123659",
-      color: "#FFFFFF",
-      confirmButtonColor: "#0492D9",
-    });
+    if (!file || file.length == 0)
+      // window.alert("你還未選擇照片")
+      Swal.fire({
+        title: "尚未選擇照片",
+        // text: "現在將為您導向個人資料頁面",
+        icon: "warning",
+        background: "#123659",
+        color: "#FFFFFF",
+        confirmButtonColor: "#0492D9",
+      });
     for (let i = 0; i < file.length; i++) {
       formData.append("file", file[i]);
     }
@@ -104,38 +104,38 @@ const CourtEdit = () => {
   };
 
   return (
-    <div className="bg-black/50">
-      <div className="h-60"></div>
-      <h1 className="text-center">CourtEdit</h1>
-      <div className="flex justify-center gap-2">
+    <div className="flex flex-col min-h-screen items-center justify-center gap-8 pt-28 bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[10vw]">
+      <h1 className="text-4xl text-[#FFCC66]">CourtEdit</h1>
+      <div className="flex flex-col items-center gap-4">
         <input
           onChange={(e) => {
             handleFileChange(e);
           }}
-          className=""
+          className="flex w-80 rounded-full border border-white/50 bg-white/10 px-8 py-1"
           type="file"
           multiple
         />
-        <button
-          onClick={() => {
-            updateCourt();
-          }}
-          className="text-white"
-        >
-          上傳
-        </button>
+
+        <div className="grid w-full grid-cols-2 justify-center gap-4 lg:grid-cols-4">
+          {preview &&
+            preview.map((item) => {
+              return (
+                <span key={item.name}>
+                  <p className="overflow-clip text-white/50">{item.name}</p>
+                  <img src={item.previewURL} />
+                </span>
+              );
+            })}
+        </div>
       </div>
-      <div className="w-135 flex justify-center gap-2">
-        {preview &&
-          preview.map((item) => {
-            return (
-              <span key={item.name}>
-                <p>{item.name}</p>
-                <img src={item.previewURL} />
-              </span>
-            );
-          })}
-      </div>
+      <button
+        onClick={() => {
+          updateCourt();
+        }}
+        className="shrink-0 rounded-xl border-2 border-white/50 bg-[#0492D9] px-10 py-2 text-lg font-bold tracking-[.2rem] text-white duration-300 hover:bg-[#05abff]"
+      >
+        上傳
+      </button>
     </div>
   );
 };
