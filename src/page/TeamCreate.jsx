@@ -144,7 +144,7 @@ const TeamCreate = () => {
     formData.append("date", date);
     formData.append("teamLeader", teamLeader);
     formData.append("teamMember", JSON.stringify(teamMemberId));
-    console.log(Object.fromEntries(formData));
+    // console.log(Object.fromEntries(formData));
 
     TeamService.teamCreate(formData)
       .then(() => {
@@ -192,11 +192,26 @@ const TeamCreate = () => {
               <option value="請選擇" disabled hidden>
                 請選擇
               </option>
-              <option value="臺北商業大學">臺北商業大學</option>
               <option value="臺北教育大學">臺北教育大學</option>
-              <option value="臺北師範大學">臺北師範大學</option>
-              <option value="臺灣大學">臺灣大學</option>
-              <option value="百齡高中">百齡高中</option>
+              <option value="師大附中">師大附中</option>
+              <option value="臺灣科技大學">臺灣科技大學</option>
+              <option value="臺北醫學大學">臺北醫學大學</option>
+              <option value="臺灣師範大學體育館">臺灣師範大學體育館</option>
+              <option value="臺北商業大學">臺灣大學綜合體育館</option>
+              <option value="臺北科技大學">臺北科技大學</option>
+              <option value="長安國中">長安國中</option>
+
+              <option value="臺北體育館">臺北體育館</option>
+              <option value="興雅國中">興雅國中</option>
+              <option value="松山工農">松山工農</option>
+              <option value="中國科技大學">中國科技大學</option>
+              <option value="大同高中">大同高中</option>
+              <option value="東吳大學(城中)">東吳大學(城中)</option>
+              <option value="世新大學">世新大學</option>
+              <option value="民權國中">民權國中</option>
+              <option value="政治大學">政治大學</option>
+              <option value="政大附中">政大附中</option>
+              <option value="明倫高中">明倫高中</option>
             </select>
           </label>
           <label
