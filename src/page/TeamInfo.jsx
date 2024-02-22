@@ -240,7 +240,7 @@ const TeamInfo = () => {
     <main className="flex w-full bg-gradient-to-b from-[#082A4D] via-[#041526] to-[#000000] px-[8vw] py-10">
       {/* 球場內容 */}
       {teamData && (
-        <div className="flex h-full w-[80vw] flex-col items-center justify-center gap-20 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8">
+        <div className="flex h-full w-[80vw] flex-col items-center justify-center gap-40 rounded-t-3xl bg-[#082A4D] px-[2vw] py-8 sm:gap-20">
           <section className="flex w-full flex-col items-center gap-[5vw] px-[2vw] md:px-[5vw] lg:flex-row">
             {/* 資訊 */}
             <article className="flex w-full flex-col justify-between gap-4 sm:gap-6 lg:w-1/2">
@@ -320,8 +320,7 @@ const TeamInfo = () => {
                 </div>
               </div>
             </article>
-
-            <div className="grid h-full w-full grid-cols-3 justify-items-center gap-x-2 gap-y-4 text-white sm:grid-cols-6 lg:w-1/2 lg:grid-cols-3 lg:gap-x-4">
+            <div className="grid h-40 w-full grid-cols-3 justify-items-center gap-x-2 gap-y-4 text-white sm:h-full sm:grid-cols-6 lg:w-1/2 lg:grid-cols-3 lg:gap-x-4">
               {/* 隊長 */}
               <button className="group h-full w-full rounded-lg border border-transparent bg-black/30 px-2 py-2 duration-500 hover:border-white/50">
                 <div className="flex h-full w-full flex-col items-center justify-center gap-2">
@@ -528,9 +527,9 @@ const TeamInfo = () => {
           </section>
 
           {/* 留言板 */}
-          <section className="flex w-full flex-col items-center justify-center gap-5 px-10">
+          <section className="flex w-full flex-col items-center justify-center gap-5 px-[2vw] sm:px-10">
             <h3 className="text-2xl font-bold text-[#FFCC66]">留言板</h3>
-            <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold duration-500 hover:border-white/20">
+            <div className="flex h-80 w-full flex-col justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 p-2 font-bold duration-500 hover:border-white/20 sm:p-4">
               <div className="no-scrollbar flex flex-col gap-1 overflow-scroll text-base">
                 {/* <div className="flex flex-col sm:flex-row sm:gap-4">
                   <p className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
@@ -672,7 +671,7 @@ const TeamInfo = () => {
                   <p className="text-base tracking-widest text-white/70">收</p>
                 </div> */}
               </div>
-              <div ref={containerRef} className="h-40 overflow-auto">
+              <div ref={containerRef} className="h-full overflow-auto">
                 {teamMessage && teamMessage.length == 0 ? (
                   <p className="text-center text-xl text-white">Loading...</p>
                 ) : (
@@ -681,16 +680,18 @@ const TeamInfo = () => {
                 {teamMessage &&
                   teamMessage.map((message) => {
                     return (
-                      <div className="flex gap-4">
-                        <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
-                          {message.split(" ")[0]}
-                        </span>
-                        <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
-                          {message.split(" ")[1]}
-                        </span>
-                        <span className="text-base tracking-widest text-blue-300/70">
-                          {message.split(" ")[3]}
-                        </span>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                        <div>
+                          <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                            {message.split(" ")[0]}
+                          </span>
+                          <span className="whitespace-nowrap text-sm leading-6 tracking-wider text-white/50">
+                            {message.split(" ")[1]}
+                          </span>
+                          <span className="text-base tracking-widest text-blue-300/70">
+                            {message.split(" ")[3]}
+                          </span>
+                        </div>
                         <span className="text-base tracking-widest text-white/70">
                           {message.split(" ")[5]}
                         </span>
@@ -704,14 +705,14 @@ const TeamInfo = () => {
                   value={messageInput}
                   onChange={handleMessage}
                   type="text"
-                  className="h-6 w-11/12 rounded-lg bg-white/10 px-2 focus:bg-white/80 focus:text-black"
+                  className="h-6 w-5/6 rounded-lg bg-white/10 px-2 focus:bg-white/80 focus:text-black sm:w-11/12"
                 />
                 <input
                   onClick={(e) => {
                     handleMessageBtn();
                   }}
                   type="submit"
-                  className="h-6 w-1/12 rounded-lg bg-white/10 text-white/50 duration-500 hover:bg-white/20"
+                  className="h-6 w-1/6 rounded-lg bg-white/10 text-white/50 duration-500 hover:bg-white/20 sm:w-1/12"
                   value={"送出訊息"}
                 />
               </div>
