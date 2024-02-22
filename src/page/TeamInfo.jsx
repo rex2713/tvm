@@ -90,16 +90,18 @@ const TeamInfo = () => {
     // console.log(isLeader);
     const userEmail = window.prompt("請輸入好友信箱：");
     // console.log(userInput);
-    if (userEmail === "") return;
+    if (userEmail === "") {
+      return Swal.fire({
+        title: "信箱不能為空",
+        // text: "",
+        icon: "warning",
+        background: "#123659",
+        color: "#FFFFFF",
+        confirmButtonColor: "#0492D9",
+      });
+    }
     // window.alert("信箱不能為空");
-    Swal.fire({
-      title: "信箱不能為空",
-      // text: "",
-      icon: "warning",
-      background: "#123659",
-      color: "#FFFFFF",
-      confirmButtonColor: "#0492D9",
-    });
+
     try {
       let userFound = await TeamService.getUserByEmail(userEmail)
         .then((data) => {
