@@ -6,7 +6,7 @@ const Footer = () => {
   const user = AuthService.getCurrentUser();
   let isLogIn = user && user.user !== null;
   return (
-    <footer className="flex h-[150px] flex-col items-center justify-center gap-5 bg-black px-[5vw] lg:flex-row lg:justify-between">
+    <footer className="flex h-[250px] flex-col items-center justify-center gap-5 bg-black px-[5vw] lg:flex-row lg:justify-between">
       {/* Logo */}
       <img
         loading="lazy"
