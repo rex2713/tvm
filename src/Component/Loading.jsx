@@ -13,8 +13,8 @@ const Loading = () => {
     style: { width: "100vw", height: "100vh" },
   };
   return (
-    <div className="font-3xl leading-96 h-full w-full  text-center text-black">
-      <div className="">
+    <div className="font-3xl leading-96 h-screen w-screen text-center text-black">
+      <div className=" flex h-screen w-screen items-center justify-center bg-black">
         <Lottie options={defaultOptions} />
       </div>
     </div>
